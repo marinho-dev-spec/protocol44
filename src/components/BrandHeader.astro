@@ -1,0 +1,8 @@
+---
+interface Props { page?: 'quiz' | 'vsl' | 'home'; lang?: string }
+const { page = 'quiz', lang = 'en' } = Astro.props;
+---
+<header class="site-header wrap">
+  <a class="brand" href="/" aria-label="Protocol 44 home"><img src="/brand/logo-ink.svg" alt="Protocol 44" width="478" height="80" /></a>
+  <nav aria-label={lang === 'pt-BR' ? 'Navegação principal' : 'Main navigation'}>{page === 'quiz' ? <a href="/">{lang === 'pt-BR' ? 'Conhecer o programa' : 'The program'}</a> : <a href="/quiz">Take the quiz</a>}</nav>
+</header>

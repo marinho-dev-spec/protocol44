@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-07T21:53:10.925804+00:00",
+  "title": "Design System: Protocol 44",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Laranja vivo",
+        "tonalRamp": [
+          "oklch(0.1500 0.2219 35.48)",
+          "oklch(0.2643 0.2219 35.48)",
+          "oklch(0.3786 0.2219 35.48)",
+          "oklch(0.4929 0.2219 35.48)",
+          "oklch(0.6071 0.2219 35.48)",
+          "oklch(0.7214 0.2219 35.48)",
+          "oklch(0.8357 0.2219 35.48)",
+          "oklch(0.9500 0.2219 35.48)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Laranja de interação",
+        "tonalRamp": [
+          "oklch(0.1500 0.1918 37.36)",
+          "oklch(0.2643 0.1918 37.36)",
+          "oklch(0.3786 0.1918 37.36)",
+          "oklch(0.4929 0.1918 37.36)",
+          "oklch(0.6071 0.1918 37.36)",
+          "oklch(0.7214 0.1918 37.36)",
+          "oklch(0.8357 0.1918 37.36)",
+          "oklch(0.9500 0.1918 37.36)"
+        ]
+      },
+      "copper": {
+        "role": "primary",
+        "displayName": "Cobre de leitura",
+        "tonalRamp": [
+          "oklch(0.1500 0.1822 33.92)",
+          "oklch(0.2643 0.1822 33.92)",
+          "oklch(0.3786 0.1822 33.92)",
+          "oklch(0.4929 0.1822 33.92)",
+          "oklch(0.6071 0.1822 33.92)",
+          "oklch(0.7214 0.1822 33.92)",
+          "oklch(0.8357 0.1822 33.92)",
+          "oklch(0.9500 0.1822 33.92)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "tonalRamp": [
+          "oklch(0.1500 0.0000 89.88)",
+          "oklch(0.2643 0.0000 89.88)",
+          "oklch(0.3786 0.0000 89.88)",
+          "oklch(0.4929 0.0000 89.88)",
+          "oklch(0.6071 0.0000 89.88)",
+          "oklch(0.7214 0.0000 89.88)",
+          "oklch(0.8357 0.0000 89.88)",
+          "oklch(0.9500 0.0000 89.88)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel"
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Creme",
+        "tonalRamp": [
+          "oklch(0.1500 0.0057 84.57)",
+          "oklch(0.2643 0.0057 84.57)",
+          "oklch(0.3786 0.0057 84.57)",
+          "oklch(0.4929 0.0057 84.57)",
+          "oklch(0.6071 0.0057 84.57)",
+          "oklch(0.7214 0.0057 84.57)",
+          "oklch(0.8357 0.0057 84.57)",
+          "oklch(0.9500 0.0057 84.57)"
+        ]
+      },
+      "soft-paper": {
+        "role": "neutral",
+        "displayName": "Papel de trabalho"
+      },
+      "reading-ink": {
+        "role": "neutral",
+        "displayName": "Tinta de leitura secundária",
+        "tonalRamp": [
+          "oklch(0.1500 0.0194 73.38)",
+          "oklch(0.2643 0.0194 73.38)",
+          "oklch(0.3786 0.0194 73.38)",
+          "oklch(0.4929 0.0194 73.38)",
+          "oklch(0.6071 0.0194 73.38)",
+          "oklch(0.7214 0.0194 73.38)",
+          "oklch(0.8357 0.0194 73.38)",
+          "oklch(0.9500 0.0194 73.38)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Texto secundário compartilhado",
+        "tonalRamp": [
+          "oklch(0.1500 0.0120 145.39)",
+          "oklch(0.2643 0.0120 145.39)",
+          "oklch(0.3786 0.0120 145.39)",
+          "oklch(0.4929 0.0120 145.39)",
+          "oklch(0.6071 0.0120 145.39)",
+          "oklch(0.7214 0.0120 145.39)",
+          "oklch(0.8357 0.0120 145.39)",
+          "oklch(0.9500 0.0120 145.39)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Divisória",
+        "tonalRamp": [
+          "oklch(0.1500 0.0145 88.70)",
+          "oklch(0.2643 0.0145 88.70)",
+          "oklch(0.3786 0.0145 88.70)",
+          "oklch(0.4929 0.0145 88.70)",
+          "oklch(0.6071 0.0145 88.70)",
+          "oklch(0.7214 0.0145 88.70)",
+          "oklch(0.8357 0.0145 88.70)",
+          "oklch(0.9500 0.0145 88.70)"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Trilho de progresso",
+        "tonalRamp": [
+          "oklch(0.1500 0.0192 83.06)",
+          "oklch(0.2643 0.0192 83.06)",
+          "oklch(0.3786 0.0192 83.06)",
+          "oklch(0.4929 0.0192 83.06)",
+          "oklch(0.6071 0.0192 83.06)",
+          "oklch(0.7214 0.0192 83.06)",
+          "oklch(0.8357 0.0192 83.06)",
+          "oklch(0.9500 0.0192 83.06)"
+        ]
+      },
+      "option-border": {
+        "role": "neutral",
+        "displayName": "Contorno de opção",
+        "tonalRamp": [
+          "oklch(0.1500 0.0247 73.56)",
+          "oklch(0.2643 0.0247 73.56)",
+          "oklch(0.3786 0.0247 73.56)",
+          "oklch(0.4929 0.0247 73.56)",
+          "oklch(0.6071 0.0247 73.56)",
+          "oklch(0.7214 0.0247 73.56)",
+          "oklch(0.8357 0.0247 73.56)",
+          "oklch(0.9500 0.0247 73.56)"
+        ]
+      },
+      "option-hover": {
+        "role": "neutral",
+        "displayName": "Exploração de opção",
+        "tonalRamp": [
+          "oklch(0.1500 0.0202 53.26)",
+          "oklch(0.2643 0.0202 53.26)",
+          "oklch(0.3786 0.0202 53.26)",
+          "oklch(0.4929 0.0202 53.26)",
+          "oklch(0.6071 0.0202 53.26)",
+          "oklch(0.7214 0.0202 53.26)",
+          "oklch(0.8357 0.0202 53.26)",
+          "oklch(0.9500 0.0202 53.26)"
+        ]
+      },
+      "accent-soft": {
+        "role": "neutral",
+        "displayName": "Escolha",
+        "tonalRamp": [
+          "oklch(0.1500 0.0326 49.34)",
+          "oklch(0.2643 0.0326 49.34)",
+          "oklch(0.3786 0.0326 49.34)",
+          "oklch(0.4929 0.0326 49.34)",
+          "oklch(0.6071 0.0326 49.34)",
+          "oklch(0.7214 0.0326 49.34)",
+          "oklch(0.8357 0.0326 49.34)",
+          "oklch(0.9500 0.0326 49.34)"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "Foco sobre papel",
+        "tonalRamp": [
+          "oklch(0.1500 0.1408 34.10)",
+          "oklch(0.2643 0.1408 34.10)",
+          "oklch(0.3786 0.1408 34.10)",
+          "oklch(0.4929 0.1408 34.10)",
+          "oklch(0.6071 0.1408 34.10)",
+          "oklch(0.7214 0.1408 34.10)",
+          "oklch(0.8357 0.1408 34.10)",
+          "oklch(0.9500 0.1408 34.10)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display da home",
+        "purpose": "Escala V5.1 de até 68 px; peso 500."
+      },
+      "headline": {
+        "displayName": "Títulos de seção",
+        "purpose": "Base compartilhada com ajustes por superfície."
+      },
+      "quiz-title": {
+        "displayName": "Pergunta V5",
+        "purpose": "Legend nativo; 32 px, 28 px no mobile."
+      },
+      "body": {
+        "displayName": "Leitura",
+        "purpose": "Base de corpo 19 px; mobile 18 px."
+      },
+      "action": {
+        "displayName": "Ação",
+        "purpose": "Botões principais."
+      },
+      "option": {
+        "displayName": "Resposta",
+        "purpose": "Texto das opções em radios nativos."
+      },
+      "functional-label": {
+        "displayName": "Indicador funcional",
+        "purpose": "Contagem de respostas e rótulos."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Entrada e feedback compartilhados."
+      },
+      {
+        "name": "page-group",
+        "value": "320ms; opacity .8 to 1; text translateY 6px to 0",
+        "purpose": "Uma vez por elemento, conteúdo visível por padrão."
+      },
+      {
+        "name": "question-enter",
+        "value": "200ms; translateY 4px to 0; no blur",
+        "purpose": "Perguntas e pontes V5, removido em reduced-motion."
+      },
+      {
+        "name": "example-feedback",
+        "value": "180ms; opacity .76 to 1",
+        "purpose": "Troca controlada pela pessoa, sem atrasar conteúdo."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "CSS animations/transitions none; scroll auto; cancel active Web Animations",
+        "purpose": "Mudança da preferência cancela efeitos; não retira leitura."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "360px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA V5 laranja com tinta; mínimo de 58 px.",
+      "html": "<button class=\"ds-button\" type=\"button\">Take the quiz <svg class=\"ds-arrow\" width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></button>",
+      "css": ".ds-button{min-height:58px;border-radius:6px;padding:15px 23px;display:inline-flex;justify-content:center;align-items:center;gap:27px;text-decoration:none;border:1px solid transparent;font:600 19px/1.3 var(--body,'Source Sans 3',sans-serif);cursor:pointer;transition:background-color .18s,color .18s}.ds-arrow{flex-shrink:0}.ds-button:disabled{opacity:.5;cursor:not-allowed}@media(hover:hover){.ds-button .ds-arrow{transition:transform .2s cubic-bezier(.16,1,.3,1)}.ds-button:hover .ds-arrow{transform:translateX(4px)}}.ds-button{background:var(--accent,#ff4d17);color:var(--ink,#171717)}.ds-button:hover{background:#ff6a3c}.ds-button:focus-visible,.ds-text:focus-visible,.ds-chip:focus-visible,.ds-nav a:focus-visible,.ds-faq summary:focus-visible{outline:3px solid var(--focus,#a9422b);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button,.ds-arrow,.ds-option{transition:none!important;transform:none!important}}"
+    },
+    {
+      "name": "Dark secondary action",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "CTA escuro sobre a superfície de apoio em papel.",
+      "html": "<div class=\"ds-orange\"><button class=\"ds-button\" type=\"button\">Try the written practice <svg class=\"ds-arrow\" width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></button></div>",
+      "css": ".ds-orange{padding:20px;background:var(--soft-paper,#f0ece3);--focus:var(--ink,#171717)}.ds-button{min-height:58px;border-radius:6px;padding:15px 23px;display:inline-flex;justify-content:center;align-items:center;gap:27px;text-decoration:none;border:1px solid transparent;font:600 19px/1.3 var(--body,'Source Sans 3',sans-serif);cursor:pointer;transition:background-color .18s,color .18s}.ds-arrow{flex-shrink:0}.ds-button:disabled{opacity:.5;cursor:not-allowed}@media(hover:hover){.ds-button .ds-arrow{transition:transform .2s cubic-bezier(.16,1,.3,1)}.ds-button:hover .ds-arrow{transform:translateX(4px)}}.ds-button{background:var(--ink,#171717);color:var(--paper,#faf8f4)}.ds-button:hover{background:#35302a}.ds-button:focus-visible,.ds-text:focus-visible,.ds-chip:focus-visible,.ds-nav a:focus-visible,.ds-faq summary:focus-visible{outline:3px solid var(--focus,#a9422b);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button,.ds-arrow,.ds-option{transition:none!important;transform:none!important}}"
+    },
+    {
+      "name": "Secondary text action",
+      "kind": "button",
+      "refersTo": "link-subtle",
+      "description": "Ação textual para rever ou limpar respostas.",
+      "html": "<button class=\"ds-text\" type=\"button\">Review my answers</button>",
+      "css": ".ds-text{border:0;background:none;color:var(--muted,#5c625c);text-decoration:underline;text-underline-offset:4px;min-height:44px;padding:8px 0;font:400 16px/1.5 var(--body,'Source Sans 3',sans-serif);cursor:pointer}.ds-text:hover{color:var(--copper,#b92c06)}.ds-button:focus-visible,.ds-text:focus-visible,.ds-chip:focus-visible,.ds-nav a:focus-visible,.ds-faq summary:focus-visible{outline:3px solid var(--focus,#a9422b);outline-offset:5px}"
+    },
+    {
+      "name": "Native radio choice",
+      "kind": "input",
+      "refersTo": "option",
+      "description": "Radio real em label; escolha combina ponto, fundo e contorno.",
+      "html": "<div class=\"ds-options\"><label class=\"ds-option\"><input type=\"radio\" name=\"ds-answer\" checked><span class=\"ds-radio\" aria-hidden=\"true\"></span><span>My work or sense of direction</span></label><label class=\"ds-option\"><input type=\"radio\" name=\"ds-answer\"><span class=\"ds-radio\" aria-hidden=\"true\"></span><span>My relationship with money</span></label></div>",
+      "css": ".ds-options{display:grid;gap:11px}.ds-option{display:flex;align-items:center;gap:16px;position:relative;background:var(--cream,#fffdf9);color:var(--ink,#171717);border:1px solid #cbbfb0;border-radius:12px;padding:18px 20px;min-height:68px;font:400 19px/1.35 var(--body,'Source Sans 3',sans-serif);cursor:pointer;transition:background-color .18s,border-color .18s,transform .18s cubic-bezier(.16,1,.3,1)}.ds-option:hover{border-color:var(--copper,#b92c06);background:#fff0e7}.ds-option:has(input:checked){background:var(--accent-soft,#ffe6d9);border-color:var(--copper,#b92c06)}.ds-option:has(input:focus-visible){outline:3px solid var(--focus,#a9422b);outline-offset:3px}.ds-option input{position:absolute;opacity:0;width:1px;height:1px}.ds-radio{display:grid;place-items:center;width:22px;height:22px;border:1px solid #84796e;border-radius:50%;flex-shrink:0}.ds-option input:checked+.ds-radio{border-color:var(--copper,#b92c06)}.ds-option input:checked+.ds-radio::after{content:\"\";width:10px;height:10px;border-radius:50%;background:var(--copper,#b92c06)}@media(max-width:760px){.ds-option{font-size:18px;padding:16px;min-height:65px;gap:14px}}@media(prefers-reduced-motion:reduce){.ds-button,.ds-arrow,.ds-option{transition:none!important;transform:none!important}}"
+    },
+    {
+      "name": "Focus choices",
+      "kind": "chip",
+      "refersTo": "focus-choice",
+      "description": "Estados visuais dos botões de foco; a troca real é orquestrada pelo controller.",
+      "html": "<div class=\"ds-choices\"><button class=\"ds-chip\" type=\"button\" aria-pressed=\"true\">Money decisions</button><button class=\"ds-chip\" type=\"button\" aria-pressed=\"false\">Other people’s expectations</button></div>",
+      "css": ".ds-choices{display:flex;flex-wrap:wrap;gap:12px}.ds-chip{font:600 17px/1.4 var(--body,'Source Sans 3',sans-serif);padding:14px 18px;min-height:50px;border:1px solid var(--line,#c5c1b7);background:var(--cream,#fffdf9);border-radius:6px;color:var(--ink,#171717);cursor:pointer}.ds-chip:hover{border-color:var(--copper,#b92c06)}.ds-chip[aria-pressed=true]{background:var(--accent-soft,#ffe6d9);border-color:var(--copper,#b92c06)}@media(max-width:760px){.ds-choices{display:grid;gap:10px}.ds-chip{width:100%;text-align:left}}.ds-button:focus-visible,.ds-text:focus-visible,.ds-chip:focus-visible,.ds-nav a:focus-visible,.ds-faq summary:focus-visible{outline:3px solid var(--focus,#a9422b);outline-offset:5px}"
+    },
+    {
+      "name": "Reflection field",
+      "kind": "input",
+      "refersTo": "textarea",
+      "description": "Campo real de escrita com label, ajuda, resize vertical e limite de 1200.",
+      "html": "<label class=\"ds-label\" for=\"ds-event\">What happened?<span>Describe the situation as you remember it.</span></label><textarea class=\"ds-field\" id=\"ds-event\" rows=\"2\" maxlength=\"1200\" placeholder=\"I missed the time I had planned.\"></textarea>",
+      "css": ".ds-label{font:600 20px/1.4 var(--body,'Source Sans 3',sans-serif);color:var(--ink,#171717);display:block}.ds-label span{display:block;font-size:16px;font-weight:400;color:var(--reading-ink,#51493f);margin-top:5px}.ds-field{display:block;width:100%;border:1px solid #a79783;border-radius:6px;background:var(--cream,#fffdf9);color:var(--ink,#171717);padding:14px 15px;margin-top:12px;min-height:102px;font:400 18px/1.45 var(--body,'Source Sans 3',sans-serif);caret-color:var(--copper,#b92c06);resize:vertical}.ds-field::placeholder{color:#726453}.ds-field:focus-visible{outline:3px solid var(--focus,#a9422b);outline-offset:4px}"
+    },
+    {
+      "name": "Brand navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Logo vetorial existente e um único destino textual.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"/\" aria-label=\"Protocol 44 home\">\n<svg class=\"ds-logo\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"420\" height=\"80\">\n\t<path fill=\"#171717\" transform=\"matrix(0.63 0 0 0.63 2 5)\" d=\"M59 0L63 0L10 72L0 72L59 0ZM49 17L63 0L63 72L49 72L49 17ZM128 0L132 0L79 72L69 72L128 0ZM118 17L132 0L132 72L118 72L118 17ZM0 74L60 74L60 83L0 83L0 74ZM75 74L132 74L145 72L145 83L75 83L75 74ZM49 85L63 85L63 98Q63 105 76 108L76 110L35 110L35 108Q49 105 49 98L49 85ZM118 85L132 85L132 98Q132 105 145 108L145 110L104 110L104 108Q118 105 118 98L118 85Z\"/>\n\t<path fill=\"#FF4D17\" transform=\"matrix(0.63 0 0 0.63 2 5)\" d=\"M63 74L72 74L72 83L63 83L63 74Z\"/>\n\t<path fill=\"#171717\" transform=\"translate(114 54)\" d=\"M11.128906 -30.84082Q13.459961 -30.84082 15.243164 -29.691406Q17.026367 -28.552734 18.014648 -26.479492Q19.00293 -24.416992 19.00293 -21.785156Q19.00293 -17.821289 16.908203 -15.393555Q14.824219 -12.976562 11.397461 -12.976562L7.6591797 -12.976562Q7.4335938 -12.976562 7.4335938 -12.761719L7.4335938 -0.52636719Q7.4335938 -0.31152344 7.2832031 -0.15039062Q7.1328125 0 6.9072266 0L2.8574219 0Q2.6425781 0 2.4814453 -0.15039062Q2.3310547 -0.31152344 2.3310547 -0.52636719L2.3310547 -30.314453Q2.3310547 -30.540039 2.4814453 -30.69043Q2.6425781 -30.84082 2.8574219 -30.84082L11.128906 -30.84082ZM10.291016 -16.983398Q11.923828 -16.983398 12.912109 -18.240234Q13.900391 -19.49707 13.900391 -21.645508Q13.900391 -23.847656 12.912109 -25.147461Q11.923828 -26.447266 10.291016 -26.447266L7.6591797 -26.447266Q7.4335938 -26.447266 7.4335938 -26.22168L7.4335938 -17.208984Q7.4335938 -16.983398 7.6591797 -16.983398L10.291016 -16.983398Z\"/>\n\t<path fill=\"#171717\" transform=\"translate(140.27 54)\" d=\"M14.566406 0Q14.125977 0 13.99707 -0.44042969L10.248047 -13.073242Q10.162109 -13.245117 10.033203 -13.245117L7.7021484 -13.245117Q7.4765625 -13.245117 7.4765625 -13.019531L7.4765625 -0.52636719Q7.4765625 -0.31152344 7.3261719 -0.15039062Q7.1757812 0 6.9501953 0L2.9003906 0Q2.6855469 0 2.5244141 -0.15039062Q2.3740234 -0.31152344 2.3740234 -0.52636719L2.3740234 -30.271484Q2.3740234 -30.49707 2.5244141 -30.647461Q2.6855469 -30.797852 2.9003906 -30.797852L11.171875 -30.797852Q13.50293 -30.797852 15.286133 -29.669922Q17.069336 -28.552734 18.057617 -26.500977Q19.056641 -24.459961 19.056641 -21.828125Q19.056641 -19.099609 17.993164 -17.112305Q16.94043 -15.135742 15.049805 -14.125977Q14.867188 -14.083008 14.920898 -13.857422L19.228516 -0.61230469Q19.271484 -0.52636719 19.271484 -0.39746094Q19.271484 0 18.788086 0L14.566406 0ZM7.7021484 -26.404297Q7.4765625 -26.404297 7.4765625 -26.178711L7.4765625 -17.423828Q7.4765625 -17.208984 7.7021484 -17.208984L10.387695 -17.208984Q11.966797 -17.208984 12.955078 -18.433594Q13.943359 -19.668945 13.943359 -21.785156Q13.943359 -23.890625 12.955078 -25.147461Q11.966797 -26.404297 10.387695 -26.404297L7.7021484 -26.404297Z\"/>\n\t<path fill=\"#171717\" transform=\"translate(166.71 54)\" d=\"M10.248047 0.35449219Q6.4667969 0.35449219 4.1572266 -1.9335938Q1.8476562 -4.2216797 1.8476562 -8.0029297L1.8476562 -22.794922Q1.8476562 -26.576172 4.1572266 -28.864258Q6.4667969 -31.152344 10.248047 -31.152344Q14.040039 -31.152344 16.371094 -28.864258Q18.702148 -26.576172 18.702148 -22.794922L18.702148 -8.0029297Q18.702148 -4.2216797 16.371094 -1.9335938Q14.040039 0.35449219 10.248047 0.35449219ZM10.248047 -4.0498047Q11.751953 -4.0498047 12.675781 -5.0810547Q13.599609 -6.1123047 13.599609 -7.7880859L13.599609 -23.009766Q13.599609 -24.685547 12.675781 -25.716797Q11.751953 -26.748047 10.248047 -26.748047Q8.7548828 -26.748047 7.8525391 -25.716797Q6.9501953 -24.685547 6.9501953 -23.009766L6.9501953 -7.7880859Q6.9501953 -6.1123047 7.8525391 -5.0810547Q8.7548828 -4.0498047 10.248047 -4.0498047Z\"/>\n\t<path fill=\"#171717\" transform=\"translate(193.42 54)\" d=\"M18.175781 -30.797852Q18.390625 -30.797852 18.541016 -30.647461Q18.702148 -30.49707 18.702148 -30.271484L18.702148 -26.930664Q18.702148 -26.705078 18.541016 -26.554688Q18.390625 -26.404297 18.175781 -26.404297L12.579102 -26.404297Q12.364258 -26.404297 12.364258 -26.178711L12.364258 -0.52636719Q12.364258 -0.31152344 12.203125 -0.15039062Q12.052734 0 11.837891 0L7.7880859 0Q7.5732422 0 7.4121094 -0.15039062Q7.2617188 -0.31152344 7.2617188 -0.52636719L7.2617188 -26.178711Q7.2617188 -26.404297 7.0361328 -26.404297L1.7617188 -26.404297Q1.5361328 -26.404297 1.3857422 -26.554688Q1.2353516 -26.705078 1.2353516 -26.930664L1.2353516 -30.271484Q1.2353516 -30.49707 1.3857422 -30.647461Q1.5361328 -30.797852 1.7617188 -30.797852L18.175781 -30.797852Z\"/>\n\t<path fill=\"#171717\" transform=\"translate(219.47 54)\" d=\"M10.248047 0.35449219Q6.4667969 0.35449219 4.1572266 -1.9335938Q1.8476562 -4.2216797 1.8476562 -8.0029297L1.8476562 -22.794922Q1.8476562 -26.576172 4.1572266 -28.864258Q6.4667969 -31.152344 10.248047 -31.152344Q14.040039 -31.152344 16.371094 -28.864258Q18.702148 -26.576172 18.702148 -22.794922L18.702148 -8.0029297Q18.702148 -4.2216797 16.371094 -1.9335938Q14.040039 0.35449219 10.248047 0.35449219ZM10.248047 -4.0498047Q11.751953 -4.0498047 12.675781 -5.0810547Q13.599609 -6.1123047 13.599609 -7.7880859L13.599609 -23.009766Q13.599609 -24.685547 12.675781 -25.716797Q11.751953 -26.748047 10.248047 -26.748047Q8.7548828 -26.748047 7.8525391 -25.716797Q6.9501953 -24.685547 6.9501953 -23.009766L6.9501953 -7.7880859Q6.9501953 -6.1123047 7.8525391 -5.0810547Q8.7548828 -4.0498047 10.248047 -4.0498047Z\"/>\n\t<path fill=\"#171717\" transform=\"translate(246.18 54)\" d=\"M10.119141 0.35449219Q6.3808594 0.35449219 4.1142578 -1.9121094Q1.8476562 -4.1787109 1.8476562 -7.9169922L1.8476562 -22.923828Q1.8476562 -26.705078 4.1142578 -28.928711Q6.3808594 -31.152344 10.119141 -31.152344Q13.900391 -31.152344 16.188477 -28.928711Q18.476562 -26.705078 18.476562 -22.923828L18.476562 -22.397461Q18.476562 -22.171875 18.326172 -22Q18.175781 -21.828125 17.950195 -21.828125L13.857422 -21.645508Q13.331055 -21.645508 13.331055 -22.171875L13.331055 -23.27832Q13.331055 -24.814453 12.450195 -25.78125Q11.569336 -26.748047 10.119141 -26.748047Q8.7119141 -26.748047 7.8310547 -25.78125Q6.9501953 -24.814453 6.9501953 -23.27832L6.9501953 -7.5195312Q6.9501953 -5.9833984 7.8310547 -5.0166016Q8.7119141 -4.0498047 10.119141 -4.0498047Q11.569336 -4.0498047 12.450195 -5.0166016Q13.331055 -5.9833984 13.331055 -7.5195312L13.331055 -8.6259766Q13.331055 -8.8408203 13.481445 -8.9912109Q13.642578 -9.1523438 13.857422 -9.1523438L17.950195 -8.9804688Q18.175781 -8.9804688 18.326172 -8.8193359Q18.476562 -8.6689453 18.476562 -8.4433594L18.476562 -7.9169922Q18.476562 -4.1787109 16.188477 -1.9121094Q13.900391 0.35449219 10.119141 0.35449219Z\"/>\n\t<path fill=\"#171717\" transform=\"translate(272.45 54)\" d=\"M10.248047 0.35449219Q6.4667969 0.35449219 4.1572266 -1.9335938Q1.8476562 -4.2216797 1.8476562 -8.0029297L1.8476562 -22.794922Q1.8476562 -26.576172 4.1572266 -28.864258Q6.4667969 -31.152344 10.248047 -31.152344Q14.040039 -31.152344 16.371094 -28.864258Q18.702148 -26.576172 18.702148 -22.794922L18.702148 -8.0029297Q18.702148 -4.2216797 16.371094 -1.9335938Q14.040039 0.35449219 10.248047 0.35449219ZM10.248047 -4.0498047Q11.751953 -4.0498047 12.675781 -5.0810547Q13.599609 -6.1123047 13.599609 -7.7880859L13.599609 -23.009766Q13.599609 -24.685547 12.675781 -25.716797Q11.751953 -26.748047 10.248047 -26.748047Q8.7548828 -26.748047 7.8525391 -25.716797Q6.9501953 -24.685547 6.9501953 -23.009766L6.9501953 -7.7880859Q6.9501953 -6.1123047 7.8525391 -5.0810547Q8.7548828 -4.0498047 10.248047 -4.0498047Z\"/>\n\t<path fill=\"#171717\" transform=\"translate(299.16 54)\" d=\"M2.9003906 0Q2.6855469 0 2.5244141 -0.15039062Q2.3740234 -0.31152344 2.3740234 -0.52636719L2.3740234 -30.271484Q2.3740234 -30.49707 2.5244141 -30.647461Q2.6855469 -30.797852 2.9003906 -30.797852L6.9501953 -30.797852Q7.1757812 -30.797852 7.3261719 -30.647461Q7.4765625 -30.49707 7.4765625 -30.271484L7.4765625 -4.6191406Q7.4765625 -4.4042969 7.7021484 -4.4042969L17.208984 -4.4042969Q17.423828 -4.4042969 17.574219 -4.2431641Q17.735352 -4.0927734 17.735352 -3.8671875L17.735352 -0.52636719Q17.735352 -0.31152344 17.574219 -0.15039062Q17.423828 0 17.208984 0L2.9003906 0Z\"/>\n\t<path fill=\"#FF4D17\" transform=\"matrix(0.42 0 0 0.42 330.18 7.8)\" d=\"M59 0L63 0L10 72L0 72L59 0ZM49 17L63 0L63 72L49 72L49 17ZM128 0L132 0L79 72L69 72L128 0ZM118 17L132 0L132 72L118 72L118 17ZM0 74L60 74L60 83L0 83L0 74ZM75 74L132 74L145 72L145 83L75 83L75 74ZM49 85L63 85L63 98Q63 105 76 108L76 110L35 110L35 108Q49 105 49 98L49 85ZM118 85L132 85L132 98Q132 105 145 108L145 110L104 110L104 108Q118 105 118 98L118 85Z\"/>\n\t<path fill=\"#FF4D17\" transform=\"matrix(0.42 0 0 0.42 330.18 7.8)\" d=\"M63 74L72 74L72 83L63 83L63 74Z\"/>\n</svg>\n</a><nav aria-label=\"Main navigation\"><a href=\"/quiz\">Take the quiz</a></nav></header>",
+      "css": ".ds-nav{height:108px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e4cec0;gap:24px;color:var(--ink,#171717);font-family:var(--body,'Source Sans 3',sans-serif)}.ds-brand{display:block;flex-shrink:0}.ds-logo{display:block;width:236px;height:auto;max-width:100%}.ds-nav nav a{font-size:17px;text-decoration:none;display:flex;align-items:center;min-height:44px;color:inherit}.ds-nav nav a:hover{color:var(--copper,#b92c06)}@media(max-width:760px){.ds-nav{height:82px;gap:20px}.ds-logo{width:191px}.ds-nav nav a{font-size:15px;white-space:nowrap}}@media(max-width:360px){.ds-logo{width:162px}.ds-nav nav a{font-size:14px}}.ds-button:focus-visible,.ds-text:focus-visible,.ds-chip:focus-visible,.ds-nav a:focus-visible,.ds-faq summary:focus-visible{outline:3px solid var(--focus,#a9422b);outline-offset:5px}"
+    },
+    {
+      "name": "Practice workbook",
+      "kind": "card",
+      "refersTo": "workbook",
+      "description": "Folha plana e retangular da prática; amostra visual do título e orientação.",
+      "html": "<div class=\"ds-workbook\"><h3>Your notes</h3><label>What happened?<span>Describe the situation as you remember it.</span></label></div>",
+      "css": ".ds-workbook{padding:36px 38px;background:var(--soft-paper,#f0ece3);color:var(--ink,#171717);border-radius:0;box-shadow:none}.ds-workbook h3{font:600 28px/1.12 var(--heading,Manrope,sans-serif);letter-spacing:-.035em;margin:0 0 29px}.ds-workbook label{font:600 20px/1.4 var(--body,'Source Sans 3',sans-serif);display:block}.ds-workbook label span{display:block;font-size:16px;font-weight:400;color:var(--reading-ink,#51493f);margin-top:5px}@media(max-width:760px){.ds-workbook{padding:26px 22px}.ds-workbook h3{font-size:26px}.ds-workbook label{font-size:19px}}"
+    },
+    {
+      "name": "Native question progress",
+      "kind": "custom",
+      "refersTo": "progress",
+      "description": "Contagem de respostas, não resultado; nenhuma transição de largura.",
+      "html": "<div class=\"ds-progress\"><span>4 of 10 answered</span><span>Your starting point</span><progress aria-label=\"Questions answered\" max=\"10\" value=\"4\">4 of 10</progress></div>",
+      "css": ".ds-progress{display:grid;grid-template-columns:1fr auto;gap:11px;color:var(--reading-ink,#51493f);font:400 15px/1.5 var(--body,'Source Sans 3',sans-serif);font-variant-numeric:tabular-nums}.ds-progress progress{width:100%;height:4px;grid-column:1/-1;border:0;background:var(--sand,#ddd6c9);accent-color:var(--accent,#ff4d17);border-radius:0;appearance:none}.ds-progress progress::-webkit-progress-bar{background:var(--sand,#ddd6c9)}.ds-progress progress::-webkit-progress-value{background:var(--accent,#ff4d17)}.ds-progress progress::-moz-progress-bar{background:var(--accent,#ff4d17)}"
+    },
+    {
+      "name": "Native FAQ disclosure",
+      "kind": "custom",
+      "refersTo": "disclosure",
+      "description": "Details real com duas linhas CSS; aberto preserva somente a horizontal.",
+      "html": "<div class=\"ds-faq\"><details><summary>Where is my writing saved?</summary><p>The form does not send your writing anywhere or keep it after the page is reloaded. Use “Download my reflection” to save a text file on your device.</p></details></div>",
+      "css": ".ds-faq{font-family:var(--body,'Source Sans 3',sans-serif);color:var(--ink,#171717)}.ds-faq details{border-bottom:1px solid var(--line,#c5c1b7);padding:22px 0}.ds-faq summary{font-size:22px;line-height:1.5;list-style:none;padding-right:32px;position:relative;cursor:pointer}.ds-faq summary::-webkit-details-marker{display:none}.ds-faq summary::before,.ds-faq summary::after{content:\"\";position:absolute;right:1px;top:.72em;width:14px;height:1.5px;background:currentColor;font-size:inherit}.ds-faq summary::before{transform:rotate(90deg);transition:transform .18s cubic-bezier(.16,1,.3,1)}.ds-faq details[open] summary::before{display:none}.ds-faq p{margin:16px 0 0;color:var(--muted,#5c625c);font-size:18px;line-height:1.5}@media(max-width:760px){.ds-faq summary{font-size:20px}.ds-faq p{font-size:17px}}@media(prefers-reduced-motion:reduce){.ds-faq summary::before{transition:none}}.ds-button:focus-visible,.ds-text:focus-visible,.ds-chip:focus-visible,.ds-nav a:focus-visible,.ds-faq summary:focus-visible{outline:3px solid var(--focus,#a9422b);outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Um lugar para voltar à prática",
+    "overview": "Descrição da implementação: papel quente, fotografia doméstica e espaço de escrita tornam a reflexão concreta. A tinta sustenta a leitura; o laranja vivo marca ações e progresso. Manrope dá expressão aos títulos e Source Sans 3 sustenta explicações e controles. O 44 serifado com quadrado central continua sendo a assinatura vetorial escolhida pelo titular.\n\nA V5 amplia por código o mundo visual estabelecido; não existe comp aprovado de página. A referência de marca escolhida não equivale à aprovação de uma composição. A V4 literal permanece em sua rota legada. Este registro de 07/09/2026 descreve a implementação de `funnel-v5.css`, a base compartilhada de `funnel.css`, componentes e controllers atuais.\n\nV5.1: NATURAL-REFINEMENT.md. Fotografia somente na home; ficha preenchida no quiz; aviso compacto de filme na VSL. Copy conversada e exemplos concretos.",
+    "keyCharacteristics": [
+      "Marca vetorial serifada com quadrado central preservado.",
+      "Papel, tinta e laranja vivo com acento escuro para texto.",
+      "Fotografia cotidiana ilustrativa, títulos amplos e leitura confortável.",
+      "Folhas retangulares, opções arredondadas e controles nativos.",
+      "Movimento de execução única e feedback breve, dispensáveis à compreensão."
+    ],
+    "rules": [
+      {
+        "name": "The Readable Accent Rule",
+        "body": "Use tinta sobre laranja vivo e cobre nas explicações pequenas sobre papel. Preserve foco em tinta nas seções laranja; a confirmação final registrou contraste de 5,40:1 para esse anel.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mark and Reading Rule",
+        "body": "Preserve a marca em vetor e use as famílias da interface para leitura. Não reconstrua o monograma digitando dois algarismos.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper Surface Rule",
+        "body": "Exemplo, resultado e formulário usam fundo e contorno, sem sombra estrutural.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** reutilizar os vetores serif44, preservando proporções e quadrado central.",
+      "**Do** manter papel, tinta e laranja vivo, com cobre para texto e foco em tinta sobre laranja.",
+      "**Do** preservar a hierarquia V5 e frases completas nas quebras móveis.",
+      "**Do** usar controles nativos, seleção explícita, foco visível e retorno legível.",
+      "**Do** manter fotografia e exemplo como ilustrações, com proveniência e disponibilidade declaradas.",
+      "**Do** preservar a V4 no contrato e na rota legados."
+    ],
+    "donts": [
+      "**Don't** reconstruir o monograma com texto ou substituir sua geometria por ornamentos.",
+      "**Don't** promover aliases antigas, rampas sintéticas ou CSS sem uso a regras globais V5.",
+      "**Don't** exigir animação para leitura ou acesso à prática.",
+      "**Don't** apresentar reflexão como diagnóstico, cena fictícia como depoimento ou material em preparação como entregue.",
+      "**Don't** converter o parecer visual em atestado de eficácia, conversão ou aprovação de publicação."
+    ]
+  }
+}

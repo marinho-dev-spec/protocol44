@@ -1,0 +1,28 @@
+---
+import Funnel from '../layouts/Funnel.astro';
+import BrandHeader from '../components/BrandHeader.astro';
+import BrandFooter from '../components/BrandFooter.astro';
+import FirstPractice from '../components/FirstPractice.astro';
+import Arrow from '../components/Arrow.astro';
+import {funnelConfig,safeWebUrl} from '../lib/funnel-config';
+import '../styles/funnel-v5.css';
+const videoUrl=safeWebUrl(funnelConfig.videoUrl);
+const captionsUrl=safeWebUrl(funnelConfig.captionsUrl);
+const checkoutUrl=safeWebUrl(funnelConfig.checkoutUrl);
+const canPurchase=funnelConfig.salesOpen&&checkoutUrl;
+---
+<Funnel title="Your first step | Protocol 44" description="Try the first Protocol 44 reflection: describe a real moment, notice your interpretation and choose one small way back.">
+  <BrandHeader page="vsl" />
+  <main id="main">
+    <section class="v5-vsl-opening wrap" aria-labelledby="vsl-title"><h1 id="vsl-title">Let’s work through<br /><span>what’s on your mind.</span></h1><p id="vsl-context" class="lead">Try a written exercise from the first Protocol 44 lesson. You’ll look at a recent situation and decide what you’d like to do next.</p><a href="#first-practice" class="hero-secondary">Go to the exercise <Arrow /></a><div class="v5-film">{videoUrl&&<div class="video-frame" id="film"><video controls playsinline preload="metadata" poster="/brand/vsl-poster.png" aria-label="Protocol 44 introduction"><source src={videoUrl}/>{captionsUrl&&<track kind="captions" src={captionsUrl} srclang="en" label="English" default/>}Your browser cannot play the video. <a href={videoUrl}>Open the video</a>.</video></div>}{!videoUrl&&<p class="film-update">We’re preparing the video introduction. The written exercise is ready below.</p>}{videoUrl&&<p id="video-error" class="video-error" role="status" hidden>The video could not be loaded. Try again or use the written practice below.</p>}{videoUrl&&funnelConfig.transcript&&<details class="transcript"><summary>Read the film transcript</summary><p>{funnelConfig.transcript}</p></details>}</div></section>
+    <section class="vsl-lesson-intro wrap" data-motion><h2>Choose something recent.</h2><div><p class="lead">Think of a plan you put off, a conversation you avoided, or a time you did something out of habit.</p><p>Describe what happened and what was going through your mind. Include the practical things that affected you, such as time, money or other responsibilities.</p><p>Then choose something you could try. It can be as simple as opening a notebook or setting aside time for a conversation.</p><p id="preferred-format" class="availability-note" hidden></p></div></section>
+    <FirstPractice />
+    <section class="vsl-next"><div class="wrap"><h2>Want to know more<br />about the program?</h2><div><p>This is a sample from the first lesson. The full program will include guided lessons, audio exercises and questions to work through at your own pace.</p>{canPurchase?<a class="button button-dark" href={checkoutUrl}>Join Protocol 44 <Arrow /></a>:<a class="button button-dark" href="/#inside">See how the program works <Arrow /></a>}<p class="button-note">{canPurchase?'Review access and purchase terms at checkout.':'The full program and recordings are still in preparation.'}</p></div></div></section>
+    <section class="faq-section wrap" aria-labelledby="practice-faq-title"><h2 id="practice-faq-title">If you get stuck</h2><div class="faqs"><details><summary>What if I don’t know why I do this?</summary><p>You can leave that question open. Write about something you remember and what you noticed at the time. You don’t need an explanation for everything.</p></details><details><summary>What if I can’t do what I planned?</summary><p>Choose a smaller step or a different time. If you planned to review your spending, opening a bill might be enough to get started. Adjust the plan to what’s possible.</p></details><details><summary>How do I know when I’m done?</summary><p>You’re done when you’ve described the situation and chosen something to try next. You can come back to your notes afterward and see what you’d change.</p></details><details><summary>Where is my writing saved?</summary><p>The form does not send your writing anywhere or keep it after the page is reloaded. Use “Download my reflection” to save a text file on your device.</p></details></div></section>
+  </main><BrandFooter />
+  <script>
+    import '../lib/page-motion';
+    const video=document.querySelector('video');const error=document.getElementById('video-error');
+    const failed=()=>{if(error)error.hidden=false;};video?.addEventListener('error',failed);video?.querySelector('source')?.addEventListener('error',failed);video?.addEventListener('loadeddata',()=>{if(error)error.hidden=true;});
+  </script>
+</Funnel>

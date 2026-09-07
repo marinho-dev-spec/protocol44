@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 64" fill="none">
+  <!-- Protocol 44 — lockup horizontal. Wordmark em Fraunces 700, tracking -3,5%.
+       Respiro mínimo ao redor: a largura do peso. -->
+  <rect width="64" height="64" rx="13" fill="#141210"/>
+  <line x1="17" y1="49" x2="47" y2="49" stroke="#d9a441" stroke-width="1.6" opacity="0.42"/>
+  <line x1="23" y1="14" x2="41" y2="14" stroke="#a39b90" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="32" y1="14" x2="32" y2="34" stroke="#a39b90" stroke-width="1.6"/>
+  <path d="M 32 33 L 38 40 L 32 56 L 26 40 Z" fill="#d9a441"/>
+  <text x="82" y="43" font-family="Fraunces, Iowan Old Style, Georgia, serif" font-weight="700"
+        font-size="30" letter-spacing="-1.0" fill="#f0ebe3">Protocol 44</text>
+</svg>

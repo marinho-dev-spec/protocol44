@@ -1,0 +1,156 @@
+/* V5 extends the chosen paper, ink and vivid-orange identity. */
+:root{--accent:#ff4d17;--accent-soft:#ffe6d9;--soft-paper:#f0ece3;--reading-ink:#51493f;--paper:#faf8f4}
+.example-section,.vsl-next{--focus:var(--ink)}
+#inside-title span{display:inline-block}
+.faqs summary::before,.faqs summary::after{content:'';position:absolute;right:1px;top:.72em;width:14px;height:1.5px;background:currentColor;font-size:inherit}
+.faqs summary::before{transform:rotate(90deg);transition:transform .18s var(--ease)}
+.faqs details[open] summary::after{content:''}
+.faqs details[open] summary::before{display:none}
+textarea{font:inherit;color:var(--ink);caret-color:var(--copper);resize:vertical;accent-color:var(--copper)}
+textarea:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+[tabindex="-1"]:focus{outline:none}
+.product-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:82px;align-items:center;padding-block:64px 68px}
+.product-hero h1{font-size:clamp(48px,4.8vw,68px);font-weight:500;line-height:1.12;letter-spacing:-.035em}
+.product-hero h1 span,.q5-intro h1 span{color:var(--copper)}
+.hero-intro{font-size:22px;line-height:1.5;margin-top:24px;max-width:42ch}
+.hero-description{font-size:18px;max-width:46ch;color:var(--reading-ink);margin-top:18px;margin-bottom:28px}
+.hero-secondary{display:inline-flex;font-size:17px;min-height:44px;align-items:center;margin-top:13px}
+.editorial-photo{margin:0;align-self:center}
+.editorial-photo>img{width:100%;height:auto;object-fit:cover;object-position:39% center;aspect-ratio:4/5;border-radius:12px}
+
+
+.recognition-section,.fit-section{display:grid;grid-template-columns:1fr 1.15fr;gap:110px;padding-block:76px;border-top:1px solid var(--line)}
+.recognition-section>div>p+p,.fit-section>div>p+p{margin-top:22px;color:var(--reading-ink)}
+.recognition-section h2,.fit-section h2{font-size:clamp(34px,3.3vw,47px)}
+.section-heading{display:grid;grid-template-columns:1fr 1.1fr;gap:110px;align-items:start;margin-bottom:45px}
+.section-heading>div p+p{margin-top:15px;color:var(--reading-ink)}
+.product-inside{padding-block:38px 85px}
+.product-phases{border-top:1px solid var(--line)}
+.product-phase{display:grid;grid-template-columns:1fr 1.15fr .76fr;gap:42px;padding-block:32px;border-bottom:1px solid var(--line)}
+.product-phase>div:first-child{display:flex;align-items:start;gap:16px}
+.phase-order{font:600 16px/30px var(--body);color:var(--copper);font-variant-numeric:tabular-nums}
+.product-phase h3{font-size:25px;line-height:1.3}
+.product-phase h4{font:600 21px/1.4 var(--body);letter-spacing:0;margin:0 0 8px}
+.product-phase p{font-size:18px;color:var(--reading-ink)}
+.product-phase .phase-output{color:var(--copper);font:500 21px/1.4 var(--heading);letter-spacing:-.025em;align-self:center}
+.availability-note{font-size:16px;color:var(--reading-ink);margin-top:22px;max-width:80ch}
+.example-section{background:var(--soft-paper);padding-block:68px}
+.example-layout{display:grid;grid-template-columns:1fr 1.04fr;gap:100px;align-items:center}
+.example-layout h2{font-size:clamp(36px,3.6vw,50px)}
+.example-layout>div>p{font-size:21px;line-height:1.5;margin-top:23px;max-width:40ch;color:#28170f}
+.example-layout>div>.example-disclosure{font-size:16px;margin-top:16px;margin-bottom:26px}
+.button-dark{background:var(--ink);color:var(--paper)}
+.button-dark:hover{background:#35302a}
+.example-workbook{background:var(--cream);padding:30px 34px 38px;min-height:370px;border:1px solid var(--line)}
+.example-controls{display:flex;gap:8px;border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:38px}
+.example-controls button{font:600 15px/1.35 var(--body);background:transparent;border:0;border-bottom:2px solid transparent;color:var(--reading-ink);padding:9px 8px;min-height:44px;flex:1}
+.example-controls button[aria-pressed="true"]{color:var(--ink);border-color:var(--copper)}
+.example-controls button:hover{background:var(--accent-soft)}
+[data-example-panel] h3{font-size:32px;line-height:1.18}
+[data-example-panel]>p{color:var(--reading-ink);font-size:19px;line-height:1.5;margin-top:18px}
+[data-example-panel]>.example-question{padding-top:22px;margin-top:22px;border-top:1px solid var(--line);font-weight:600;color:var(--copper);font-size:17px}
+.fit-section{border:0;padding-block:86px 36px}
+.plain-list{list-style:none;padding:0;margin:26px 0 0}
+.plain-list li{padding:16px 0;border-top:1px solid var(--line);font-size:19px}
+.product-close{padding-block:66px 83px;border-top:1px solid var(--line);text-align:center}
+.product-close img{margin:0 auto 25px;width:78px;height:78px}
+.product-close h2{font-size:clamp(38px,4vw,58px)}
+.product-close p{margin:20px auto 25px;color:var(--reading-ink);font-size:22px}
+.q5-main{min-height:calc(100svh - 213px)}
+.q5-intro{display:grid;grid-template-columns:1.12fr 1fr;align-items:center;gap:90px;padding-block:66px 78px}
+.q5-intro h1{font-size:clamp(38px,3.6vw,54px);font-weight:500;line-height:1.15;letter-spacing:-.03em}
+.q5-intro .lead{margin-top:24px;margin-bottom:27px;max-width:43ch;font-size:21px;color:var(--reading-ink)}
+
+
+
+.q5-expect{margin-top:26px;color:var(--reading-ink);font-size:16px;max-width:40ch}
+
+.q5-flow{max-width:640px;width:calc(100% - 40px);margin:43px auto 60px}
+.q5-progress{display:grid;grid-template-columns:1fr auto;gap:11px;color:var(--reading-ink);font-size:15px;font-variant-numeric:tabular-nums;margin-bottom:36px}
+.q5-progress progress{width:100%;height:4px;grid-column:1/-1;border:0;background:var(--sand);accent-color:var(--accent);border-radius:0;appearance:none}
+.q5-progress progress::-webkit-progress-bar{background:var(--sand)}
+.q5-progress progress::-webkit-progress-value{background:var(--accent)}
+.q5-progress progress::-moz-progress-bar{background:var(--accent)}
+.q5-title{font:550 32px/1.24 var(--heading);letter-spacing:-.025em;text-wrap:balance}
+.q5-options{display:grid;gap:11px}
+.q5-option{display:flex;align-items:center;gap:16px;position:relative;background:var(--cream);border:1px solid #cbbfb0;border-radius:12px;padding:17px 20px;min-height:66px;font-size:19px;line-height:1.35;cursor:pointer;transition:background-color .18s,border-color .18s,transform .18s var(--ease)}
+.q5-option:hover{border-color:var(--copper);background:#fff0e7}
+.q5-option:has(input:checked){background:var(--accent-soft);border-color:var(--copper)}
+.q5-option:has(input:focus-visible){outline:3px solid var(--focus);outline-offset:3px}
+.q5-option input{position:absolute;opacity:0;width:1px;height:1px}
+.q5-radio{display:grid;place-items:center;width:22px;height:22px;border:1px solid #84796e;border-radius:50%;flex-shrink:0}
+input:checked+.q5-radio{border-color:var(--copper)}
+input:checked+.q5-radio::after{content:'';width:10px;height:10px;border-radius:50%;background:var(--copper)}
+
+.q5-flow #question-form,.q5-bridge{animation:question-enter .2s cubic-bezier(.16,1,.3,1)}
+@keyframes question-enter{from{transform:translateY(4px)}to{transform:translateY(0)}}
+.q5-bridge{padding-top:9px}.q5-bridge>img{margin-bottom:28px}.q5-bridge h2{font-size:38px}
+.q5-bridge>.lead{font-size:22px;margin-top:23px;color:var(--reading-ink)}
+.q5-bridge-note{padding:22px 24px;background:var(--soft-paper);margin-top:27px;border-radius:12px;font-size:19px}
+.q5-result{display:grid;grid-template-columns:1.15fr .85fr;gap:60px 100px;padding-block:66px 75px}
+.q5-result h1{font-size:clamp(38px,3.8vw,54px);font-weight:500;line-height:1.16}
+.q5-result .lead{margin-top:23px;color:var(--reading-ink);font-size:21px}
+.q5-result-context{font-size:17px;margin-top:20px;color:var(--reading-ink)}
+.q5-first-step{padding-block:25px;margin-block:28px;border-block:1px solid var(--line)}
+.q5-first-step h2{font:600 19px/1.4 var(--body);letter-spacing:0}
+.q5-first-step p{font-size:25px;line-height:1.35;margin-top:12px;color:var(--copper)}
+.q5-answer-sheet{background:var(--cream);padding:28px 30px;align-self:start;border:1px solid var(--line)}
+.q5-answer-sheet h2{font-size:27px;margin-bottom:14px}
+.q5-answer-sheet dl{margin:0}.q5-answer-sheet dl>div{padding-block:20px;border-bottom:1px solid #d2c5b5}
+.q5-answer-sheet dt{font-size:15px;color:var(--reading-ink)}
+.q5-answer-sheet dd{font:500 21px/1.4 var(--heading);letter-spacing:-.025em;margin:8px 0 0}
+.q5-answer-sheet details{margin-top:22px;font-size:16px}
+.q5-answer-sheet details p{margin-top:12px;color:var(--reading-ink)}
+.q5-answer-sheet .text-button{margin-top:12px}
+.q5-focus-switch{grid-column:1/-1;border-top:1px solid var(--line);padding-top:38px}
+.q5-focus-switch h2{font-size:29px}.q5-focus-switch>p{margin-top:15px;color:var(--reading-ink)}
+.q5-focus-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.q5-focus-buttons button{font:600 17px/1.4 var(--body);padding:14px 18px;min-height:50px;border:1px solid var(--line);background:var(--cream);border-radius:6px;color:var(--ink)}
+.q5-focus-buttons button:hover{border-color:var(--copper)}
+.q5-focus-buttons button[aria-pressed=true]{background:var(--accent-soft);border-color:var(--copper)}
+.v5-vsl-opening{padding-block:58px 30px;text-align:center}
+.v5-vsl-opening h1{font-size:clamp(40px,4.2vw,60px);font-weight:500;line-height:1.17;max-width:850px;margin-inline:auto}
+.v5-vsl-opening h1 span{color:var(--copper)}
+.v5-vsl-opening .lead{margin:24px auto 0;max-width:56ch;font-size:22px}
+.v5-vsl-opening .hero-secondary{margin-top:22px}
+.v5-film{max-width:920px;margin:25px auto 0}
+.v5-film .video-frame{margin-top:0}
+.v5-film .video-caption{margin-top:14px}
+.vsl-lesson-intro{display:grid;grid-template-columns:1fr 1.15fr;gap:100px;padding-block:48px 32px;border-top:1px solid var(--line)}
+.vsl-lesson-intro p+p{margin-top:18px;color:var(--reading-ink)}
+.first-practice{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;padding-block:40px 85px;align-items:start;scroll-margin-top:28px}
+.first-practice-intro{padding-top:24px}
+.first-practice-intro>p{margin-top:23px;color:var(--reading-ink);font-size:20px}
+.first-practice-intro details{border-top:1px solid var(--line);margin-top:30px;padding-top:22px;font-size:18px}
+.first-practice-intro details p{margin-top:18px;color:var(--reading-ink)}
+.first-practice-intro .practice-focus{color:var(--copper);font-size:22px;line-height:1.4}
+.practice-workbook{padding:36px 38px;background:var(--soft-paper)}
+.practice-workbook h3{font-size:28px;margin:0 0 29px}
+.practice-workbook label{font:600 20px/1.4 var(--body);display:block;margin-top:24px}
+.practice-workbook label span{display:block;font-size:16px;font-weight:400;color:var(--reading-ink);margin-top:5px}
+.practice-workbook textarea{display:block;width:100%;border:1px solid #a79783;border-radius:6px;background:var(--cream);padding:14px 15px;margin-top:12px;min-height:102px;font-size:18px;line-height:1.45}
+.practice-workbook textarea::placeholder{color:#726453}
+.practice-workbook .button{width:100%;margin-top:27px}
+.practice-status{font-size:16px;margin-top:15px;color:var(--copper)}
+.vsl-next{background:var(--soft-paper);padding-block:60px}
+.vsl-next>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.vsl-next p{margin-bottom:24px;color:#28170f;font-size:21px}
+.vsl-next .button-note{font-size:16px;margin-top:18px;margin-bottom:0}
+@media(hover:hover){.q5-option:hover{transform:none}.button .arrow-icon{transition:transform .2s var(--ease)}.button:hover .arrow-icon{transform:translateX(4px)}}
+@media(max-width:1100px){.product-hero{gap:40px}.editorial-photo{min-height:0}.product-hero h1{font-size:56px}.q5-intro{gap:45px}.recognition-section,.section-heading,.fit-section,.vsl-lesson-intro{gap:55px}.example-layout{gap:55px}.product-phase{gap:25px}.q5-result{gap:45px}.first-practice{gap:45px}.vsl-next>.wrap{gap:55px}}
+@media(max-width:760px){.product-hero{grid-template-columns:1fr;gap:34px;padding-block:35px 39px}.product-hero h1{font-size:clamp(40px,10.2vw,56px);line-height:1.12}.hero-intro{font-size:22px;margin-top:23px}.hero-description{font-size:18px;margin-top:15px;margin-bottom:24px}.product-hero-copy>.button{width:100%}.product-hero-copy>.button-note{text-align:center}.hero-secondary{margin-top:12px}.editorial-photo{min-height:0}.editorial-photo>img{height:auto;aspect-ratio:1.5;object-position:40% 54%;border-radius:10px}.recognition-section,.fit-section,.section-heading,.vsl-lesson-intro{grid-template-columns:1fr;gap:25px;padding-block:39px}.recognition-section .lead{font-size:22px}.recognition-section h2,.fit-section h2{font-size:35px}.section-heading{padding-top:8px;padding-bottom:0;margin-bottom:30px}.section-heading h2{font-size:35px}.product-inside{padding-block:9px 46px}.product-phase{grid-template-columns:1fr;gap:17px;padding-block:26px}.product-phase>div:first-child{gap:12px}.product-phase h3{font-size:26px}.product-phase .phase-output{font-size:19px}.availability-note{font-size:15px;margin-top:20px}.example-section{padding-block:43px}.example-layout{grid-template-columns:1fr;gap:32px}.example-layout h2{font-size:37px}.example-layout>div>p{font-size:20px;margin-top:21px}.example-layout>div>.example-disclosure{font-size:15px}.example-workbook{padding:22px 22px 28px;min-height:370px}.example-controls{gap:0;margin-bottom:29px}.example-controls button{padding:8px 4px;font-size:14px}[data-example-panel] h3{font-size:29px}[data-example-panel]>p{font-size:18px}.fit-section{padding-top:44px;padding-bottom:10px}.plain-list{margin-top:18px}.product-close{padding-block:43px 54px}.product-close h2{font-size:39px}.product-close p{font-size:21px}.product-close .button{width:100%}.q5-intro{grid-template-columns:1fr;gap:33px;padding-block:34px 42px}.q5-intro h1{font-size:clamp(34px,8.8vw,44px)}.q5-intro .lead{font-size:20px;margin-top:22px;margin-bottom:25px}.q5-intro .button{width:100%;gap:20px}.q5-intro .button-note{text-align:center}.q5-expect{font-size:16px;margin-top:23px}.q5-flow{margin:28px auto 39px}.q5-title{font-size:28px}.q5-progress{margin-bottom:29px;font-size:14px}.q5-option{font-size:18px;padding:16px;min-height:65px;gap:14px}.q5-bridge h2{font-size:34px}.q5-bridge>.lead{font-size:20px}.q5-bridge-note{font-size:18px;padding:21px}.q5-result{grid-template-columns:1fr;gap:33px;padding-block:34px 42px}.q5-result h1{font-size:39px}.q5-result .lead{font-size:21px;margin-top:22px}.q5-first-step p{font-size:23px}.q5-result-copy>.button{width:100%;gap:15px}.q5-answer-sheet{padding:25px}.q5-answer-sheet h2{font-size:26px}.q5-answer-sheet dd{font-size:20px}.q5-focus-switch{padding-top:28px}.q5-focus-switch h2{font-size:27px}.q5-focus-buttons{display:grid;gap:10px}.q5-focus-buttons button{width:100%;text-align:left}.v5-vsl-opening{padding-top:37px}.v5-vsl-opening h1{font-size:38px}.v5-vsl-opening .lead{font-size:20px}.v5-film{margin-top:23px}.vsl-lesson-intro{padding-top:47px;padding-bottom:22px}.vsl-lesson-intro h2{font-size:35px}.first-practice{grid-template-columns:1fr;gap:30px;padding-top:12px;padding-bottom:45px}.first-practice-intro{padding-top:0}.first-practice-intro h2{font-size:35px}.first-practice-intro>p{font-size:19px}.practice-workbook{padding:26px 22px}.practice-workbook h3{font-size:26px}.practice-workbook label{font-size:19px}.practice-workbook .button{font-size:17px;gap:13px;padding-inline:15px}.vsl-next{padding-block:42px}.vsl-next>.wrap{grid-template-columns:1fr;gap:24px}.vsl-next h2{font-size:35px}.vsl-next p{font-size:20px}.vsl-next .button{width:100%}}
+@media(prefers-reduced-motion:reduce){.q5-flow #question-form,.q5-bridge{animation:none}.q5-option:hover{transform:none}}
+
+/* The quiz previews the actual exercise instead of repeating the hero portrait. */
+.quiz-preview{background:var(--cream);border:1px solid var(--line);padding:30px 34px;align-self:center}
+.preview-heading{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.preview-heading h2{font-size:27px;font-weight:550;letter-spacing:-.025em;line-height:1.25}
+.preview-heading img{flex-shrink:0}
+.preview-description{font-size:16px;line-height:1.5;color:var(--reading-ink);margin-top:15px;max-width:38ch}
+.quiz-preview dl{margin:24px 0}
+.quiz-preview dl>div{padding-block:17px;border-top:1px solid var(--line)}
+.quiz-preview dt{font-size:16px;font-weight:600}
+.quiz-preview dd{margin:7px 0 0;font-size:19px;line-height:1.5;color:var(--reading-ink)}
+.quiz-preview>a{display:inline-flex;align-items:center;min-height:44px;color:var(--copper);font-size:17px}
+.film-update{font-size:16px;line-height:1.5;color:var(--reading-ink);max-width:55ch;margin:0 auto;padding:18px 0 10px;border-top:1px solid var(--line)}
+@media(max-width:760px){.quiz-preview{padding:25px 24px}.preview-heading h2{font-size:25px}.preview-heading img{width:38px;height:38px}.quiz-preview dd{font-size:18px}.q5-intro{gap:34px}.example-controls button{line-height:1.4}.v5-vsl-opening{padding-bottom:32px}.film-update{font-size:15px}.q5-first-step p{font-size:22px}}

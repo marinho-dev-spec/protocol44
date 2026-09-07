@@ -1,0 +1,29 @@
+---
+import '../styles/funnel.css';
+interface Props { title: string; description: string; lang?: string }
+const { title, description, lang = 'en' } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#FF4D17" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL('/brand/social-share.png', Astro.site || Astro.url).href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+    <link rel="icon" sizes="32x32" type="image/png" href="/brand/icon-32.png" />
+    <link rel="alternate icon" href="/brand/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/brand/icon-180.png" />
+    <link rel="manifest" href="/brand/site.webmanifest" />
+    <link rel="preload" href="/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/sourcesans3.ttf" as="font" type="font/ttf" crossorigin />
+    <title>{title}</title>
+  </head>
+  <body><a class="skip-link" href="#main">{lang === 'pt-BR' ? 'Pular para o conteúdo' : 'Skip to content'}</a><slot /></body>
+</html>

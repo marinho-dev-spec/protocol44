@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   STEADFAST — sistema visual
+   Marca: Protocol 44 · Mecanismo: The Pendulum Return / Point of Rest
+   Solução: The Setpoint Protocol · Tagline: "For keeps."
+
+   Três papéis de cor, e nada de decorativo:
+     TIDE narra   — o balanço, o estado, o dado, o processo
+     A LINHA mede — chalk/ash/seam: estrutura de instrumento
+     BRASS segura — só onde algo fica: payoff, CTA, garantia, marca
+
+   Regra de compliance: Brass nunca encosta em preço ou cifra.
+   Perto de número em dólar, usar Chalk. Evita promessa financeira
+   implícita pela cor. Zero verde no sistema (verde lê como saúde).
+   ───────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Modo Prumo — superfície primária (quiz, resultado, checkout) */
+  --color-stone: #141210;
+  --color-slate: #1c1917;
+  --color-ridge: #272320;
+  --color-seam: #332e29;
+  --color-seam-hi: #443d36;
+
+  --color-chalk: #f0ebe3;
+  --color-ash: #a39b90;
+  --color-dust: #736c63;
+
+  --color-brass: #d9a441;
+  --color-bronze: #a8752f;
+  --color-tide: #8fa5b9;
+  --color-clay: #d9917e;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  background: var(--color-stone);
+  color: var(--color-chalk);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* O escuro é morno e habitado, nunca vazio do cosmos.
+   A luz vem de cima, como uma janela sobre a bancada. */
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background:
+    radial-gradient(115% 50% at 50% -10%, rgba(217, 164, 65, 0.055), transparent 62%),
+    var(--color-stone);
+}
+
+/* Grão de papel e pedra. Substitui a estática de rádio da identidade
+   anterior: aqui a textura é matéria, não ruído, e por isso NÃO diminui
+   ao longo do funil. O que diminui é a amplitude da oscilação. */
+:root {
+  --grain-op: 0.038;
+  --swing: 7px; /* amplitude de entrada; JS reduz conforme o funil avança */
+}
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  opacity: var(--grain-op);
+  transition: opacity 1.2s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3'/%3E%3C/filter%3E%3Crect width='170' height='170' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Movimento: tudo que anima, assenta ──
+   Nada surge, brilha ou flutua. Oscila e para. */
+@keyframes settle {
+  0%   { transform: translateX(var(--swing)); }
+  22%  { transform: translateX(calc(var(--swing) * -0.52)); }
+  44%  { transform: translateX(calc(var(--swing) * 0.26)); }
+  66%  { transform: translateX(calc(var(--swing) * -0.12)); }
+  84%  { transform: translateX(calc(var(--swing) * 0.05)); }
+  100% { transform: translateX(0); }
+}
+.settle { animation: settle 0.72s cubic-bezier(0.36, 0, 0.28, 1) both; }
+
+/* ── Opções do quiz ──
+   Cantos quase retos: instrumento, não app. Selecionado ganha a barra
+   de latão à esquerda, que é o prumo assentando naquela linha. */
+.opt {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+  background: var(--color-slate);
+  border: 1px solid var(--color-seam);
+  color: var(--color-chalk);
+  padding: 0.9rem 1rem;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(240, 235, 227, 0.025);
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.opt .emoji { flex: none; width: 1.5rem; text-align: center; font-size: 1.1rem; }
+.opt > span:last-of-type { flex: 1; }
+.opt:hover {
+  border-color: var(--color-seam-hi);
+  background: var(--color-ridge);
+}
+.opt:active { background: var(--color-ridge); }
+.opt[aria-pressed="true"] {
+  border-color: var(--color-brass);
+  background: rgba(217, 164, 65, 0.07);
+  box-shadow: inset 3px 0 0 var(--color-brass);
+}
+.opt[aria-pressed="true"]::after {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-brass);
+}
+.opt:disabled { cursor: default; opacity: 0.45; }
+.opt[aria-pressed="true"]:disabled { opacity: 1; }
+
+/* ── Painel ── */
+.painel {
+  background: var(--color-slate);
+  border: 1px solid var(--color-seam);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(240, 235, 227, 0.03), 0 18px 40px -26px rgba(0, 0, 0, 0.9);
+}
+
+/* ── Revelação do motor: um dos raros momentos de latão ──
+   Brass só aparece quando algo se fixa. Se estiver em tudo, o momento
+   "for keeps" deixa de existir. */
+.reveal {
+  background: rgba(217, 164, 65, 0.08);
+  border: 1px solid rgba(217, 164, 65, 0.3);
+  border-left: 2px solid var(--color-brass);
+  border-radius: 0 3px 3px 0;
+  padding: 0.9rem 1rem;
+  color: var(--color-brass);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* ── CTAs ──
+   O botão de decisão é latão sólido com tinta Stone. É o ponto assentando. */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-brass);
+  color: var(--color-stone);
+  border: none;
+  padding: 0.9rem 1.6rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.005em;
+  cursor: pointer;
+  box-shadow: 0 10px 26px -14px rgba(217, 164, 65, 0.55);
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+.cta:hover { background: #e3b257; box-shadow: 0 12px 30px -14px rgba(217, 164, 65, 0.7); }
+.cta:active { background: var(--color-bronze); }
+.cta:disabled { opacity: 0.4; cursor: default; box-shadow: none; }
+
+/* Secundário: contorno, sem preenchimento. Tide não decide, narra. */
+.cta-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-chalk);
+  border: 1px solid var(--color-seam-hi);
+  padding: 0.9rem 1.6rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.cta-secundario:hover { border-color: var(--color-ash); background: var(--color-ridge); }
+
+.link-sutil {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-ash);
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.link-sutil:hover { color: var(--color-chalk); }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dust);
+}
+
+/* ── O fio de prumo: barra de progresso do funil ──
+   Uma hairline com o peso descendo. Vertical é a assinatura da marca;
+   aqui ele deita porque é régua de percurso, não de repouso. */
+.prumo {
+  position: relative;
+  height: 1px;
+  background: var(--color-seam);
+}
+.prumo-peso {
+  position: absolute;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  margin-left: -3.5px;
+  background: var(--color-brass);
+  transform: rotate(45deg);
+  transition: left 0.6s cubic-bezier(0.36, 0, 0.28, 1);
+}
+.prumo-trilha {
+  position: absolute;
+  inset: 0 auto 0 0;
+  height: 1px;
+  background: var(--color-brass);
+  opacity: 0.4;
+  transition: width 0.6s cubic-bezier(0.36, 0, 0.28, 1);
+}
+
+/* ── A linha de repouso: o gráfico de diagnóstico ──
+   Duas horizontais em alturas diferentes. Nunca uma curva ascendente,
+   que sugeriria trajetória de resultado. */
+.linha-repouso { stroke: var(--color-tide); stroke-width: 2; }
+.linha-alvo { stroke: var(--color-brass); stroke-width: 2; stroke-dasharray: 6 4; }
+
+/* ── Dados como instrumento ── */
+.dado {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  color: var(--color-tide);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

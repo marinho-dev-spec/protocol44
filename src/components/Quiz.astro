@@ -1,0 +1,11 @@
+---
+import Funnel from '../layouts/Funnel.astro';
+import BrandHeader from './BrandHeader.astro';
+import '../styles/funnel-v5.css';
+---
+<Funnel title="What would you like to work on? | Protocol 44" description="Ten questions to explore what feels hard to sustain and choose a practical starting point. Free, with your reflection shown on screen.">
+  <BrandHeader page="quiz" />
+  <main id="main" class="q5-main"><div id="quiz-app"></div><noscript><p class="wrap noscript">This quiz needs JavaScript. You can also <a href="/vsl#first-practice">read the first practice</a>.</p></noscript></main>
+  <footer class="site-footer wrap"><span>Protocol 44 <span class="footer-signature">For keeps.</span></span><details><summary>About your answers</summary><p>Your answers stay in this browser tab. We don’t receive them. You can clear them below. This quiz is for personal reflection.</p><button type="button" class="text-button" id="clear-v5">Clear my answers</button></details></footer>
+  <script>import '../lib/quiz-v5-controller';</script>
+</Funnel>

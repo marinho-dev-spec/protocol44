@@ -1,0 +1,21 @@
+---
+import Funnel from '../layouts/Funnel.astro';
+import BrandHeader from './BrandHeader.astro';
+import '../styles/quiz-v4.css';
+---
+<Funnel title="Protocol 44 — Seu diagnóstico" description="Quiz Protocol 44. As dez perguntas, reforços e resultado da versão v4." lang="pt-BR">
+  <BrandHeader lang="pt-BR" />
+  <main id="main" class="v4-main">
+    <div id="progress" class="v4-progress" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><span id="progress-fill"></span></div>
+    <div id="shell" class="v4-shell"><div id="app"></div></div>
+    <noscript><p class="wrap noscript">Ative o JavaScript para responder ao quiz.</p></noscript>
+  </main>
+  <footer class="site-footer wrap"><span>Protocol 44 <span class="footer-signature">For keeps.</span></span><details class="privacy-note"><summary>Sobre esta prévia</summary><p>Quiz v4 dos arquivos do projeto. Nome e email ficam apenas nesta aba; o envio de email ainda não está conectado. <button id="clear-v4" class="text-button">Limpar respostas</button></p></details></footer>
+  <script>
+    import '../lib/quiz-v4-controller';
+    document.getElementById('clear-v4')?.addEventListener('click', () => {
+      try { sessionStorage.removeItem('protocol44-quiz-v4'); } catch {}
+      window.location.reload();
+    });
+  </script>
+</Funnel>

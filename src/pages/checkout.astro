@@ -1,0 +1,199 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Decisões vigentes aplicadas nesta tela (OFERTA_MASTER §3 + PRODUCAO/06_TECNICO):
+//   pagamento único, sem recorrência · garantia 7 dias no formato test-drive
+//   zero contador, zero vaga fictícia, zero contador de vendas
+//   Brass nunca encosta em preço (regra de compliance da identidade)
+// Copy em PT porque o protótipo é PT. A reescrita nativa em EN é a tarefa
+// 03_COPY_EN.md e deve vir antes de qualquer tráfego.
+const preco = { front: 37, bump: 17 };
+const fases = [
+  { n: '01', nome: 'The Reading', ops: '8 operações', desc: 'Reconhecer a assinatura do recuo antes dele chegar, e localizar de quem é o ponto que você herdou.' },
+  { n: '02', nome: 'The Move',    ops: '8 operações', desc: 'Mover o eixo. O trabalho é feito em estado baixo, cansada e sem vontade, não no pico.' },
+  { n: '03', nome: 'The Hold',    ops: '6 operações', desc: 'Sustentar sem depender de motivação. Receber sem sabotar.' },
+];
+---
+
+<Base title="Protocol 44 — The Setpoint Protocol">
+  <header class="border-b border-seam">
+    <div class="max-w-md mx-auto px-5 py-4 flex items-center justify-between">
+      <span class="flex items-center gap-2 select-none">
+        <img src="/logo-mark.svg" alt="Protocol 44" width="24" height="24" class="rounded-[5px]" />
+        <span class="font-display font-bold text-[1rem] tracking-[-0.035em]">Protocol 44</span>
+      </span>
+      <span class="font-mono text-[0.6rem] tracking-[0.14em] uppercase text-dust">The Hold</span>
+    </div>
+  </header>
+
+  <main class="w-full max-w-md mx-auto px-5 py-10 pb-20">
+
+    <!-- ── Diagnóstico carregado do quiz ── -->
+    <p class="eyebrow mb-2">Seu Point of Rest · Padrão Herdado</p>
+    <h1 class="font-display font-bold text-[1.75rem] leading-[1.08] tracking-[-0.028em] text-balance">
+      Você foi firme o tempo todo.<br />A regulagem é que estava errada.
+    </h1>
+    <p class="text-ash text-[0.98rem] leading-relaxed mt-3">
+      O balanço não é o inimigo, e você não está quebrada. O problema é a altura em que o seu
+      ponto de repouso foi regulado, antes dos seus oito anos, por gente que rodava o próprio
+      padrão sem saber. É isso que o protocolo move.
+    </p>
+
+    <!-- ── A linha de repouso: o gráfico de diagnóstico ──
+         Duas horizontais, nunca uma curva ascendente, que sugeriria trajetória de resultado. -->
+    <figure class="painel mt-7 p-4">
+      <svg viewBox="0 0 400 148" class="w-full h-auto" role="img"
+           aria-label="Onde seu ponto está regulado hoje e para onde o protocolo o move">
+        <line x1="34" y1="14" x2="34" y2="120" stroke="#332e29" stroke-width="1" />
+        <line x1="34" y1="120" x2="386" y2="120" stroke="#332e29" stroke-width="1" />
+
+        <line x1="34" y1="42" x2="386" y2="42" class="linha-alvo" />
+        <text x="40" y="35" fill="#d9a441" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.3">PARA ONDE O PROTOCOLO MOVE</text>
+
+        <line x1="34" y1="92" x2="386" y2="92" class="linha-repouso" />
+        <text x="40" y="85" fill="#8fa5b9" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.3">ONDE SEU PONTO ESTA REGULADO HOJE</text>
+
+        <path d="M 262 92 C 278 54, 298 54, 314 92" fill="none" stroke="#a39b90" stroke-width="1.1" stroke-dasharray="3 4" opacity=".75" />
+        <circle cx="288" cy="63" r="2.6" fill="#a39b90" />
+        <circle cx="314" cy="92" r="3.2" fill="#8fa5b9" />
+        <text x="298" y="110" fill="#736c63" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1.1">O RECUO</text>
+      </svg>
+      <figcaption class="text-dust text-[0.72rem] leading-relaxed mt-2 font-mono">
+        Cada subida obedece a um ponto de repouso. O pêndulo sempre te devolve a ele.
+      </figcaption>
+    </figure>
+
+    <!-- ── O que você leva ── -->
+    <h2 class="font-display font-bold text-[1.2rem] tracking-[-0.02em] mt-10 mb-1">
+      The Setpoint Protocol
+    </h2>
+    <p class="text-ash text-[0.92rem] leading-relaxed mb-5">
+      44 operações em 44 dias, na versão do Padrão Herdado.
+      <span class="text-chalk">22 leituras que fazem você ver. 22 sessões que fazem ficar.</span>
+    </p>
+
+    <ol class="painel divide-y divide-seam list-none p-0 m-0">
+      {fases.map((f) => (
+        <li class="p-4 flex gap-3.5">
+          <span class="dado text-[0.7rem] pt-1 flex-none">{f.n}</span>
+          <span class="flex-1">
+            <span class="flex items-baseline justify-between gap-3">
+              <b class="font-display font-semibold text-[1rem] tracking-[-0.01em]">{f.nome}</b>
+              <span class="dado text-[0.64rem] flex-none">{f.ops}</span>
+            </span>
+            <span class="block text-ash text-[0.86rem] leading-relaxed mt-1">{f.desc}</span>
+          </span>
+        </li>
+      ))}
+    </ol>
+
+    <!-- ── Preço. Chalk, nunca Brass: latão não encosta em cifra. ── -->
+    <div class="painel mt-6 p-5">
+      <div class="flex items-baseline justify-between gap-4">
+        <span>
+          <span class="block font-display font-semibold text-[1rem]">Acesso completo</span>
+          <span class="block text-dust text-[0.8rem] mt-0.5">Pagamento único. Sem assinatura, sem renovação.</span>
+        </span>
+        <span class="font-display font-bold text-[1.9rem] tracking-[-0.03em] tabular-nums flex-none">
+          ${preco.front}
+        </span>
+      </div>
+
+      <!-- Order bump -->
+      <label class="flex gap-3 items-start mt-5 pt-5 border-t border-seam cursor-pointer">
+        <input id="bump" type="checkbox" class="mt-1 accent-brass w-4 h-4 flex-none" />
+        <span class="flex-1">
+          <span class="flex items-baseline justify-between gap-3">
+            <b class="text-[0.92rem]">Adicionar The 44-Day Map</b>
+            <span class="text-[0.92rem] tabular-nums flex-none">+${preco.bump}</span>
+          </span>
+          <span class="block text-ash text-[0.82rem] leading-relaxed mt-1">
+            O protocolo dia a dia numa folha só, com o registro do recuo. Serve para você
+            enxergar o padrão acontecendo enquanto ele acontece.
+          </span>
+        </span>
+      </label>
+
+      <div class="flex items-baseline justify-between gap-4 mt-5 pt-4 border-t border-seam">
+        <span class="eyebrow">Total hoje</span>
+        <span id="total" class="font-display font-bold text-[1.35rem] tabular-nums">${preco.front}</span>
+      </div>
+
+      <button class="cta w-full mt-4">Começar The Reading</button>
+      <p class="text-dust text-[0.72rem] leading-relaxed mt-3 text-center">
+        Acesso no seu e-mail em menos de um minuto. Sem grupo obrigatório, sem liberação em 24h.
+      </p>
+    </div>
+
+    <!-- ── Garantia. Test-drive, nunca garantia de resultado. ── -->
+    <div class="mt-6 border-l-2 border-brass bg-brass/[0.07] rounded-r-[3px] p-4">
+      <p class="eyebrow mb-1.5" style="color:var(--color-brass)">7 dias para decidir</p>
+      <p class="text-[0.9rem] leading-relaxed">
+        Entre, faça a primeira sequência e veja o mapa inteiro por dentro. Se em 7 dias você
+        concluir que não é para você, um e-mail devolve 100%, sem formulário e sem justificativa.
+      </p>
+      <p class="text-ash text-[0.82rem] leading-relaxed mt-2">
+        Sendo honesto sobre o que essa janela é: 7 dias servem para você julgar o material,
+        não para julgar o resultado. O protocolo roda 44 dias, e ninguém pode prometer o que
+        acontece no seu caso.
+      </p>
+    </div>
+
+    <!-- ── Candid Weakness, obrigatória em toda aparição do nome ── -->
+    <p class="text-ash text-[0.86rem] leading-relaxed mt-7">
+      <b class="text-chalk">O que isto não é.</b> Não é milagre, não tem prazo e não promete
+      dinheiro. É um procedimento com começo, meio e fim, que você aplica sozinha. Se você
+      procura garantia de resultado, não é aqui. Se procura método, é exatamente isto.
+    </p>
+
+    <!-- ── FAQ curta ── -->
+    <div class="mt-8 space-y-4">
+      <div>
+        <h3 class="font-display font-semibold text-[0.95rem]">Já tentei de tudo. Por que isto seria diferente?</h3>
+        <p class="text-ash text-[0.86rem] leading-relaxed mt-1">
+          Porque as outras tentativas trabalhavam a atração, e atrair nunca foi o seu problema.
+          Você atrai bem, e é por isso que teve os picos que teve. O que ninguém mexeu foi a
+          altura para onde o sistema te devolve.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-[0.95rem]">Preciso saber alguma coisa antes?</h3>
+        <p class="text-ash text-[0.86rem] leading-relaxed mt-1">
+          Não. Começa do zero e conduz passo a passo. As sessões são curtas de propósito,
+          porque ninguém cansado faz quarenta minutos de nada.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-[0.95rem]">Como recebo e por quanto tempo tenho acesso?</h3>
+        <p class="text-ash text-[0.86rem] leading-relaxed mt-1">
+          O acesso cai no seu e-mail assim que o pagamento é aprovado, e é vitalício. Pagamento
+          único: nada renova, nada é cobrado de novo.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Legal. Obrigatório antes de tráfego. ── -->
+    <footer class="mt-10 pt-6 border-t border-seam">
+      <p class="text-dust text-[0.72rem] leading-relaxed">
+        Protocol 44 é material educacional de desenvolvimento pessoal. <b class="text-ash">Não é
+        terapia nem tratamento médico</b> e não substitui acompanhamento profissional. Se você
+        está em crise, ligue ou mande mensagem para o 988 (Suicide &amp; Crisis Lifeline, EUA).
+        Resultados individuais variam e nada nesta página promete resultado.
+      </p>
+      <p class="text-dust text-[0.72rem] leading-relaxed mt-3 font-mono">
+        Protótipo interno. Preços e checkout ainda não operantes.
+      </p>
+      <a href="/" class="link-sutil inline-block mt-4">Voltar ao diagnóstico</a>
+    </footer>
+  </main>
+
+  <script is:inline>
+    const bump = document.getElementById('bump');
+    const total = document.getElementById('total');
+    if (bump && total) {
+      bump.addEventListener('change', () => {
+        total.textContent = '$' + (bump.checked ? 54 : 37);
+      });
+    }
+  </script>
+</Base>

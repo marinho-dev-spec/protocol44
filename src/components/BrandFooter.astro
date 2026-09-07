@@ -1,0 +1,9 @@
+---
+interface Props { quiz?: boolean }
+const { quiz = false } = Astro.props;
+---
+<footer class="site-footer wrap">
+  <span>Protocol 44 <span class="footer-signature">For keeps.</span></span>
+  {quiz && <details class="privacy-note"><summary>About your answers</summary><p>Your answers are kept in this browser tab when storage is available. They are not sent to a server. Use “Clear answers” to remove them. This reflection is for personal exploration, not a clinical assessment.</p></details>}
+  {!quiz && <span>Personal development, at your pace.</span>}
+</footer>
