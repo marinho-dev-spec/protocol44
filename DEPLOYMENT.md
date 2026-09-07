@@ -6,11 +6,12 @@ Vercel: **READY**, produção.
 - Quiz: https://protocol44.vercel.app/quiz
 - Prática/VSL: https://protocol44.vercel.app/vsl
 - Deploy inicial: `dpl_7XP2GjhochmdR1vkWbw9MBXt8TV1`
+- Deploy automático confirmado após primeiro push: `dpl_7TLmB2J89MquaRyMAN4zurdJc73i`, **READY**, com alias `protocol44.vercel.app`.
 - Projeto: `protocol44`, na equipe `odairmarinho2019-5298s-projects`.
 - Repositório conectado: https://github.com/marinho-dev-spec/protocol44
 - Build remoto: Astro, `npm run build`, saída estática `dist`.
 
-O deploy inicial foi enviado pela CLI. A conexão do projeto com o GitHub foi confirmada pela Vercel. O primeiro push ainda aguarda a conclusão do login oficial do GitHub nesta sessão.
+O deploy inicial foi enviado pela CLI. O primeiro commit `11f7801` foi publicado na branch `main`; o hash remoto foi conferido. A integração com o GitHub gerou automaticamente um segundo deploy de produção, confirmado como READY. Novos pushes na `main` acionam a Vercel.
 
 Verificação contra o endereço público: **13 grupos aprovados, dez capturas, zero erros**. Inclui o percurso completo do quiz, contexto na prática, download, retorno, retomada, limpeza de sessão, mobile e movimento reduzido. Evidência local: `.impeccable/review/production/VERIFICACAO-V5.json`.
 

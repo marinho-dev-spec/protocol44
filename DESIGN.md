@@ -230,7 +230,7 @@ Sem vídeo configurado, a VSL mostra aviso compacto de preparação e acesso à 
 
 `/quiz-v4` preserva fonte PT, resultado V2, gate local e diagrama de sinal; os estilos próprios estão no contrato legado. Checkout não integra esta atualização. As rotas mantêm noindex; o titular autorizou a publicação desta prévia no GitHub e na Vercel.
 
-[VERIFICACAO-V5.json](.impeccable/review/natural/VERIFICACAO-V5.json) registra 13 checks, dez capturas, fontes/imagens carregadas e errors=[], cobrindo larguras de 320 a 1440 px. O [veredito final](.impeccable/review/v5/FINISH-VERDICT.md) registra ship restrito às três correções: foco sobre laranja, geometria da FAQ e título móvel. Isso não equivale a auditoria integral, eficácia comercial ou autorização de publicação.
+[VERIFICACAO-V5.json](.impeccable/review/natural/VERIFICACAO-V5.json) registra 13 checks, dez capturas, fontes/imagens carregadas e errors=[], cobrindo larguras de 320 a 1440 px. O [veredito atual](.impeccable/review/natural/FINISH-VERDICT.md) confirma a correção da introdução da prática para escolhas e sugestões. A mesma suíte passou no endereço público. Estado de publicação em [DEPLOYMENT.md](DEPLOYMENT.md). A revisão não mede eficácia comercial ou conversão.
 
 ## Do's and Don'ts
 
