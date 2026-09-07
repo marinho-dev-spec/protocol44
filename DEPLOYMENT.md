@@ -1,5 +1,7 @@
 # Publicação — 7 de setembro de 2026
 
+Atualização editorial V6: promessa, apresentação da oferta, perguntas, resultados e VSL revisados com base no acervo e nos comentários. Build local e 13 grupos de verificação aprovados; dez capturas em .impeccable/review/offer-v6. Motor do quiz e configuração comercial preservados. A atualização segue pelo deploy automático da main.
+
 Vercel: **READY**, produção.
 
 - Site: https://protocol44.vercel.app

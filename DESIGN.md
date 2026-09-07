@@ -121,6 +121,8 @@ components:
 
 # Design System: Protocol 44
 
+Refinamento editorial V6: promessa e copy mais diretas, com a mesma identidade V5.1. A expressão “progress last.” usa inline-block para evitar palavra isolada no título. CTA principal: “Find my starting point”. Nenhum novo sistema de cores, fontes ou imagens.
+
 ## Overview
 
 **Creative North Star: "Um lugar para voltar à prática"**

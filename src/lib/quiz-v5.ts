@@ -1,28 +1,28 @@
-/** Editorial V5, September 2026. Self-reflection, not a diagnostic instrument. */
+/** Editorial V6, September 2026; V5 state and scoring preserved. Self-reflection, not a diagnostic instrument. */
 export type Focus = 'money' | 'capacity' | 'expectations' | 'open';
 export type Option = { id: string; label: string; focus?: Focus };
 export type Question = { id: string; title: string; hint: string; options: Option[] };
 export const questions: Question[] = [
   {
     "id": "area",
-    "title": "What’s been on your mind lately?",
-    "hint": "Choose what you’d most like to work on.",
+    "title": "Where would you most like to stop going in circles?",
+    "hint": "Choose the area that matters most to you right now.",
     "options": [
       {
         "id": "work",
-        "label": "My work or where I’m headed"
+        "label": "My work or the direction of my life"
       },
       {
         "id": "money",
-        "label": "Money"
+        "label": "My money worries and decisions"
       },
       {
         "id": "relationships",
-        "label": "My relationships"
+        "label": "The patterns in my relationships"
       },
       {
         "id": "space",
-        "label": "Finding time for myself"
+        "label": "Putting everyone else ahead of myself"
       },
       {
         "id": "unsure",
@@ -55,8 +55,8 @@ export const questions: Question[] = [
   },
   {
     "id": "pressure",
-    "title": "When life gets busy, what takes up the most space?",
-    "hint": "Pick the answer that feels closest.",
+    "title": "What most often gets in the way of what you want?",
+    "hint": "Choose the answer that fits your experience.",
     "options": [
       {
         "id": "money",
@@ -81,8 +81,8 @@ export const questions: Question[] = [
   },
   {
     "id": "response",
-    "title": "What do you tend to do then?",
-    "hint": "Think of the last time this happened.",
+    "title": "When that happens, what do you usually do?",
+    "hint": "Think about your response, even if it changes from day to day.",
     "options": [
       {
         "id": "money",
@@ -111,8 +111,8 @@ export const questions: Question[] = [
   },
   {
     "id": "thought",
-    "title": "Does any of this sound familiar?",
-    "hint": "Choose the thought you recognize most.",
+    "title": "Which thought feels most familiar?",
+    "hint": "Choose one you recognize, or select none.",
     "options": [
       {
         "id": "money",
@@ -126,12 +126,12 @@ export const questions: Question[] = [
       },
       {
         "id": "expectations",
-        "label": "“I should want what they want for me.”",
+        "label": "“What if choosing what I want disappoints someone?”",
         "focus": "expectations"
       },
       {
         "id": "return",
-        "label": "“I’ve stopped again. What’s the point?”"
+        "label": "“Things go well, then I’m back where I started.”"
       },
       {
         "id": "none",
@@ -141,24 +141,24 @@ export const questions: Question[] = [
   },
   {
     "id": "help",
-    "title": "What would help you most right now?",
-    "hint": "Choose what you’d like to get out of this.",
+    "title": "What would help you move forward?",
+    "hint": "Choose what you most want from a guided practice.",
     "options": [
       {
         "id": "clarity",
-        "label": "Understanding why I keep doing the same thing"
+        "label": "Seeing the pattern behind my repeated setbacks"
       },
       {
         "id": "action",
-        "label": "Knowing what I could do next"
+        "label": "Knowing how to respond differently in the moment"
       },
       {
         "id": "return",
-        "label": "Getting back to something I’ve stopped doing"
+        "label": "Following through after the first burst of motivation"
       },
       {
         "id": "choice",
-        "label": "Feeling clearer about what I want"
+        "label": "Making a choice without second-guessing what I want"
       }
     ]
   },
@@ -210,31 +210,31 @@ export const questions: Question[] = [
   },
   {
     "id": "progress",
-    "title": "What would you like to do first?",
-    "hint": "Choose something you could see yourself doing.",
+    "title": "What change would matter most in your everyday life?",
+    "hint": "Pick something you would be able to notice.",
     "options": [
       {
         "id": "decision",
-        "label": "Deal with a decision I’ve been avoiding"
+        "label": "Making a money or work decision I keep avoiding"
       },
       {
         "id": "space",
-        "label": "Make time for something I care about"
+        "label": "Keeping time for myself, even when others ask for it"
       },
       {
         "id": "rule",
-        "label": "Rethink something I feel I should do"
+        "label": "Choosing what I want instead of automatically doing what’s expected"
       },
       {
         "id": "resume",
-        "label": "Pick up something I’ve left unfinished"
+        "label": "Following through on a plan after a setback"
       }
     ]
   },
   {
     "id": "focus",
-    "title": "Which of these would you like to explore?",
-    "hint": "You can choose a focus or let your answers guide the suggestion.",
+    "title": "Where do you want to start changing the pattern?",
+    "hint": "Choose your focus, or ask us to suggest one from your answers.",
     "options": [
       {
         "id": "money",
@@ -259,10 +259,38 @@ export const questions: Question[] = [
   }
 ];
 export const startingPoints = {
-  money:{title:'Start with a money decision.',name:'Money decisions',body:'Think of a money decision you’ve been putting off. What do you know about it, what worries you, and what do you still need to find out? The exercise below gives you somewhere to write it down.',prompt:'What is one money decision I have been putting off?',example:'Open one bill, write down its due date, and choose when to review it.',units:'Choosing a focus, examining a familiar rule and planning a practical next step.'},
-  capacity:{title:'Make room for yourself.',name:'Time for yourself',body:'Think of the last time you put your own plans on hold. What did the day ask of you? Choose something you’d like to make time for, alongside the responsibilities you already have.',prompt:'What would I like to make time for this week?',example:'Choose one small task for myself and give it a realistic place in the day.',units:'Noticing everyday signals, making room for a pause and planning a return.'},
-  expectations:{title:'Work out what you want.',name:'Other people’s expectations',body:'Think of something you feel you should do. Is it something you still want, or an expectation you’ve got used to following? You don’t need to know where it started to look at how it affects you now.',prompt:'What do I feel I should do, and is it what I want?',example:'Write down one “should,” then one choice that reflects what matters to me today.',units:'Recognizing protective roles, reconsidering learned rules and choosing a direction.'},
-  open:{title:'Start with what’s on your mind.',name:'An open starting point',body:'More than one topic may fit your answers. Choose a recent situation that’s been on your mind. You can use the exercise to work through it, or pick a different focus below.',prompt:'What happened the last time something I cared about became hard to continue?',example:'Describe the interruption, then choose one small way to return.',units:'Choosing a focus, separating facts from interpretation and planning a return.'},
+  "money": {
+    "title": "Make your next money decision with clarity.",
+    "name": "Money decisions",
+    "body": "A money worry can turn into postponing a decision or avoiding the numbers altogether. Start with one decision. Separate what you know from what you fear, then choose an action you can take.",
+    "prompt": "What money decision am I avoiding, and what do I need to make it?",
+    "example": "Open one bill, write down its due date, and choose when to review it.",
+    "units": "Choosing a focus, examining a familiar rule and planning a practical next step."
+  },
+  "capacity": {
+    "title": "Make room for your own plans.",
+    "name": "Time for yourself",
+    "body": "Being dependable can leave little room for what you want. Start with one plan you’ve put aside. Decide what time it needs and whether there’s a request you can decline, defer or ask someone to share.",
+    "prompt": "What am I putting aside for others, and what boundary could make room for it?",
+    "example": "Choose one plan for myself and decide what I can decline, defer or share to make room for it.",
+    "units": "Noticing everyday signals, making room for a pause and planning a return."
+  },
+  "expectations": {
+    "title": "Make the choice that’s yours.",
+    "name": "Other people’s expectations",
+    "body": "Old expectations can make a decision feel settled before you’ve asked what you want. Pick one “should” about work, money or relationships. Consider whether it fits your life now and what you would choose.",
+    "prompt": "Which “should” is shaping this decision, and what do I actually want?",
+    "example": "Write down one “should,” then one choice that reflects what matters to me today.",
+    "units": "Recognizing protective roles, reconsidering learned rules and choosing a direction."
+  },
+  "open": {
+    "title": "Choose what you want to change first.",
+    "name": "An open starting point",
+    "body": "Your answers leave room for more than one focus. Start with a setback or decision you want to handle differently. The exercise helps you look at what happened, what you told yourself, and what you could do next.",
+    "prompt": "What happened the last time I slipped back into a familiar pattern?",
+    "example": "Describe the situation and my response, then choose one action I could try differently.",
+    "units": "Choosing a focus, separating facts from interpretation and planning a return."
+  }
 } as const;
 export const SESSION_KEY = 'protocol44-quiz-v5';
 export type State = { version:5; screen:'intro'|'questions'|'bridge'|'result'; index:number; answers:Record<string,string> };

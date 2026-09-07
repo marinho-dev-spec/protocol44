@@ -1,6 +1,6 @@
 # Protocol 44
 
-Site institucional, quiz em inglês e primeira prática escrita do Protocol 44. Construído com Astro 5, TypeScript e fontes locais. Revisão V5.1: linguagem conversada, exemplos concretos, identidade em papel/tinta e laranja nas ações.
+Site institucional, quiz em inglês e primeira prática escrita do Protocol 44. Construído com Astro 5, TypeScript e fontes locais. Copy V6: Stop starting over. Make your progress last. Oferta e perguntas mais diretas, mantendo a identidade natural V5.1 e a lógica do quiz V5.
 
 ## Rotas
 
@@ -61,7 +61,9 @@ Variáveis opcionais: `P44_BASE_URL` (padrão `http://127.0.0.1:4322`), `P44_REV
 - `PRODUCT.md`: propósito, público e limites de disponibilidade.
 - `DESIGN.md`: sistema visual atual; sidecar em `.impeccable/design.json`.
 - `NATURAL-REFINEMENT.md`: direção da V5.1 e revisão visual.
-- `docs/FUNIL_V5_1_NATURAL_EN.md`: copy consolidada atual.
+- `docs/FUNIL_V6_OFERTA_EN.md`: copy consolidada atual.
+- `docs/OFERTA_PRINCIPAL_V6.md`: promessa, benefícios e composição da oferta.
+- `docs/FUNIL_V5_1_NATURAL_EN.md`: copy da revisão anterior.
 - `FUNNEL-V5-BRIEF.md` e `FUNNEL-BRIEF.md`: etapas anteriores, mantidas como histórico.
 
 O repositório contém o projeto do site, ativos e documentação correspondente. O acervo bruto de pesquisa, cursos de referência, áudios e notas privadas do projeto maior permanece fora desta distribuição.

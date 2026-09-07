@@ -39,4 +39,6 @@ Contexto consolidado em ../../.claude/product-marketing.md e ../../00-ESTADO-ATU
 
 ## Current Implementation
 
+Revisão editorial V6: “Stop starting over. Make your progress last.” Benefícios ligados a decisões sobre dinheiro, planos próprios, expectativas e continuidade. O quiz mantém motor e sessão V5, com linguagem revisada; V4 documental preservada. Oferta em docs/OFERTA_PRINCIPAL_V6.md e copy em docs/FUNIL_V6_OFERTA_EN.md. O corpus orienta linguagem e objeções, sem virar prova social do produto.
+
 `/` apresenta o programa em inglês. `/quiz` usa a V5 EN: 10 perguntas, duas pontes de reflexão, foco escolhido pela pessoa, resultado transparente e acesso direto à primeira prática. Respostas ficam no sessionStorage, sem nome, e-mail ou envio. `/quiz-v4` preserva a V4 PT e seu resultado v2 documental, incluindo o gate local legado. `/vsl` oferece uma amostra escrita utilizável e download local da reflexão; o vídeo ainda será produzido. Apenas a primeira unidade EN foi redigida; as demais unidades e gravações estão em preparação. As rotas mantêm noindex. O titular solicitou publicar o projeto do site em marinho-dev-spec/protocol44 e fazer deploy na Vercel. A publicação não abre vendas. O checkout legado não foi alterado. Nenhum teste de software demonstra eficácia ou conversão comercial.

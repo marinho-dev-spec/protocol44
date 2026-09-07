@@ -12,6 +12,7 @@ textarea:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
 .product-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:82px;align-items:center;padding-block:64px 68px}
 .product-hero h1{font-size:clamp(48px,4.8vw,68px);font-weight:500;line-height:1.12;letter-spacing:-.035em}
 .product-hero h1 span,.q5-intro h1 span{color:var(--copper)}
+.promise-outcome{display:inline-block}
 .hero-intro{font-size:22px;line-height:1.5;margin-top:24px;max-width:42ch}
 .hero-description{font-size:18px;max-width:46ch;color:var(--reading-ink);margin-top:18px;margin-bottom:28px}
 .hero-secondary{display:inline-flex;font-size:17px;min-height:44px;align-items:center;margin-top:13px}
