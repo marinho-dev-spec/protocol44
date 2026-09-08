@@ -8,6 +8,7 @@ import {funnelConfig,safeWebUrl} from '../lib/funnel-config';
 import {content,copy} from '../lib/funnel-content';
 import '../styles/funnel-v5.css';
 import '../styles/signal-identity.css';
+import '../styles/editorial.css';
 const v=content.vsl;
 const videoUrl=safeWebUrl(funnelConfig.videoUrl);
 const captionsUrl=safeWebUrl(funnelConfig.captionsUrl);
@@ -17,7 +18,11 @@ const canPurchase=funnelConfig.salesOpen&&checkoutUrl;
 <Funnel surface="vsl" title={copy(v.title)} description={v.description}>
   <BrandHeader page="vsl" />
   <main id="main">
-    <section class="v5-vsl-opening wrap" aria-labelledby="vsl-title"><h1 id="vsl-title">{v.headline[0]}<br /><span>{v.headline[1]}</span></h1><p id="vsl-context" class="lead">{v.intro}</p><a href="#first-practice" class="hero-secondary">{v.cta} <Arrow /></a><div class="v5-film">{videoUrl&&<div class="video-frame" id="film"><video controls playsinline preload="metadata" poster="/brand/vsl-poster.png" aria-label={v.videoLabel}><source src={videoUrl}/>{captionsUrl&&<track kind="captions" src={captionsUrl} srclang="en" label="English" default/>}{v.videoUnsupported} <a href={videoUrl}>{v.videoOpen}</a>.</video></div>}{!videoUrl&&<p class="film-update">{v.videoPending}</p>}{videoUrl&&<p id="video-error" class="video-error" role="status" hidden>{v.videoError}</p>}{videoUrl&&funnelConfig.transcript&&<details class="transcript"><summary>{v.transcript}</summary><p>{funnelConfig.transcript}</p></details>}</div></section>
+    <section class="v5-vsl-opening wrap" aria-labelledby="vsl-title">
+      <div class="practice-opening-copy"><p class="section-kicker">{content.editorial.practiceKicker}</p><h1 id="vsl-title">{v.headline[0]}<br /><span>{v.headline[1]}</span></h1><p id="vsl-context" class="lead">{v.intro}</p><a href="#first-practice" class="button button-dark">{v.cta} <Arrow /></a>{!videoUrl&&<p class="film-update">{v.videoPending}</p>}</div>
+      <figure class="practice-opening-image"><img src="/brand/next-step-canada-768.webp" srcset="/brand/next-step-canada-480.webp 480w, /brand/next-step-canada-768.webp 768w" sizes="(max-width: 760px) calc(100vw - 40px), 45vw" width="768" height="512" alt={content.editorial.photoAlt} fetchpriority="high" /><figcaption>{content.editorial.practiceCaption}<span>{content.editorial.illustrationLabel}</span></figcaption></figure>
+      {videoUrl&&<div class="v5-film"><div class="video-frame" id="film"><video controls playsinline preload="metadata" poster="/brand/vsl-poster.png" aria-label={v.videoLabel}><source src={videoUrl}/>{captionsUrl&&<track kind="captions" src={captionsUrl} srclang="en" label="English" default/>}{v.videoUnsupported} <a href={videoUrl}>{v.videoOpen}</a>.</video></div><p id="video-error" class="video-error" role="status" hidden>{v.videoError}</p>{funnelConfig.transcript&&<details class="transcript"><summary>{v.transcript}</summary><p>{funnelConfig.transcript}</p></details>}</div>}
+    </section>
     <section class="vsl-lesson-intro wrap" data-motion><h2>{v.sectionTitle[0]}<br />{v.sectionTitle[1]}</h2><div>{v.sectionBody.map((p,i)=><p class={i===0?'lead':undefined}>{p}</p>)}</div></section>
     <FirstPractice />
     <section class="vsl-next"><div class="wrap"><h2>{v.nextTitle[0]}<br />{v.nextTitle[1]}</h2><div><p>{v.nextBody}</p>{canPurchase?<a class="button button-dark" href={checkoutUrl}>{v.join} <Arrow /></a>:<a class="button button-dark" href="/#inside">{v.previewCta} <Arrow /></a>}<p class="button-note">{canPurchase?v.purchaseNote:v.previewNote}</p></div></div></section>

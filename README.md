@@ -51,6 +51,7 @@ Editar `src/content/funnel-content.json`: textos das páginas, perguntas, opçõ
 
 ## Documentação
 
+- [Direção visual Canadá / Muse](docs/DESIGN-CANADA-MUSE-2026-09-08.md) — referência escolhida pelo titular, imagem original, composição e limites da pesquisa.
 - [Adequação e decisões](docs/ADEQUACAO_V8.md)
 - [Copy pública](docs/COPY_V8_EN.md)
 - [Lógica](docs/LOGICA_V8.md)

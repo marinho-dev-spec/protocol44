@@ -15,7 +15,10 @@ function initializePageMotion() {
   let observer: IntersectionObserver | undefined;
 
   function cancelAnimation(element: Element) {
-    animations.get(element)?.kill();
+    const animation = animations.get(element);
+    if (!animation) return;
+    animation.kill();
+    gsap.set(element, { clearProps: 'opacity,visibility,transform' });
     animations.delete(element);
   }
 
@@ -38,6 +41,7 @@ function initializePageMotion() {
       delay: delay / 1000,
       ease: 'power3.out',
       overwrite: true,
+      clearProps: 'opacity,visibility,transform',
       onComplete: release,
     });
     animations.set(element, animation);
@@ -97,13 +101,13 @@ function initializePageMotion() {
   }
 
   function reveal(element: Element) {
-    // Mark only meaningful groups. Default entrances use no spatial movement.
+    // Small, finite entrances keep the reading rhythm without tying it to scrolling.
     const isText = element.getAttribute('data-motion') === 'text';
     animate(
       element,
-      isText ? { opacity: 0.8, y: 6 } : { opacity: 0.8 },
+      isText ? { opacity: 0.7, y: 14 } : { opacity: 0.8 },
       isText ? { opacity: 1, y: 0 } : { opacity: 1 },
-      320,
+      580,
     );
   }
 

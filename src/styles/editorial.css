@@ -1,0 +1,264 @@
+/* Editorial composition. signal-identity.css owns the partner's palette and fonts. */
+body[data-surface] { --line: #d4dbe5; }
+body[data-surface] .wrap { max-width: 1220px; }
+body[data-surface] .section-kicker { font-size: 13px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; line-height: 1.5; color: var(--copper); margin: 0 0 22px; }
+body[data-surface] .button { border-radius: 999px; min-height: 56px; padding: 16px 25px; font-size: 17px; gap: 28px; }
+body[data-surface] h2 { font-size: clamp(30px, 3.15vw, 46px); line-height: 1.13; font-weight: 600; }
+body[data-surface] .header-surround { padding: 16px 20px 0; }
+body[data-surface] .site-header { height: 74px; width: 100%; max-width: 1400px; padding: 0 28px; border: 1px solid var(--line); border-radius: 16px; }
+body[data-surface] .brand img { width: 185px; }
+body[data-surface] .site-header nav { display: flex; align-items: center; gap: 30px; }
+body[data-surface] .site-header nav a { font-size: 14px; gap: 18px; }
+body[data-surface] .site-header .nav-quiz { border: 1px solid var(--line); border-radius: 999px; padding: 0 20px; }
+body[data-surface=home] .header-home { background: #0d0e11; }
+body[data-surface=home] .header-home .site-header { background: #171a21; border-color: #ffffff1a; }
+body[data-surface=home] .header-home .nav-quiz { background: #f8f9fa; color: #0f172a; border: 0; }
+body[data-surface] .site-footer { padding-block: 32px; margin-top: 0; }
+
+/* A real situation takes the place of the large abstract technology visual. */
+.home-opening { padding-top: 16px; }
+.home-opening .product-hero { position: relative; isolation: isolate; display: flex; align-items: center; min-height: 680px; max-width: 1400px; width: calc(100% - 40px); margin: 0 auto; padding: 0; overflow: hidden; border-radius: 20px; background: #0d0e11; }
+.hero-life-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% 48%; z-index: -2; }
+.home-opening .product-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #0d0e11f5 0%, #0d0e11e8 23%, #0d0e11ba 44%, #0d0e1130 67%, #0d0e1108 100%); pointer-events: none; }
+.home-opening .product-hero-copy { width: 58%; padding: 64px 0 72px 54px; }
+.home-opening .product-hero h1 { font-size: clamp(44px, 4.5vw, 66px); line-height: 1.04; font-weight: 600; letter-spacing: -.035em; text-wrap: initial; }
+.home-opening .headline-start { display: block; max-width: 14ch; color: #f8f9fa; text-wrap: balance; }
+.home-opening .promise-outcome { display: block; }
+.home-opening .hero-intro { max-width: 37ch; font-size: 19px; line-height: 1.65; color: #e1e5eb; margin-block: 26px 30px; }
+.home-opening .product-hero .button-note { color: #c9cfd9; font-size: 13px; margin-top: 16px; }
+.hero-practice-peek { position: absolute; right: 30px; bottom: 42px; width: 300px; padding: 22px 24px; border-radius: 14px; background: #f8f9fa; color: #0f172a; text-decoration: none; box-shadow: 0 12px 36px #0002; transition: background .2s; }
+.hero-practice-peek:hover { background: #e9f5f0; }
+.hero-practice-peek .peek-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 12px; color: #46556d; }
+.hero-practice-peek strong { display: block; font: 600 23px/1.25 var(--heading); margin: 20px 0 10px; }
+.hero-practice-peek>span:last-child { display: block; color: #46556d; font-size: 13px; line-height: 1.6; }
+.hero-image-caption { position: absolute; right: 32px; bottom: 16px; color: #fff; font-size: 11px; text-shadow: 0 1px 3px #000; }
+.opening-path { display: grid; grid-template-columns: .75fr 2.6fr; align-items: center; gap: 40px; padding-block: 38px 44px; }
+.opening-path-intro { font: 500 20px/1.4 var(--heading); color: #f8f9fa; }
+.opening-path ol { list-style: none; margin: 0; padding: 0; }
+.opening-path li { display: flex; align-items: start; gap: 14px; }
+.path-number { color: #00f0a8; font-size: 12px; line-height: 1.8; font-variant-numeric: tabular-nums; }
+.opening-path strong { display: block; font-size: 14px; font-weight: 500; }
+.opening-path li>span>span { display: block; color: #a0a5b5; font-size: 12px; line-height: 1.6; margin-top: 7px; }
+
+body[data-surface=home] .recognition-section { grid-template-columns: 1fr 1.1fr; gap: 90px; padding-block: 110px; }
+body[data-surface=home] .recognition-section h2 { color: #0f172a; }
+.recognition-section h2 span { color: #0052ff; }
+.recognition-section .lead { font-size: 20px; line-height: 1.7; }
+.recognition-section .program-definition { padding-top: 24px; border-top: 1px solid var(--line); font-size: 16px; line-height: 1.7; }
+body[data-surface=home] .product-inside { padding: 88px 0; background: #edf2fa; }
+.product-inside .section-heading { display: block; max-width: 800px; margin: 0 auto 50px; text-align: center; }
+.product-inside .section-heading h2 { color: #0f172a; }
+.product-inside .section-heading>div { max-width: 66ch; margin: 26px auto 0; font-size: 17px; line-height: 1.7; color: var(--reading-ink); }
+.product-inside .product-phases { border: 1px solid #c9d5e7; border-radius: 20px; overflow: hidden; background: #f8f9fa; }
+.product-inside .product-phase { display: flex; flex-direction: column; gap: 25px; padding: 36px 30px 28px; border: 0; }
+.product-inside .product-phase+.product-phase { border-left: 1px solid #c9d5e7; }
+.product-phase .phase-name { display: block; }
+.product-phase .phase-order { display: block; font: 400 44px/1 var(--heading); color: #0052ff; margin-bottom: 38px; letter-spacing: -.04em; }
+.product-phase h3 { font-size: 25px; }
+.product-phase h4 { font-size: 17px; margin-bottom: 14px; }
+.product-phase p { font-size: 16px; line-height: 1.7; }
+body[data-surface] .product-phase .phase-output { display: flex; gap: 12px; width: 100%; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line); font: 500 17px/1.5 var(--body); color: #0052ff; }
+.product-inside .availability-note { margin: 24px auto 0; text-align: center; max-width: 82ch; font-size: 13px; line-height: 1.6; }
+.example-section { background: #f8f9fa; padding-block: 108px; }
+.example-layout { grid-template-columns: .9fr 1.1fr; gap: 90px; }
+.example-layout>div>.section-kicker { margin: 0 0 22px; color: #0052ff; font-size: 13px; }
+.example-layout>div>p { font-size: 18px; line-height: 1.7; }
+.example-layout>div>.example-disclosure { font-size: 13px; line-height: 1.6; }
+body[data-surface] .example-workbook { border: 1px solid #d4dbe5; border-radius: 18px; padding: 28px 32px 36px; min-height: 440px; box-shadow: 0 20px 48px #0f172a0a; }
+.workbook-masthead { display: flex; gap: 20px; align-items: center; justify-content: space-between; margin-bottom: 34px; }
+.workbook-masthead img { width: 120px; height: auto; }
+.workbook-masthead>span { font-size: 12px; color: #536078; }
+.example-controls { margin-bottom: 30px; padding-bottom: 12px; gap: 12px; }
+.example-controls button { text-align: left; padding: 6px 0 12px; font-size: 12px; }
+.example-step-number { display: block; font-size: 12px; color: #536078; margin-bottom: 8px; }
+.example-controls button[aria-pressed=true] .example-step-number { color: #0052ff; }
+[data-example-panel] h3 { font-size: 30px; }
+[data-example-panel]>p { font-size: 17px; line-height: 1.7; }
+body[data-surface=home] .fit-section { grid-template-columns: .95fr 1.05fr; align-items: center; gap: 90px; padding-block: 0 100px; }
+.fit-section .context-photo { max-width: none; margin: 0; align-self: stretch; display: flex; flex-direction: column; }
+.fit-section .context-photo img { aspect-ratio: 4 / 4.8; object-fit: cover; object-position: 36% center; border-radius: 18px; flex-grow: 1; }
+.context-photo figcaption { font-size: 13px; line-height: 1.6; }
+.context-photo figcaption span { display: block; color: var(--muted); font-size: 11px; }
+.fit-section .lead { margin-top: 24px; font-size: 18px; line-height: 1.7; }
+.plain-list li { display: flex; gap: 16px; align-items: baseline; font-size: 16px; padding-block: 17px; line-height: 1.6; }
+.plain-list li>span { color: #0052ff; }
+.faq-section { padding-block: 80px 100px; gap: 90px; border-top: 1px solid var(--line); }
+.faqs summary { font-size: 18px; line-height: 1.5; font-weight: 500; }
+.faqs p { font-size: 16px; line-height: 1.7; }
+body[data-surface=home] .product-close { padding-block: 84px; border: 0; background: #0d0e11; color: #f8f9fa; --accent: #00f0a8; --accent-hover: #70ffd4; --copper: #00f0a8; --focus: #00f0a8; }
+body[data-surface=home] .product-close h2 { color: #f8f9fa; font-size: clamp(32px, 3.9vw, 56px); }
+.product-close p { max-width: 56ch; color: #bcc4d2; font-size: 18px; line-height: 1.6; }
+.product-close .section-kicker { margin: 0 auto 24px; color: #00f0a8; }
+.product-close .button-note { font-size: 13px; margin: 24px auto 0; max-width: 60ch; }
+
+/* The quiz stays quiet while the background resolves from void into white. */
+body[data-surface=quiz]:not([data-signal-stage=clear]) { --line: #475063; }
+body[data-surface=quiz] .header-surround { background: transparent; }
+body[data-surface=quiz] .site-header { border-color: color-mix(in srgb, var(--muted) 22%, transparent); }
+body[data-surface=quiz] .q8-intro { padding-block: 60px 72px; gap: 80px; grid-template-columns: 1.08fr .92fr; }
+body[data-surface=quiz] .q8-intro h1 { font-size: clamp(34px, 3.6vw, 51px); line-height: 1.12; font-weight: 600; }
+.q8-intro-copy .lead { font-size: 18px; line-height: 1.7; margin-top: 22px; }
+.q8-intro-copy .button-note { font-size: 13px; }
+.q8-intro .q8-signal-intro { align-self: center; }
+.quiz-life-photo { position: relative; margin: 0; border-radius: 18px 18px 0 0; overflow: hidden; }
+.q8-signal-intro .quiz-life-photo .signal-portrait { display: block; width: 100%; height: auto; aspect-ratio: 1.65; margin: 0; opacity: 1; object-fit: cover; object-position: 62% 50%; }
+.quiz-life-photo figcaption { position: absolute; bottom: 12px; right: 16px; color: #fff; text-shadow: 0 1px 4px #000; font-size: 11px; }
+.quiz-reflection-preview { background: #171a21; border: 1px solid #ffffff20; border-top: 0; border-radius: 0 0 18px 18px; padding: 26px 30px 22px; }
+.quiz-reflection-preview .preview-heading { font-size: 13px; font-weight: 500; color: #a0a5b5; }
+body[data-surface=quiz] .quiz-reflection-preview h2 { text-transform: none; font-size: 26px; line-height: 1.25; font-weight: 500; margin-top: 18px; }
+.quiz-reflection-preview>p { font-size: 15px; line-height: 1.6; color: #b9c0ce; margin-top: 12px; }
+.quiz-reflection-preview .signal-field { height: 60px; margin: 20px 0 0; }
+.quiz-reflection-preview .signal-caption { margin: 0; padding-top: 13px; font-size: 12px; }
+.q8-intro .q8-signal-intro>.text-button { font-size: 13px; display: block; margin: 10px 0 0 auto; }
+body[data-surface=quiz] .q5-flow { max-width: 668px; margin: 32px auto 60px; }
+body[data-surface=quiz] .q5-progress { margin-bottom: 34px; font-size: 12px; gap: 14px; }
+.q5-progress .signal-mini { height: 24px; margin: 0 0 4px; }
+.q5-progress .signal-mini .signal-field { height: 24px; }
+.q5-progress progress { height: 3px; border-radius: 3px; overflow: hidden; }
+body[data-surface=quiz] .q5-title { font-size: 28px; line-height: 1.32; font-weight: 550; }
+body[data-surface=quiz] .question-hint { font-size: 14px; margin: 14px 0 25px; }
+body[data-surface=quiz] .q5-options { gap: 10px; }
+body[data-surface=quiz] .q5-option { font-size: 16px; min-height: 65px; padding: 17px 22px; border-radius: 12px; border-color: color-mix(in srgb, var(--line) 65%, transparent); }
+body[data-surface=quiz] .q5-option:hover,body[data-surface=quiz] .q5-option:has(input:checked) { border-color: var(--copper); }
+.q5-option .q5-radio { width: 20px; height: 20px; }
+.q5-flow #question-form,.q5-flow .q5-bridge { animation: none; }
+.q5-flow .question-actions { margin-top: 26px; }
+.q5-flow .back-button { font-size: 14px; }
+body[data-surface=quiz] .q5-result { gap: 60px 80px; padding-block: 70px 80px; }
+body[data-surface=quiz] .q5-result h1 { font-size: clamp(34px, 3.3vw, 48px); font-weight: 600; }
+.q8-result .q5-answer-sheet { border-radius: 18px; }
+.q8-result .q5-answer-sheet dt { font-size: 13px; }
+.q8-result .q5-answer-sheet dd { font-size: 18px; line-height: 1.5; }
+body[data-surface=quiz] .q8-result h2 { font-size: 24px; font-weight: 600; }
+.q8-result .lead,.q8-result-section p { font-size: 18px; line-height: 1.7; }
+.q8-result .q8-comparison { background: #edf2fa; border: 0; border-radius: 16px; padding: 28px; gap: 24px; }
+.q8-result .q8-comparison>div { padding-top: 0; }
+.q8-result .q8-comparison>div p { font-size: 16px; line-height: 1.7; }
+.q8-result .q5-first-step { border: 0; border-left: 2px solid #0052ff; padding: 4px 0 4px 24px; }
+body[data-surface] .q8-close { padding: 40px; background: #edf2fa; border-radius: 18px; border: 0; }
+
+/* A clear continuation from the result to the actual, usable written practice. */
+body[data-surface=vsl] .v5-vsl-opening { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; text-align: left; align-items: center; padding-block: 70px; }
+body[data-surface=vsl] .v5-vsl-opening h1 { font-size: clamp(34px, 3.45vw, 50px); line-height: 1.13; font-weight: 600; margin: 0; }
+body[data-surface=vsl] .v5-vsl-opening .lead { font-size: 18px; line-height: 1.7; margin: 24px 0 26px; }
+.v5-vsl-opening .film-update { font-size: 13px; border: 0; padding: 0; margin: 18px 0 0; }
+.practice-opening-image { margin: 0; }
+.practice-opening-image>img { border-radius: 18px; width: 100%; height: auto; aspect-ratio: 1.02; object-fit: cover; object-position: 64% 50%; }
+.practice-opening-image figcaption { font-size: 14px; color: #46556d; line-height: 1.6; margin-top: 16px; }
+.practice-opening-image figcaption span { display: block; font-size: 11px; }
+.v5-vsl-opening .v5-film { grid-column: 1/-1; width: 100%; margin: 0 auto; }
+.vsl-lesson-intro { padding-block: 60px 38px; }
+.vsl-lesson-intro p { font-size: 17px; line-height: 1.7; }
+body[data-surface] .practice-workbook { border: 1px solid #d4dbe5; border-radius: 18px; background: #fff; box-shadow: 0 20px 50px #0f172a07; }
+.practice-workbook label { font-size: 18px; }
+.practice-workbook label span { font-size: 14px; }
+body[data-surface] .practice-workbook textarea { background: #f8f9fa; border-radius: 10px; font-size: 16px; }
+.practice-workbook .button-note { font-size: 13px; }
+.first-practice-intro>p { font-size: 18px; line-height: 1.7; }
+.vsl-next p { font-size: 18px; line-height: 1.7; }
+
+@media (max-width: 1100px) {
+  .home-opening .product-hero { min-height: 640px; }
+  .home-opening .product-hero-copy { width: 61%; padding-left: 36px; }
+  .home-opening .product-hero h1 { font-size: clamp(36px, 4.35vw, 48px); }
+  .hero-practice-peek { width: 255px; padding: 20px; right: 24px; }
+  .opening-path { gap: 24px; grid-template-columns: .6fr 2.4fr; }
+  .opening-path ol { gap: 20px; }
+  .opening-path li { gap: 8px; }
+  .opening-path-intro { font-size: 17px; }
+  body[data-surface=home] .recognition-section,body[data-surface=home] .fit-section,.example-layout,.faq-section { gap: 45px; }
+  .product-inside .product-phase { padding: 28px 24px; }
+  body[data-surface=quiz] .q8-intro { gap: 40px; }
+  body[data-surface=quiz] .q5-result { gap: 40px; }
+  body[data-surface=vsl] .v5-vsl-opening { gap: 36px; }
+}
+@media (max-width: 760px) {
+  body[data-surface] .header-surround { padding: 12px 12px 0; }
+  body[data-surface] .site-header { height: 62px; padding: 0 14px; border-radius: 12px; gap: 12px; }
+  body[data-surface] .brand img { width: 145px; }
+  body[data-surface] .site-header nav { gap: 0; }
+  body[data-surface] .site-header nav a { font-size: 12px; }
+  body[data-surface] .site-header .nav-detail { display: none; }
+  body[data-surface] .site-header .nav-quiz { min-height: 38px; padding-inline: 13px; gap: 10px; }
+  body[data-surface] .section-kicker { font-size: 11px; margin-bottom: 18px; }
+  body[data-surface] .button { font-size: 16px; min-height: 54px; }
+  .home-opening { padding-top: 12px; }
+  .home-opening .product-hero { display: grid; min-height: 0; width: calc(100% - 24px); border-radius: 14px; padding: 0; gap: 0; background: #171a21; }
+  .home-opening .product-hero::after { display: none; }
+  .home-opening .product-hero-copy { grid-area: 1/1; width: 100%; padding: 32px 24px 30px; }
+  .home-opening .product-hero h1 { font-size: clamp(30px, 8.1vw, 48px); line-height: 1.1; }
+  .home-opening .hero-intro { font-size: 17px; line-height: 1.65; margin-block: 22px 24px; }
+  .home-opening .product-hero .button-note { font-size: 12px; }
+  .hero-life-image { position: static; grid-area: 2/1; height: auto; aspect-ratio: 1.35; object-fit: cover; object-position: 61% center; z-index: auto; }
+  .hero-practice-peek { position: relative; grid-area: 3/1; width: auto; right: auto; bottom: auto; padding: 21px 24px; border-radius: 0; box-shadow: none; }
+  .hero-practice-peek strong { font-size: 21px; margin-block: 14px 8px; }
+  .hero-image-caption { grid-area: 2/1; position: relative; align-self: end; justify-self: end; bottom: auto; right: auto; padding: 8px 14px; font-size: 10px; }
+  .opening-path { grid-template-columns: 1fr; gap: 24px; padding-block: 30px 36px; }
+  .opening-path-intro br { display: none; }
+  .opening-path-intro { font-size: 18px; }
+  .opening-path ol { grid-template-columns: 1fr; gap: 20px; }
+  .opening-path li { gap: 18px; }
+  .opening-path li>span>span { margin-top: 3px; font-size: 13px; }
+  .opening-path strong { font-size: 15px; }
+  body[data-surface=home] .recognition-section { grid-template-columns: 1fr; gap: 26px; padding-block: 60px; }
+  .recognition-section .lead { font-size: 18px; }
+  .recognition-section .program-definition { font-size: 15px; }
+  body[data-surface=home] .product-inside { padding-block: 54px; }
+  .product-inside .section-heading { text-align: left; margin-bottom: 32px; padding: 0; }
+  .product-inside .section-heading>div { font-size: 16px; margin-top: 22px; }
+  .product-inside .product-phases { grid-template-columns: 1fr; border-radius: 14px; }
+  .product-inside .product-phase { padding: 28px 24px; gap: 22px; }
+  .product-inside .product-phase+.product-phase { border-left: 0; border-top: 1px solid #c9d5e7; }
+  .product-phase .phase-name { display: flex; align-items: center; gap: 18px; }
+  .product-phase .phase-order { font-size: 30px; margin: 0; }
+  .product-phase h3 { font-size: 24px; }
+  .product-phase h4 { font-size: 17px; }
+  .product-inside .availability-note { text-align: left; }
+  .example-section { padding-block: 56px; }
+  .example-layout { grid-template-columns: 1fr; gap: 32px; }
+  .example-layout>div>p { font-size: 17px; }
+  body[data-surface] .example-workbook { padding: 24px; border-radius: 14px; min-height: 465px; }
+  .workbook-masthead { margin-bottom: 26px; gap: 12px; }
+  .workbook-masthead>span { font-size: 11px; }
+  .workbook-masthead img { width: 112px; }
+  .example-controls { gap: 12px; margin-bottom: 24px; }
+  .example-controls button { font-size: 11px; }
+  [data-example-panel] h3 { font-size: 27px; }
+  [data-example-panel]>p { font-size: 16px; }
+  body[data-surface=home] .fit-section { grid-template-columns: 1fr; gap: 32px; padding-block: 0 60px; }
+  .fit-section .context-photo img { aspect-ratio: 1.2; border-radius: 14px; }
+  .fit-section .lead { font-size: 17px; }
+  .faq-section { grid-template-columns: 1fr; gap: 30px; padding-block: 54px; }
+  .faqs summary { font-size: 17px; }
+  body[data-surface=home] .product-close { padding-block: 56px; }
+  .product-close p { font-size: 17px; }
+  .product-close .button-note { font-size: 12px; }
+  body[data-surface=quiz] .q8-intro { grid-template-columns: 1fr; gap: 32px; padding-block: 36px; }
+  body[data-surface=quiz] .q8-intro h1 { font-size: clamp(30px, 7.8vw, 42px); line-height: 1.16; }
+  .q8-intro-copy .lead { font-size: 17px; margin-top: 20px; }
+  .q8-intro-copy .button-note { font-size: 12px; }
+  .quiz-reflection-preview { padding: 24px; }
+  body[data-surface=quiz] .quiz-reflection-preview h2 { font-size: 24px; }
+  .quiz-reflection-preview .signal-field { height: 50px; }
+  body[data-surface=quiz] .q5-flow { margin-top: 24px; margin-bottom: 42px; }
+  body[data-surface=quiz] .q5-progress { margin-bottom: 28px; }
+  body[data-surface=quiz] .q5-title { font-size: 23px; line-height: 1.34; }
+  body[data-surface=quiz] .q5-option { font-size: 16px; padding: 16px; min-height: 64px; }
+  body[data-surface=quiz] .q5-result { padding-block: 38px 48px; gap: 32px; }
+  body[data-surface=quiz] .q5-result h1 { font-size: 31px; }
+  .q8-result .q8-comparison { padding: 24px; }
+  body[data-surface] .q8-close { padding: 26px 24px; }
+  body[data-surface=vsl] .v5-vsl-opening { grid-template-columns: 1fr; padding-block: 38px 46px; gap: 32px; }
+  body[data-surface=vsl] .v5-vsl-opening h1 { font-size: 32px; }
+  body[data-surface=vsl] .v5-vsl-opening .lead { font-size: 17px; }
+  .practice-opening-copy .button { width: 100%; }
+  .practice-opening-image>img { aspect-ratio: 1.3; border-radius: 14px; }
+  .practice-opening-image figcaption { font-size: 13px; }
+  .vsl-lesson-intro { padding-block: 40px 26px; }
+  .first-practice-intro>p { font-size: 17px; }
+}
+@media (max-width: 370px) {
+  body[data-surface] .brand img { width: 126px; }
+  .home-opening .product-hero-copy { padding-inline: 20px; }
+  .home-opening .product-hero h1 { font-size: 29px; }
+}

@@ -12,6 +12,7 @@ const { title, description, lang = 'en', surface } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="p44-content-version" content={content.version} />
+    <meta name="p44-visual-revision" content={content.editorial.revision} />
     <meta name="robots" content="noindex,nofollow" />
     <meta name="theme-color" content={surface === 'home' || surface === 'quiz' ? '#0D0E11' : '#F8F9FA'} />
     <meta property="og:title" content={title} />
