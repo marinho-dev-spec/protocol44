@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-08T17:51:50.415279+00:00",
+  "generatedAt": "2026-09-08T18:31:00.000000+00:00",
   "title": "Design System: Protocol 44",
   "extensions": {
     "colorMeta": {
@@ -613,7 +613,18 @@
         "purpose": "Contagem e metadados; não é display promocional."
       }
     },
-    "shadows": [],
+    "shadows": [
+      {
+        "name": "signal-frame-halo",
+        "value": "0 26px 72px rgba(0,240,168,.08)",
+        "purpose": "Halo mint muito suave exclusivo da moldura da arte óptica no herói; não é elevação de containers de leitura."
+      },
+      {
+        "name": "signal-frame-halo-mobile",
+        "value": "0 18px 44px rgba(0,240,168,.07)",
+        "purpose": "Versão compacta do halo da arte óptica em telas estreitas."
+      }
+    ],
     "motion": [
       {
         "name": "ease",
@@ -662,7 +673,7 @@
       },
       {
         "name": "reduced-motion",
-        "value": "CSS animations/transitions none; scan beam removed; scroll auto; cancel active Web Animations",
+        "value": "CSS animations/transitions none; scan beam removed; scroll auto; cancel active GSAP tweens",
         "purpose": "Sinal completo e conteúdo utilizável sem os efeitos."
       }
     ],
@@ -765,7 +776,7 @@
   ],
   "narrative": {
     "northStar": "Do sinal interrompido ao estúdio claro",
-    "overview": "A identidade construída apresenta material óptico, sinal interrompido e campo escuro, seguido por superfícies claras de leitura com azul e verde. Montserrat dá forma geométrica aos títulos, principalmente em caixa alta; Plus Jakarta Sans sustenta leitura e controles. A logo serif44 mantém sua geometria e seu pequeno acento laranja, separado da paleta funcional.\n\nEste registro de 08/09/2026 descreve a 8.2 e substitui as prescrições visuais V5–8.1 para home, quiz e VSL. O titular rejeitou a adaptação laranja da 8.1 e pediu fidelidade ao RTF e referências de imagem no Pinterest. A descrição acima sintetiza essa direção fixada; não houve nova seleção criativa, seed aleatória ou comp aprovado. A copy e o funcionamento 8.1 permanecem.\n\nA autoridade é a cascata de `funnel.css`, `funnel-v5.css`, `funnel-v8.css` no quiz e, por último, `signal-identity.css`, junto dos componentes atuais. O [contrato 8.2](docs/IDENTIDADE-8.2-PINTEREST.md) registra o briefing, as referências observadas e a proveniência. As composições pertencem aos briefs de [home](.impeccable/surfaces/src-pages-index-astro.md), [quiz](.impeccable/surfaces/src-pages-quiz-astro.md) e [VSL/prática](.impeccable/surfaces/src-pages-vsl-astro.md). A [V4 documental](.impeccable/surfaces/src-pages-quiz-v4-astro.md) e o checkout permanecem legados.",
+    "overview": "A identidade construída apresenta material óptico, sinal interrompido e campo escuro, seguido por superfícies claras de leitura com azul e verde. Montserrat dá forma geométrica aos títulos, principalmente em caixa alta; Plus Jakarta Sans sustenta leitura e controles. A logo serif44 mantém sua geometria e seu pequeno acento laranja, separado da paleta funcional.\n\nEste registro de 08/09/2026 descreve a 8.2 e a polida visual posterior para home, quiz e VSL; ele substitui as prescrições visuais V5–8.1. O titular rejeitou a adaptação laranja da 8.1 e pediu fidelidade ao RTF e referências de imagem no Pinterest. A descrição acima sintetiza essa direção fixada; não houve nova seleção criativa, seed aleatória ou comp aprovado. A copy e o funcionamento 8.1 permanecem.\n\nA autoridade é a cascata de `funnel.css`, `funnel-v5.css`, `funnel-v8.css` no quiz e, por último, `signal-identity.css`, junto dos componentes atuais. O [contrato 8.2](docs/IDENTIDADE-8.2-PINTEREST.md) registra o briefing, as referências observadas e a proveniência. As composições pertencem aos briefs de [home](.impeccable/surfaces/src-pages-index-astro.md), [quiz](.impeccable/surfaces/src-pages-quiz-astro.md) e [VSL/prática](.impeccable/surfaces/src-pages-vsl-astro.md). A [V4 documental](.impeccable/surfaces/src-pages-quiz-v4-astro.md) e o checkout permanecem legados.",
     "keyCharacteristics": [
       "Marca serif44 preservada; laranja restrito à marca e ao legado.",
       "Deep Void e CRT Gray com mint nas ações e crimson nas interrupções.",
@@ -787,7 +798,7 @@
       },
       {
         "name": "The Flat Container Rule",
-        "body": "Agrupe leitura e escrita com fundo, contorno e espaço. Preserve a profundidade da imagem óptica como material da imagem, sem convertê-la em elevação de todos os componentes.",
+        "body": "Agrupe leitura e escrita com fundo, contorno e espaço. Preserve a profundidade da imagem óptica como material da imagem; a moldura do herói pode receber apenas o halo mint discreto documentado, sem convertê-lo em elevação de todos os componentes.",
         "section": "elevation"
       }
     ],
