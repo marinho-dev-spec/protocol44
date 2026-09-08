@@ -1,5 +1,6 @@
 ---
 import '../styles/funnel.css';
+import {content} from '../lib/funnel-content';
 interface Props { title: string; description: string; lang?: string }
 const { title, description, lang = 'en' } = Astro.props;
 ---
@@ -9,6 +10,7 @@ const { title, description, lang = 'en' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="p44-content-version" content={content.version} />
     <meta name="robots" content="noindex,nofollow" />
     <meta name="theme-color" content="#FF4D17" />
     <meta property="og:title" content={title} />

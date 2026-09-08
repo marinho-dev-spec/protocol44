@@ -1,35 +1,30 @@
 ---
 import Arrow from './Arrow.astro';
+import {content} from '../lib/funnel-content';
+const p=content.practice;
 ---
 <section class="first-practice wrap" id="first-practice" aria-labelledby="first-practice-title">
-  <div class="first-practice-intro"><h2 id="first-practice-title">Map your next move.</h2><p>Describe the moment, notice your response, and choose what you want to do differently. A sentence or two per question is enough. Leave a question open if you’re unsure.</p><p id="practice-focus" class="practice-focus" hidden></p><details><summary>See a completed example</summary><p>In this fictional example, Maya planned to review her spending on Sunday. A family visit ran late. She thought, “I never stick with this,” and put her notebook away.</p><p>Her next step: open the notebook on Monday and check one upcoming bill. She can schedule the rest separately.</p></details></div>
-  <form id="first-practice-form" class="practice-workbook"><h3>Your notes</h3><label for="practice-event">What happened?<span>Describe the situation as you remember it.</span></label><textarea id="practice-event" name="event" rows="2" maxlength="1200" placeholder="I missed the time I had planned."></textarea><label for="practice-thought">What did you tell yourself?<span>What was going through your mind?</span></label><textarea id="practice-thought" name="thought" rows="2" maxlength="1200" placeholder="I thought I had already fallen behind."></textarea><label for="practice-next">What could you do next?<span>Choose something that fits your day, and say when you could try it.</span></label><textarea id="practice-next" name="next" rows="2" maxlength="1200" placeholder="After lunch, I’ll open the notebook and review one item."></textarea><button type="submit" class="button button-primary">Download my reflection <Arrow /></button><p class="button-note">A text file for you to keep. Your writing is not sent or saved by this page.</p><p id="practice-status" class="practice-status" role="status"></p></form>
+  <div class="first-practice-intro"><h2 id="first-practice-title">{p.title}</h2><p>{p.intro}</p><p id="practice-focus" class="practice-focus" hidden></p><details><summary>{p.exampleLabel}</summary>{p.example.map(s=><p>{s}</p>)}</details></div>
+  <form id="first-practice-form" class="practice-workbook"><h3>{p.notes}</h3>{p.fields.map(f=><><label for={`practice-${f.id}`}>{f.label}<span>{f.hint}</span></label><textarea id={`practice-${f.id}`} name={f.id} rows="2" maxlength="1200" placeholder={f.placeholder}></textarea></>)}<button type="submit" class="button button-primary">{p.cta} <Arrow /></button><p class="button-note">{p.privacy}</p><p id="practice-status" class="practice-status" role="status"></p></form>
 </section>
 <script>
-  import {readState,SESSION_KEY,chooseFocus,startingPoints} from '../lib/quiz-v5';
+  import {content,copy} from '../lib/funnel-content';
+  import {readState,SESSION_KEY,calculate} from '../lib/quiz-v8';
+  const p=content.practice;
   try {
     const state=readState(sessionStorage.getItem(SESSION_KEY));
     if(state.screen==='result') {
-      const point=startingPoints[chooseFocus(state.answers)];
+      const point=content.results[calculate(state.answers).topic];
       const node=document.getElementById('practice-focus')!;node.hidden=false;
-      node.textContent=`Your question: ${point.prompt}`;
-      const intro=document.getElementById('vsl-context');
-      if(intro)intro.textContent=`Your focus is “${point.name}.” Let’s work through an example from your week.`;
-      const format=document.getElementById('preferred-format');
-      const formatCopy:Record<string,string>={
-        write:'You can write directly in the worksheet or use your own notebook.',
-        listen:'Prefer to listen? We’re still preparing the audio version. For now, you can read the questions and pause after each one.',
-        both:'Start with the written exercise below. We’re still preparing the audio version.',
-        unsure:'Open the completed example beside the worksheet to see how it works.',
-      };
-      if(format){format.hidden=false;format.textContent=formatCopy[state.answers.format]||formatCopy.write;}
+      node.textContent=copy(p.focus,{question:point.prompt});
+      const intro=document.getElementById('vsl-context');if(intro)intro.textContent=copy(p.context,{topic:point.name});
     }
   } catch {}
   const form=document.getElementById('first-practice-form') as HTMLFormElement;
   form.addEventListener('submit',event=>{
     event.preventDefault();const data=new FormData(form);const status=document.getElementById('practice-status')!;
-    if(!['event','thought','next'].some(k=>String(data.get(k)||'').trim())){status.textContent='Write something in at least one field to save your reflection.';document.getElementById('practice-event')?.focus();return;}
-    const content=['Protocol 44 — Your notes','Personal reflection',...['event','thought','next'].map((k,i)=>`\n${['What happened?','What did I tell myself?','One small next step'][i]}\n${String(data.get(k)||'').trim()||'(left open)'}`),'\nAfter trying the step, note what happened and what you would adjust.'].join('\n');
-    const url=URL.createObjectURL(new Blob([content],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='Protocol-44-my-first-reflection.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='Your file is ready to download. Keep it with your notes so you can come back to it.';
+    if(!p.fields.some(f=>String(data.get(f.id)||'').trim())){status.textContent=p.error;document.getElementById('practice-event')?.focus();return;}
+    const text=[`${content.tokens.BRAND} — ${p.fileTitle}`,p.fileSubtitle,...p.fields.map(f=>`\n${f.label}\n${String(data.get(f.id)||'').trim()||p.leftOpen}`),`\n${p.fileReview}`].join('\n');
+    const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=content.tokens.BRAND.replace(/\s+/g,'-')+'-my-first-reflection.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent=p.success;
   });
 </script>

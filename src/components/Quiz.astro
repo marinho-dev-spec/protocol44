@@ -1,11 +1,14 @@
 ---
 import Funnel from '../layouts/Funnel.astro';
 import BrandHeader from './BrandHeader.astro';
+import {content,copy} from '../lib/funnel-content';
 import '../styles/funnel-v5.css';
+import '../styles/funnel-v8.css';
+const u=content.ui;
 ---
-<Funnel title="Where does your progress get stuck? | Protocol 44" description="Explore recurring setbacks, choose a focus and start working on a different response. Ten questions, a free result and a written exercise. No email required.">
+<Funnel title={copy(u.quizTitle)} description={copy(u.quizDescription)}>
   <BrandHeader page="quiz" />
-  <main id="main" class="q5-main"><div id="quiz-app"></div><noscript><p class="wrap noscript">This quiz needs JavaScript. You can also <a href="/vsl#first-practice">read the first practice</a>.</p></noscript></main>
-  <footer class="site-footer wrap"><span>Protocol 44 <span class="footer-signature">For keeps.</span></span><details><summary>About your answers</summary><p>Your answers stay in this browser tab. We don’t receive them. You can clear them below. This quiz is for personal reflection.</p><button type="button" class="text-button" id="clear-v5">Clear my answers</button></details></footer>
-  <script>import '../lib/quiz-v5-controller';</script>
+  <main id="main" class="q5-main"><div id="quiz-app"></div><noscript><p class="wrap noscript">{u.noJs} <a href="/vsl#first-practice">{u.noJsLink}</a>.</p></noscript></main>
+  <footer class="site-footer wrap"><span>{content.tokens.BRAND} <span class="footer-signature">{u.tagline}</span></span><details><summary>{u.privacyTitle}</summary><p>{u.privacy}</p><button type="button" class="text-button" id="clear-v8">{u.clear}</button></details></footer>
+  <script>import '../lib/quiz-v8-controller';</script>
 </Funnel>

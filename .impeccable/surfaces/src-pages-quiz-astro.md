@@ -43,3 +43,8 @@ Testes existentes cobrem dez perguntas, pontes, validação, voltar/restaurar, t
 ## Refinamento V5.1
 
 Direção vigente em NATURAL-REFINEMENT.md. Copy mais conversada, laranja nas ações e superfícies de apoio em papel. Evidência atual em .impeccable/review/natural: 13 grupos, dez capturas e zero erros de execução. A revisão anterior permanece histórica.
+
+
+## Adequação V8 — contrato vigente
+
+Substitui o contrato de foco escolhido descrito acima. Implementação: src/lib/quiz-v8.ts e quiz-v8-controller.ts; fonte src/content/funnel-content.json. Abertura com sinal de 2,4s pulável → dez perguntas e três reforços → atividade opcional por Q9 → resumo imediato → nome opcional → resultado calculado em dois eixos → prática. Q3 usa checkboxes; Q7 idade opcional; Q4/Q8 pesos do JSON. Consistência é nota inline, retrospectiva. Empates não resolvidos usam copy neutra. Não há troca direta de resultado ou captura de email. SessionStorage versionado em protocol44-quiz-v8. Campos escritos na prática não são persistidos. Identidade e componentes preservados; comparação de sinais é ilustração sem série temporal ou efeito clínico. Testes em tests/quiz-v8.test.mjs e docs/VALIDACAO_V8.md.

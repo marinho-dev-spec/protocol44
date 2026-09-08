@@ -35,6 +35,7 @@ textarea:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
 .product-phase p{font-size:18px;color:var(--reading-ink)}
 .product-phase .phase-output{color:var(--copper);font:500 21px/1.4 var(--heading);letter-spacing:-.025em;align-self:center}
 .availability-note{font-size:16px;color:var(--reading-ink);margin-top:22px;max-width:80ch}
+.product-hero-copy>.availability-note{margin:0 0 22px;line-height:1.5}
 .example-section{background:var(--soft-paper);padding-block:68px}
 .example-layout{display:grid;grid-template-columns:1fr 1.04fr;gap:100px;align-items:center}
 .example-layout h2{font-size:clamp(36px,3.6vw,50px)}

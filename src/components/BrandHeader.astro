@@ -1,8 +1,9 @@
 ---
+import {content,copy} from '../lib/funnel-content';
 interface Props { page?: 'quiz' | 'vsl' | 'home'; lang?: string }
 const { page = 'quiz', lang = 'en' } = Astro.props;
 ---
 <header class="site-header wrap">
-  <a class="brand" href="/" aria-label="Protocol 44 home"><img src="/brand/logo-ink.svg" alt="Protocol 44" width="478" height="80" /></a>
-  <nav aria-label={lang === 'pt-BR' ? 'Navegação principal' : 'Main navigation'}>{page === 'quiz' ? <a href="/">{lang === 'pt-BR' ? 'Conhecer o programa' : 'The program'}</a> : <a href="/quiz">Take the quiz</a>}</nav>
+  <a class="brand" href="/" aria-label={copy(content.ui.homeLabel)}><img src="/brand/logo-ink.svg" alt={content.tokens.BRAND} width="478" height="80" /></a>
+  <nav aria-label={lang === 'pt-BR' ? 'Navegação principal' : content.ui.navLabel}>{page === 'quiz' ? <a href="/">{lang === 'pt-BR' ? 'Conhecer o programa' : content.ui.navHome}</a> : <a href="/quiz">{content.ui.navQuiz}</a>}</nav>
 </header>
