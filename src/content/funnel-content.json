@@ -1,5 +1,5 @@
 {
-  "version": "8.0",
+  "version": "8.1",
   "tokens": {
     "BRAND": "Protocol 44",
     "MECHANISM": "Blocked Signal",
@@ -7,7 +7,14 @@
   },
   "source": {
     "file": "funnel-content.json",
-    "sha256": "d6138d1912fe3f85cae4e67006f78420abbfc10bb143099c700bf72d119cf362"
+    "sha256": "d6138d1912fe3f85cae4e67006f78420abbfc10bb143099c700bf72d119cf362",
+    "partnerReview": {
+      "url": "https://claude.ai/code/artifact/a2c46e46-d4cd-4bbb-81b5-21e246e96a40",
+      "retrieved": "2026-09-08",
+      "sha256": "fdc0ceaed89c65374277f834a3a50f678d69864f5a046f2a0d94c94625356e16",
+      "visualBrief": "IDENTIDADE VISUAL.rtf",
+      "visualBriefSha256": "445fecf03d23c74562e966fb35bc2829b450ecb8dc7782c7af6942279a361b6c"
+    }
   },
   "axes": {
     "persona": [
@@ -53,7 +60,7 @@
     "q1": {
       "type": "single_choice",
       "section_label": "Your experience",
-      "question": "What's pushing you to fix this now?",
+      "question": "What’s made you want to change things now?",
       "options": [
         {
           "id": "work",
@@ -73,7 +80,7 @@
         },
         {
           "id": "rel",
-          "label": "Stopping the way I wreck my own relationships",
+          "label": "Changing the way I handle my relationships",
           "scores": {
             "persona": "relational",
             "weight": 1
@@ -89,7 +96,7 @@
         },
         {
           "id": "why",
-          "label": "Understanding why nothing I try works",
+          "label": "Understanding why I keep ending up in the same place",
           "scores": null
         }
       ]
@@ -97,7 +104,7 @@
     "q2": {
       "type": "single_choice",
       "section_label": "Your experience",
-      "question": "Have you tried to change your life before, and felt like it didn't take?",
+      "question": "Have you tried to make a change, only to slip back into the same routine?",
       "options": [
         {
           "id": "many",
@@ -119,7 +126,7 @@
     "q3": {
       "type": "multi_choice",
       "section_label": "Your experience",
-      "question": "Has this been hitting any of these?",
+      "question": "Where has this been showing up in your life?",
       "options": [
         {
           "id": "alone",
@@ -169,7 +176,7 @@
     "q4": {
       "type": "single_choice",
       "section_label": "Your experience",
-      "question": "Deep down, what do you think is really holding you back?",
+      "question": "What feels like the biggest obstacle right now?",
       "options": [
         {
           "id": "pain",
@@ -294,7 +301,7 @@
     "q8": {
       "type": "single_choice",
       "section_label": "Getting started",
-      "question": "What would you most like to be different?",
+      "question": "If things started moving forward, what would matter most?",
       "options": [
         {
           "id": "career",
@@ -356,7 +363,7 @@
     "q10": {
       "type": "single_choice",
       "section_label": "Getting started",
-      "question": "Say this is already handled. How would you celebrate?",
+      "question": "Imagine making progress on this. How would you mark the moment?",
       "options": [
         {
           "id": "dinner",
@@ -379,20 +386,20 @@
     },
     "screen_0": {
       "type": "priming",
-      "title": "Before you try again, notice what gets in the way.",
+      "title": "What keeps getting between you and your next move?",
       "body": [
-        "Another plan. Another fresh start. Then a familiar moment pulls you back.",
-        "These 10 questions help you look at that moment: what is happening, what you think is holding you back, and what you want to change."
+        "You can want a change and still put it off. A money decision. A work conversation. Something you keep promising yourself you’ll do.",
+        "Answer 10 questions about what happens in those moments. You’ll get a reflection based on your answers and a written practice to help you choose where to begin."
       ],
-      "note": "Your reflection is free. No email needed. You can go back and change any answer.",
+      "note": "Free. No email needed. Go back and change any answer.",
       "cta": "Find my starting point"
     },
     "reinforcement_1": {
       "type": "reinforcement",
-      "title": "Start with what feels difficult.",
+      "title": "It’s hard to move forward when everything feels tangled.",
       "body": [
-        "It can be hard to tell whether you need a different plan, more support, or a response you have not tried yet.",
-        "You’ve named what feels most difficult right now. Keep that situation in mind for the next question. There’s no need to make your answer fit a story about willpower."
+        "The practical problem and what you tell yourself about it can become one big worry. “I need to look at the numbers” turns into “I’m terrible with money.” A work setback turns into “I’ll never be ready.”",
+        "Your answers give us a place to begin. Keep one recent moment in mind as you look at the thought that tends to follow it."
       ],
       "cta": "Continue"
     },
@@ -403,10 +410,10 @@
     },
     "reinforcement_2": {
       "type": "reinforcement",
-      "title": "What would make the next attempt more workable?",
+      "title": "What would make this change worth it to you?",
       "body": [
-        "You’ve looked at the difficulty and the support around you. Those circumstances matter alongside your own response.",
-        "The next questions bring the picture forward: what you want to change and what kind of activity you are willing to try."
+        "You’ve described what gets in the way and who you can turn to. Now bring it back to your own life.",
+        "It might be a work decision you finally make, a conversation you stop avoiding, or some time that feels like yours again. The next questions help shape an example you can work with."
       ],
       "cta": "Continue"
     },
@@ -461,10 +468,10 @@
     },
     "reinforcement_3": {
       "type": "authority_stack",
-      "title": "Put a name to the interruption.",
+      "title": "A clearer picture needs a practical next step.",
       "body": [
-        "We use {{MECHANISM}} as a metaphor for the gap between what you want to do and the response that follows.",
-        "The useful work is specific: describe the situation, notice the interpretation, prepare a response, and review what happens when you try it."
+        "We call the interruption between an intention and a response {{MECHANISM}}. Think of it as a way to describe the moment you want to understand.",
+        "Protocol 44 works with situations you can put into words. The first practice takes you through these three parts."
       ],
       "cards": [
         {
@@ -480,7 +487,7 @@
           "body": "Keep a smaller option available when the first plan no longer fits."
         }
       ],
-      "note": "The metaphor is not a measurable signal or a medical explanation. The background reading below did not test this quiz or the program.",
+      "note": "Blocked Signal is a metaphor. The quiz is a reflection tool; it does not measure a signal or assess your health.",
       "cta": "Continue"
     },
     "loading": {
@@ -503,7 +510,7 @@
     "skip": "Skip",
     "skipAge": "Prefer not to share",
     "skipName": "Continue without a name",
-    "skipIntro": "Start without animation",
+    "skipIntro": "Go straight to the questions",
     "choose": "Choose the answer that feels closest to continue.",
     "chooseMulti": "Select at least one answer to continue.",
     "ageError": "Enter a whole age from 18 to 120, or choose “Prefer not to share”.",
@@ -518,9 +525,9 @@
     "primingSkip": "Skip this activity",
     "optional": "Optional activity",
     "reflection": "Your reflection",
-    "resultIntro": "{{Name}}, here is a starting point based on what you shared.",
-    "resultIntroAnon": "Here is a starting point based on what you shared.",
-    "basisTitle": "What this points to",
+    "resultIntro": "{{Name}}, this is what your answers bring into focus.",
+    "resultIntroAnon": "This is what your answers bring into focus.",
+    "basisTitle": "In your own words",
     "basisExplanation": "This summary uses your selected answers. It does not identify a hidden cause, predict success or tell you who you are.",
     "methodTitle": "How this reflection works",
     "method": "Questions 1, 3, 4, 5 and 8 contribute to the topic. Relevant answers in questions 4 and 8 carry two points; other relevant answers carry one. Questions 1, 3, 6 and 8 contribute to the example; question 8 has extra weight. Your age and optional activity do not affect the result. Ties use question 4 for the topic and question 8 for the example when they are among the tied leaders. Otherwise the reflection stays open, or uses no personalised scene.",
@@ -528,20 +535,20 @@
     "basisConcern": "The difficulty you described",
     "basisChange": "The change you want",
     "basisTheme": "A topic to explore",
-    "metaphorTitle": "Think of a radio between stations.",
-    "metaphorLimit": "That is an illustration, not a claim that your thoughts work like radio waves. Real limits on time, money, health or support still need practical attention.",
-    "compareTitle": "What changes in the exercise",
+    "metaphorTitle": "When the worry gets louder than the next step.",
+    "metaphorLimit": "The lines illustrate the exercise. Time, money, health and support still need practical attention.",
+    "compareTitle": "Give the next response a shape.",
     "compareBefore": "The familiar response",
     "compareAfter": "A response you prepare",
-    "compareNote": "Illustrative comparison of an activity. It does not chart measured or predicted results.",
-    "sceneTitle": "What this could look like",
+    "compareNote": "An example of how the practice works, not measured or predicted progress.",
+    "sceneTitle": "A moment you could practise for",
     "primingTitle": "Bring the observation into a real moment",
     "futureTitle": "Make room for what matters to you",
     "practiceTitle": "A question to start with",
     "practiceCta": "Try my first practice",
     "practiceNote": "A free written practice. Describe one moment, choose a next step, and download your notes.",
-    "closeTitle": "Does this fit what you want to work on?",
-    "closeBody": "Review your answers if the reflection misses something. If it feels relevant, try the written practice before deciding whether the approach is useful to you.",
+    "closeTitle": "Does this sound like a useful place to start?",
+    "closeBody": "Take one situation into the written practice. If the reflection misses something, review your answers and make it your own.",
     "readingTitle": "The background reading",
     "readingNote": "Research on related topics provides context, not proof of this program, the metaphor or a personal result.",
     "clear": "Clear my answers",
@@ -555,9 +562,15 @@
     "tagline": "For keeps.",
     "footer": "Personal development, at your pace.",
     "homeLabel": "{{BRAND}} home",
-    "quizTitle": "A different starting point | {{BRAND}}",
-    "quizDescription": "Ten questions to explore what gets in the way of a change you want. Get your reflection and a free written practice. No email required.",
-    "clearResult": "Your answers have been cleared."
+    "quizTitle": "Find your next move | {{BRAND}}",
+    "quizDescription": "Explore what gets in the way of a decision about money, work or everyday life. Ten questions, your reflection and a free written practice.",
+    "clearResult": "Your answers have been cleared.",
+    "signalStart": "A lot on your mind.",
+    "signalEnd": "One place to begin.",
+    "offerTitle": "Build on this with Protocol 44.",
+    "offerBody": "The planned program pairs 22 video sessions with 22 audio practices: understand the interruption, prepare your next move, and find a way back after a setback.",
+    "offerNote": "The full program is in preparation. Start with the free written sample.",
+    "offerCta": "See what’s inside the program"
   },
   "citations": [
     {
@@ -582,20 +595,20 @@
   "results": {
     "concrete_lack": {
       "name": "Money and stability",
-      "title": "Give one practical worry a next step.",
-      "intro": "Your answers place money, work or stability near the centre of what feels difficult. Start with one decision where more information or a clearer plan could help.",
-      "recognition": "It is difficult to make a plan when a bill, an uncertain job or a lack of resources keeps pulling your attention back. A thought about yourself may add pressure, but it does not make those constraints imaginary.",
+      "title": "Turn the money worry into a decision you can work on.",
+      "intro": "Money, work or stability came up in your answers. Start with the decision that keeps returning to your mind, then separate what you know from what you still need to find out.",
+      "recognition": "A bill you have not opened. A conversation about pay. An opportunity that feels too uncertain to explore. When the whole situation becomes one big worry, even the first step can be difficult to see.",
       "mechanism": "Here, {{MECHANISM}} is a metaphor for what interrupts a practical decision. Separate the circumstances you face from the conclusion you draw about yourself. Then identify what you can find out or do next.",
       "before": "The money task stays open. A general worry replaces the next decision.",
       "after": "Name one question. Find a reliable record or person who can help answer it.",
       "prompt": "What is one fact you need before making the money or work decision you have been postponing?",
-      "next": "You do not need to solve every money concern in this practice. Start with a manageable information task. The activity does not provide financial advice or promise more income.",
+      "next": "For this practice, choose one information task you can manage. It gives you something to work with; it does not guarantee a financial outcome.",
       "scenes": {
         "professional": "A work decision has been circling for days. Write the question you need answered, the information already available, and the next person or record to consult.",
         "family": "A shared expense keeps coming back into conversation. Put the known amounts and unanswered questions in one place before choosing what to discuss.",
         "relational": "Money is making a conversation harder. Prepare one practical question and distinguish it from assumptions about what the other person thinks."
       },
-      "metaphor": "Static can make a station hard to hear. In this exercise, the radio is a way to picture a familiar thought interrupting a choice. Naming the thought gives you something to examine and respond to.",
+      "metaphor": "Think of trying to hear one voice in a noisy room. In the practice, you set one situation apart from everything around it: the facts, the thought that followed, and the response you want to prepare.",
       "future": {
         "dinner": "You pictured a good dinner on your own. What small choice would make room for time that feels like yours?",
         "trip": "You pictured a trip you keep postponing. What information or practical decision would help you judge whether it fits?",
@@ -605,9 +618,9 @@
     },
     "health_burnout": {
       "name": "Energy and capacity",
-      "title": "Start with what you can realistically take on.",
-      "intro": "Your answers give health, tiredness or limited capacity a prominent place. This reflection cannot assess a health concern. For the written practice, choose one manageable demand to look at, including what support is available.",
-      "recognition": "Another commitment can feel very different when you are already stretched. Giving the limit a name can help you prepare a response; it does not explain a health problem or replace getting help for one.",
+      "title": "Make room for the next move you can actually manage.",
+      "intro": "Tiredness, health or limited capacity featured in your answers. Start with one demand you could clarify, reduce or ask for help with.",
+      "recognition": "You agree to one more thing. By the time you return to your own plan, there is very little left to give it. Put that demand into words and look at what it will take before deciding what you can offer.",
       "mechanism": "Here, {{MECHANISM}} is a metaphor for the gap between a demand and the capacity you have. Look at the request, the assumptions around it and what you could reasonably offer.",
       "before": "A request arrives. You agree before checking what it will displace.",
       "after": "Check your capacity. Prepare a limit, a question or a request for support.",
@@ -618,7 +631,7 @@
         "family": "A family responsibility leaves little room in the day. Identify the part you can do and one specific form of help you could request.",
         "relational": "You keep being available for a conversation when you need a pause. Prepare a time you can offer and say clearly when you need to stop."
       },
-      "metaphor": "Static can make a station hard to hear. In this exercise, the radio is a way to picture a familiar thought interrupting a choice. Naming the thought gives you something to examine and respond to.",
+      "metaphor": "Think of trying to hear one voice in a noisy room. In the practice, you set one situation apart from everything around it: the facts, the thought that followed, and the response you want to prepare.",
       "future": {
         "dinner": "You pictured a good dinner on your own. What small choice would make room for time that feels like yours?",
         "trip": "You pictured a trip you keep postponing. What information or practical decision would help you judge whether it fits?",
@@ -628,9 +641,9 @@
     },
     "internal_block": {
       "name": "Recurring thoughts and expectations",
-      "title": "Catch the thought before it decides for you.",
-      "intro": "Your answers give recurring thoughts or familiar expectations a prominent place. Start with one moment when that thought changed what you did next.",
-      "recognition": "A setback can quickly become “this always happens” or “I’m not enough.” The thought may feel familiar. This quiz cannot establish where it came from or whether it explains the situation.",
+      "title": "Catch the thought that keeps putting your next move on hold.",
+      "intro": "Familiar thoughts and expectations came up in your answers. Look at one moment when a thought changed what you did next.",
+      "recognition": "“I’m not ready.” “I should be able to handle this.” “I never follow through.” Put the actual sentence on paper, beside the situation that brought it up. You can examine it without having to explain your whole history.",
       "mechanism": "Here, {{MECHANISM}} is a metaphor for an interpretation that cuts into a choice. Put the event and the interpretation in separate sentences. That gives you something specific to question and a response to prepare.",
       "before": "A plan is interrupted. “I never follow through” becomes the reason to stop.",
       "after": "Name the interruption. Keep one useful step and choose a way back.",
@@ -641,7 +654,7 @@
         "family": "A “should” decides how every free hour is spent. Put that expectation into words and consider one request you could discuss with the people involved.",
         "relational": "You want to say what you need, then predict the other person’s response. Separate what you know from what you expect and prepare a sentence you could adapt."
       },
-      "metaphor": "Static can make a station hard to hear. In this exercise, the radio is a way to picture a familiar thought interrupting a choice. Naming the thought gives you something to examine and respond to.",
+      "metaphor": "Think of trying to hear one voice in a noisy room. In the practice, you set one situation apart from everything around it: the facts, the thought that followed, and the response you want to prepare.",
       "future": {
         "dinner": "You pictured a good dinner on your own. What small choice would make room for time that feels like yours?",
         "trip": "You pictured a trip you keep postponing. What information or practical decision would help you judge whether it fits?",
@@ -651,7 +664,7 @@
     },
     "mixed": {
       "name": "An open starting point",
-      "title": "Start with one situation you can describe.",
+      "title": "You can begin before you have it all figured out.",
       "intro": "Your answers do not point clearly to one theme. Money, capacity and familiar thoughts can overlap. This reflection will keep the starting point open.",
       "recognition": "You do not need one explanation for everything before making a useful note. Choose a recent moment with a clear beginning: a request, a postponed decision or an interrupted plan.",
       "mechanism": "{{MECHANISM}} is a metaphor for an interruption between an intention and a response. In your case, the quiz does not identify a leading topic. The written practice can help you examine one situation without forcing a label.",
@@ -660,7 +673,7 @@
       "prompt": "Which recent moment would be useful to put on the page first?",
       "next": "Keep the first situation manageable. You can return to another one later, or decide that this approach is not useful for what you need.",
       "scenes": {},
-      "metaphor": "Static can make a station hard to hear. In this exercise, the radio is a way to picture a familiar thought interrupting a choice. Naming the thought gives you something to examine and respond to.",
+      "metaphor": "Think of trying to hear one voice in a noisy room. In the practice, you set one situation apart from everything around it: the facts, the thought that followed, and the response you want to prepare.",
       "future": {
         "dinner": "You pictured a good dinner on your own. What small choice would make room for time that feels like yours?",
         "trip": "You pictured a trip you keep postponing. What information or practical decision would help you judge whether it fits?",
@@ -670,54 +683,54 @@
     }
   },
   "home": {
-    "title": "Stop putting your own life on hold | {{BRAND}}",
-    "description": "A guided program for clearer choices, practical boundaries and returning to a plan. Explore the free quiz and written practice.",
+    "title": "Stop putting your next move on hold | {{BRAND}}",
+    "description": "Make a clearer decision about money or work. Explore Protocol 44, take the free quiz and try the first written practice.",
     "headline": [
       "Stop putting your",
-      "own life",
+      "next move",
       "on hold."
     ],
-    "intro": "You know there’s something you want to change. Then another request, another doubt, or another busy week pushes it aside.",
-    "body": "A guided personal development program for setting a boundary, making a decision you keep postponing, and returning to a plan after an interruption.",
+    "intro": "The money decision. The career move. The conversation you keep rehearsing. Give one of them a next step you can actually take.",
+    "body": "Protocol 44 is a guided personal development program for understanding what interrupts your decisions, preparing a different response, and following through when life gets in the way.",
     "cta": "Find my starting point",
-    "note": "Free quiz. 10 questions. Your reflection and first practice, with no email needed.",
+    "note": "10 questions. A personal reflection. A free first practice. No email needed.",
     "insideLink": "See what’s inside",
-    "status": "The full program is in preparation. Try the free written preview today.",
+    "status": "The full program is in preparation. The written preview is free to try now.",
     "photoAlt": "A woman writing in a notebook at a kitchen table in afternoon light",
     "recognitionTitle": [
-      "You say “of course.”",
-      "Your own plan waits."
+      "You’ve thought about it.",
+      "Now what?"
     ],
     "recognitionBody": [
-      "Someone asks for one more thing. You agree before checking what it will take. Later, the thing you wanted to do moves to tomorrow. Again.",
-      "Or you keep circling a money decision. Or hear a familiar “should” every time you consider a change. Start with one of those moments: what happened, what you told yourself, and the response you want to prepare."
+      "You open the job listing, then close it. Put the bill aside until you feel ready. Say yes to another request while your own plan waits. The decision stays with you long after the moment has passed.",
+      "Start there. What happened just before you put it off? What did you tell yourself? What information, support or response would help you move forward? Protocol 44 gives you a way to work through those questions."
     ],
     "insideTitle": [
-      "Understand the pattern.",
-      "Prepare the next move."
+      "One real decision.",
+      "A way to work through it."
     ],
     "insideBody": [
-      "The planned program pairs 22 video sessions with 22 guided audio practices. Use situations from your own life to prepare a response, try it, and review what happened.",
-      "A request you want time to consider. A rule you want to question. A plan you want to return to. Keep one situation with you as you move through the three phases."
+      "The planned program brings together 22 video sessions and 22 guided audio practices in three phases. Keep a real situation in view as you learn, rehearse and review.",
+      "Bring the job conversation, the money task or the boundary you keep postponing. Build a written picture of what gets in the way, words for your next response, and a plan for returning when a week goes sideways."
     ],
     "phases": [
       {
         "name": "The Reading",
-        "title": "Recognize the pattern.",
-        "body": "Map what happens, what you tell yourself and how you respond. Examine familiar rules about money, responsibility and approval.",
-        "output": "A written picture of one recurring situation."
+        "title": "See what interrupts the decision.",
+        "body": "Describe a recent moment. Separate what happened from what you assumed, and examine familiar rules about money, responsibility and approval.",
+        "output": "Your situation, clearly on the page."
       },
       {
         "name": "The Move",
-        "title": "Prepare a different response.",
-        "body": "Work through a decision you keep postponing or a request you want time to consider. Choose a response that fits your circumstances.",
-        "output": "One decision. One response to try."
+        "title": "Choose words. Prepare an action.",
+        "body": "Rehearse the question, boundary or next step you have been postponing. Include the time, information and support it will require.",
+        "output": "A response you can use in real life."
       },
       {
         "name": "The Hold",
-        "title": "Give yourself a way back.",
-        "body": "Review what happened after your attempt. Decide what to keep, change or stop, and how to return after an interruption.",
-        "output": "A plan you can return to and adjust."
+        "title": "Keep one setback from ending the plan.",
+        "body": "Review what happened when you tried. Adjust what did not fit and choose a smaller way back after an interruption.",
+        "output": "A next attempt you can return to."
       }
     ],
     "phaseLabel": "Phase {{number}}",
@@ -751,10 +764,10 @@
       }
     ],
     "fitTitle": [
-      "What could you",
-      "do differently?"
+      "For the part of your life",
+      "that keeps getting postponed."
     ],
-    "fitIntro": "Choose one change you could notice in an ordinary week. That gives you something specific to prepare and come back to.",
+    "fitIntro": "You want to change something about money or work, but thinking about it keeps taking the place of doing something about it. Choose an action you could notice in an ordinary week.",
     "fitItems": [
       "Find one fact for a money decision you’ve been avoiding.",
       "Ask for time before agreeing to another request.",
@@ -792,10 +805,11 @@
       }
     ],
     "closeTitle": [
-      "Give one choice",
-      "your attention today."
+      "Your next move",
+      "deserves a place in your day."
     ],
-    "closeBody": "Take the free quiz and work through one situation you want to handle differently."
+    "closeBody": "Find a starting point in your answers. Then use the free practice to turn one open decision into something specific to try.",
+    "photoCaption": "Make room for a decision that matters to you."
   },
   "practice": {
     "title": "Leave with a next step.",
@@ -838,13 +852,13 @@
     "fileReview": "After trying the step, note what happened and what you would adjust."
   },
   "vsl": {
-    "title": "Prepare a different response | {{BRAND}}",
+    "title": "Put your next move into words | {{BRAND}}",
     "description": "Describe a setback, notice your response and choose one action to try differently. A free written practice.",
     "headline": [
-      "You’ve seen the pattern.",
-      "Try a different response."
+      "Give that decision",
+      "a next step."
     ],
-    "intro": "Bring one moment from your week: a plan you dropped, a request you accepted too quickly, or a decision you left for later. Use the free practice below to work out your next step.",
+    "intro": "Bring one situation you want to handle differently: a money task you avoid, a work conversation you keep rehearsing, or a plan you dropped. Put it on the page and choose something to try.",
     "cta": "Go to the practice",
     "videoPending": "We’re preparing the video introduction. The written practice is ready below.",
     "videoLabel": "Program introduction",
@@ -862,8 +876,8 @@
       "You might ask for time before saying yes, open one bill, or choose when to return to a plan. Pick a step small enough to try, and decide when you’ll review it."
     ],
     "nextTitle": [
-      "Take this into",
-      "your next real moment."
+      "A first step today.",
+      "A way to keep working on it."
     ],
     "nextBody": "The first practice gives you a situation and a next step to work with. The planned program builds from there: examine the rules behind your choices, prepare a boundary or a different response, and give yourself a way to return when plans change.",
     "join": "Explore the full program",

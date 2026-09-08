@@ -7,13 +7,14 @@ import Arrow from '../components/Arrow.astro';
 import {funnelConfig,safeWebUrl} from '../lib/funnel-config';
 import {content,copy} from '../lib/funnel-content';
 import '../styles/funnel-v5.css';
+import '../styles/signal-identity.css';
 const v=content.vsl;
 const videoUrl=safeWebUrl(funnelConfig.videoUrl);
 const captionsUrl=safeWebUrl(funnelConfig.captionsUrl);
 const checkoutUrl=safeWebUrl(funnelConfig.checkoutUrl);
 const canPurchase=funnelConfig.salesOpen&&checkoutUrl;
 ---
-<Funnel title={copy(v.title)} description={v.description}>
+<Funnel surface="vsl" title={copy(v.title)} description={v.description}>
   <BrandHeader page="vsl" />
   <main id="main">
     <section class="v5-vsl-opening wrap" aria-labelledby="vsl-title"><h1 id="vsl-title">{v.headline[0]}<br /><span>{v.headline[1]}</span></h1><p id="vsl-context" class="lead">{v.intro}</p><a href="#first-practice" class="hero-secondary">{v.cta} <Arrow /></a><div class="v5-film">{videoUrl&&<div class="video-frame" id="film"><video controls playsinline preload="metadata" poster="/brand/vsl-poster.png" aria-label={v.videoLabel}><source src={videoUrl}/>{captionsUrl&&<track kind="captions" src={captionsUrl} srclang="en" label="English" default/>}{v.videoUnsupported} <a href={videoUrl}>{v.videoOpen}</a>.</video></div>}{!videoUrl&&<p class="film-update">{v.videoPending}</p>}{videoUrl&&<p id="video-error" class="video-error" role="status" hidden>{v.videoError}</p>}{videoUrl&&funnelConfig.transcript&&<details class="transcript"><summary>{v.transcript}</summary><p>{funnelConfig.transcript}</p></details>}</div></section>

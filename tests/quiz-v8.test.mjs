@@ -27,9 +27,25 @@ after(async () => {
 });
 const {
   questions, freshState, calculate, consistentAfterQ5, consistentAfterQ8,
-  isAnswered, readState, flow, answerLabel,
+  isAnswered, readState, flow, answerLabel, visualStage,
 } = await import(pathToFileURL(bundleFile).href);
 const content = JSON.parse(await readFile(resolve(projectRoot, 'src/content/funnel-content.json'), 'utf8'));
+
+describe('visual journey follows navigation, not scores', () => {
+  test('opens dark and only the result uses the clear surface', () => {
+    assert.equal(visualStage('screen_0'), 'noise');
+    for (const screen of content.flow.filter(id => id !== 'result')) {
+      assert.notEqual(visualStage(screen), 'clear');
+    }
+    assert.equal(visualStage('result'), 'clear');
+  });
+  test('back and review return to the chapter of the displayed screen', () => {
+    assert.equal(visualStage('q1'), 'noise');
+    assert.equal(visualStage('q5'), 'focus');
+    assert.equal(visualStage('q9'), 'settle');
+    assert.equal(visualStage('q3'), 'noise');
+  });
+});
 
 const base = {
   q1: 'why', q2: 'first', q3: ['none'], q4: 'fear', q5: 'none',

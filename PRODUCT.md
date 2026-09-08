@@ -47,3 +47,8 @@ Revisão editorial V6: “Stop starting over. Make your progress last.” Benef�
 ## Adequação V8 — estado vigente
 
 Esta seção substitui a descrição histórica V6 acima. Fonte de conteúdo: src/content/funnel-content.json. Nome Protocol 44 confirmado; Blocked Signal é uma metáfora. Quiz com dez perguntas, dois eixos ponderados, três temas e fallback neutro. Idade/nome opcionais locais, Q3 múltipla, três reforços, consistência inline, atividade opcional com Skip. Resultado calculado e revisável pelas respostas. Home e VSL usam a mesma fonte de copy. Sem envio de respostas, backend de leads ou venda ativa. Vídeo e programa completo ainda em produção. Preço de trabalho US$97/C$129 para teste futuro; condições em docs/OFERTA_ESCALAVEL.md. A V4 permanece histórica. O titular solicitou publicar a V8 no GitHub e na Vercel; estado verificado em DEPLOYMENT.md.
+
+
+## Revisão do sócio e identidade 8.1 — 8 de setembro de 2026
+
+Decisão explícita do titular: quiz começa escuro e revela um resultado claro com menos ruído; manter logo 44 e laranja. Referências Pinterest, documento IDENTIDADE VISUAL.rtf e funil Claude analisados. Oferta central: “Stop putting your next move on hold.”, para decisões sobre dinheiro e trabalho. Estrutura das dez perguntas e motor V8 preservados; copy e narrativa visual revisadas. V9 segue proposta documental, não é a versão publicada. Fontes, diferenças e preço CAD57.99 proposto pelo sócio em docs/REVISAO-SOCIO-IDENTIDADE-8.1.md. Esse preço não substitui condições finais ainda não definidas. Entrega completa em preparação, prática escrita gratuita disponível; vendas fechadas.

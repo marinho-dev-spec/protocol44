@@ -50,6 +50,13 @@ export function flow(state:State):string[] {
   // Consistency notes appear inline with the next question, never as extra gates.
   return content.flow.filter(id=>!id.startsWith('engine_reveal'));
 }
+// Navigation determines the visual chapter. It never uses a score or claims improvement.
+export function visualStage(screen:string):'noise'|'focus'|'settle'|'clear' {
+  if(screen==='result')return 'clear';
+  if(['q9','priming_2','reinforcement_3','q10','loading','gate_name'].includes(screen))return 'settle';
+  if(['reinforcement_1','q5','q6','reinforcement_2','q7','q8'].includes(screen))return 'focus';
+  return 'noise';
+}
 export function isAnswered(id:string,answers:Answers):boolean {
   const value=answers[id];
   if(id==='q7')return value==='skip'||(typeof value==='number'&&Number.isInteger(value)&&value>=18&&value<=120);

@@ -1,8 +1,8 @@
 ---
 import '../styles/funnel.css';
 import {content} from '../lib/funnel-content';
-interface Props { title: string; description: string; lang?: string }
-const { title, description, lang = 'en' } = Astro.props;
+interface Props { title: string; description: string; lang?: string; surface?: 'home'|'quiz'|'vsl' }
+const { title, description, lang = 'en', surface } = Astro.props;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -27,5 +27,5 @@ const { title, description, lang = 'en' } = Astro.props;
     <link rel="preload" href="/fonts/sourcesans3.ttf" as="font" type="font/ttf" crossorigin />
     <title>{title}</title>
   </head>
-  <body><a class="skip-link" href="#main">{lang === 'pt-BR' ? 'Pular para o conteúdo' : 'Skip to content'}</a><slot /></body>
+  <body data-surface={surface} data-signal-stage={surface === 'quiz' ? 'noise' : undefined}><a class="skip-link" href="#main">{lang === 'pt-BR' ? 'Pular para o conteúdo' : 'Skip to content'}</a><slot /></body>
 </html>
