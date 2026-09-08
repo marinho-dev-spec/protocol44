@@ -1,5 +1,5 @@
 {
-  "version": "8.1",
+  "version": "8.2",
   "tokens": {
     "BRAND": "Protocol 44",
     "MECHANISM": "Blocked Signal",
@@ -14,6 +14,14 @@
       "sha256": "fdc0ceaed89c65374277f834a3a50f678d69864f5a046f2a0d94c94625356e16",
       "visualBrief": "IDENTIDADE VISUAL.rtf",
       "visualBriefSha256": "445fecf03d23c74562e966fb35bc2829b450ecb8dc7782c7af6942279a361b6c"
+    },
+    "visualRevision": {
+      "date": "2026-09-08",
+      "authority": "IDENTIDADE VISUAL.rtf — final explicit palette; user reinforced strict adherence",
+      "palette": "Deep Void / CRT Gray / Glitch Crimson / Phosphor Mint → Studio White / Core Pacific Blue / Hyper Green / Ink Black",
+      "typography": "Montserrat / Plus Jakarta Sans",
+      "logo": "User-approved 44, unchanged",
+      "copy": "8.1 retained; this revision changes visual identity only"
     }
   },
   "axes": {

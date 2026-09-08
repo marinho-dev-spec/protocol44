@@ -3,42 +3,54 @@ version: 1
 slug: "src-pages-index-astro"
 primary_target: "src/pages/index.astro"
 related_targets:
+  - "src/components/SignalVisual.astro"
   - "src/components/BrandHeader.astro"
   - "src/components/BrandFooter.astro"
   - "src/lib/page-motion.ts"
-  - "src/styles/funnel-v5.css"
+  - "src/content/funnel-content.json"
   - "src/styles/funnel.css"
+  - "src/styles/funnel-v5.css"
+  - "src/styles/signal-identity.css"
 ---
 
-# Protocol 44 — institucional V5
+# Protocol 44 — institucional 8.2
 
-Mode: Persuade. Rota `/`, EN/EUA. Registro de 07/09/2026. A visita deve compreender a proposta e decidir experimentar o quiz ou a prática. Novas copys e extensão visual foram autorizadas; V4 permanece em rota própria.
+Mode: Persuade. Rota `/`, EN/EUA. Registro de 08/09/2026. A visita compreende o programa planejado e encontra o quiz ou a prática escrita. A identidade 8.2 substitui a adaptação laranja 8.1; copy e comportamento continuam.
 
 ## Direction contract
 
-THESIS: Tornar o retorno à prática concreto com uma situação comum, um exemplo utilizável e um próximo passo.
+THESIS: Apresentar uma decisão concreta sobre dinheiro ou trabalho, usando a metáfora de sinal interrompido e um próximo passo utilizável.
 
-OWN-WORLD: Serif44 e quadrado central escolhidos; papel, tinta, laranja vivo e fontes locais. Fotografia doméstica fictícia. Regras em DESIGN.md; extensão construída em código, sem comp aprovado de página.
+OWN-WORLD: Aplicação do RTF e das referências observadas no Pinterest, conforme docs/IDENTIDADE-8.2-PINTEREST.md. Deep Void, CRT Gray, mint e crimson na abertura; Studio White, azul e verde na leitura. Montserrat e Plus Jakarta Sans locais. Serif44 preservado, laranja somente na marca. Implementação por código de direção explícita, sem seed ou comp aprovado.
 
-STORY: Abertura → interrupção cotidiana → três fases do programa planejado → exemplo fictício de Maya em três passos → adequação → FAQ → convite ao quiz. Há acesso direto à amostra escrita.
+STORY: Promessa, contexto e disponibilidade → reconhecimento cotidiano → três fases planejadas → exemplo fictício com fotografia ilustrativa → adequação → FAQ → convite ao quiz. A amostra escrita tem acesso direto.
 
-FIRST VIEWPORT: Título amplo/CTA à esquerda e mulher escrevendo à direita sem sobreposição. Texto, ação e informação de dez perguntas livres antecedem a foto no celular. Hero 1.15fr/.85fr, gap de 82 px; uma coluna até 760 px.
+FIRST VIEWPORT: Header e abertura escuros. Logo de contraste claro, título em caixa alta, explicação, status e CTA mint antes da imagem no celular. Desktop: texto à esquerda e material óptico à direita, grade 1.15fr/.85fr, gap 72 px; até 1100 px, gap 40 px. Mobile: uma coluna, gap 36 px. Padding vertical 56/72 px, ou 38/42 px no mobile.
 
-FORM: Pessoa controla os três passos do exemplo por botões nativos. Foto permanece estática; grupos de texto entram brevemente. Conteúdo nasce visível; movimento reduzido respeitado. Frases completas do título do programa preservam as quebras móveis.
+FORM: Raster óptico original em SignalVisual; scanlines SVG em 3% e feixe finito sobre a imagem. Corpo da página claro, títulos azuis e ação verde. Exemplo controlado por três botões nativos; fotografia humana contextual, com legenda explícita de ilustração.
 
-FINISH: Documentação e revisão V5 concluídas. .impeccable/review/v5/FINISH-VERDICT.md registra ship restrito a foco, FAQ e título móvel; não amplia a revisão.
+FINISH: .impeccable/review/v8.2/final e finish-review.md registram as capturas e a revisão independente. A única correção material foi a documentação desatualizada. Este brief registra o estado final, sem nova execução da revisão.
 
-## Built behavior and limits
+## Built composition
 
-Header leva ao quiz; CTA principal leva a /quiz e exemplo a /vsl#first-practice. Foco sobre laranja é tinta. FAQ nativa usa cruz geométrica fechada e traço único aberto, com font-size herdado. Hero chega a 68 px, peso 500; mobile usa clamp(40px,10.2vw,56px).
+Título da abertura: Montserrat 650, caixa alta, clamp(43px,4.1vw,59px)/1,1, tracking −0,025em. Até 1100 px: 43 px. Até 760 px: clamp(31px,8.1vw,46px). Introdução 21 px/1,5, máximo 39ch; descrição máximo 48ch. Corpo base 18 px, 17 px no mobile.
 
-quiet-practice-v5.webp: cena gerada fictícia, 1536 × 1024, 98.918 bytes; prompt/data no sidecar adjacente. Recorte 4/5 desktop e 1,5 móvel. Maya é declaradamente fictícia.
+Títulos h2 de seção: Montserrat 650 em caixa alta, clamp(29px,2.7vw,39px)/1,2, 30 px no mobile. Azul nos h2 das seções claras. Reconhecimento usa 85 px verticais, 44 px no mobile; fechamento 76/88 px, ou 42/54 px. As demais grades se empilham até 760 px.
 
-Evidência: home-1440.png, home-390.png e VERIFICACAO-V5.json, com viewports de 320 a 1440 px e interação por teclado. Primeiro painel do exemplo continua legível sem script; a troca requer JavaScript.
+Raster óptico `public/brand/signal-glass-v8.2.webp`, 1536 × 1024, aproximadamente 78 KB. Recorte 1,2 no desktop e 1,65 no mobile, object-fit cover, width 100%, height auto, sem raio de container. Legenda de 15/14 px abaixo de regra de 1 px. Material original gerado com image_gen, prompt no JSON adjacente e PNG original em ../../03-MARCA/signal-glass-v8.2.png.
 
-Programa completo, gravações, matrícula e filme estão em preparação; apenas a primeira unidade escrita foi redigida. Prévia noindex, publicação solicitada pelo titular, depoimentos validados ou checkout alterado.
+O feixe percorre a imagem uma vez em 2,1 s; sua posição final fica fora do quadro. Scanlines decorativas começam em 3%, somente na abertura. Reduced-motion elimina o feixe. Sem espera para clicar ou ler.
 
+## Contextual photograph and example
 
-## Refinamento V5.1
+`public/brand/quiet-practice-v5.webp` foi removida do hero e aparece junto ao exemplo, com loading lazy. É uma cena gerada fictícia, identificada pela legenda “Illustrative image.”; proveniência adjacente preservada.
 
-Direção vigente em NATURAL-REFINEMENT.md. Copy mais conversada, laranja nas ações e superfícies de apoio em papel. Evidência atual em .impeccable/review/natural: 13 grupos, dez capturas e zero erros de execução. A revisão anterior permanece histórica.
+Figura com máximo de 480 px e margem superior 28 px. Imagem width 100%, height auto, proporção 2, object-fit cover, posição 40% 55% e raio 8 px. A altura automática é parte da correção final da proporção. Legenda 14 px/1,5, margem superior 10 px.
+
+O exemplo usa apoio claro, folha branca retangular e CTA secundário azul/branco de raio 6 px. Os três passos são controlados pela pessoa, com seleção azul explícita. Primeiro painel e FAQ nativa continuam legíveis sem script; troca de painel depende de JavaScript.
+
+## References and limits
+
+As referências de material óptico, CRT, LUNORA e EVOLVE foram inspecionadas no Pinterest e registradas no contrato 8.2. Seus arquivos não foram incorporados ao site. A fotografia não representa cliente; a narrativa é fictícia.
+
+Header e CTA principal levam a /quiz; exemplo leva a /vsl#first-practice. Programa completo, gravações e filme seguem em preparação; prática escrita disponível, vendas fechadas e noindex. Publicação fica em DEPLOYMENT.md. /quiz-v4 e checkout conservam o legado.

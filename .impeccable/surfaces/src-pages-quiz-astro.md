@@ -5,46 +5,86 @@ primary_target: "src/pages/quiz.astro"
 related_targets:
   - "src/components/Quiz.astro"
   - "src/components/BrandHeader.astro"
-  - "src/lib/quiz-v5.ts"
-  - "src/lib/quiz-v5-controller.ts"
-  - "src/styles/funnel-v5.css"
+  - "src/layouts/Funnel.astro"
+  - "src/lib/quiz-v8.ts"
+  - "src/lib/quiz-v8-controller.ts"
+  - "src/lib/signal-art.ts"
+  - "src/content/funnel-content.json"
   - "src/styles/funnel.css"
+  - "src/styles/funnel-v5.css"
+  - "src/styles/funnel-v8.css"
+  - "src/styles/signal-identity.css"
 ---
 
-# Protocol 44 — quiz V5 EN
+# Protocol 44 — quiz visual 8.2 EN
 
-Mode: Operate. Rota `/quiz`, EN/EUA. Registro de 07/09/2026. A pessoa deve responder, entender a reflexão, escolher/trocar foco e acessar a prática. V4 literal permanece em /quiz-v4.
+Mode: Operate, com narrativa visual. Rota `/quiz`, EN/EUA. Registro de 08/09/2026. Motor e sessão V8, copy 8.1 e identidade 8.2. Este brief substitui cores, fontes e progressão visual anteriores; /quiz-v4 permanece documental.
 
 ## Direction contract
 
-THESIS: Dar um ponto de partida compreensível e revisável a partir das escolhas da pessoa.
+THESIS: Dar um próximo passo compreensível e revisável a partir das respostas, passando do sinal interrompido ao resultado claro.
 
-OWN-WORLD: Papel, tinta, laranja vivo, serif44 escolhido e duas fontes locais. Ficha HTML preenchida com exemplo fictício; regras globais em DESIGN.md.
+OWN-WORLD: Direção explícita do RTF e referências Pinterest registradas em docs/IDENTIDADE-8.2-PINTEREST.md. Deep Void, CRT Gray, mint e crimson passam a Studio White, Pacific Blue, Hyper Green e Ink Black. Montserrat/Plus Jakarta Sans locais; serif44 preservado. Sem seed, nova seleção de identidade ou comp aprovado.
 
-STORY: Abertura → dez perguntas → pontes após perguntas 4 e 7 → reflexão → troca de foco/revisão → /vsl#first-practice. A escolha final lidera. Para sugestão, contam-se temas das perguntas 3–5; empate/ausência mantém resultado aberto. O critério é explicado.
+STORY: Abertura → dez perguntas e três reforços → atividade opcional após Q9 com Skip → resumo imediato → nome opcional → resultado calculado e revisão → prática escrita. Q3 múltipla, Q7 idade opcional, notas de consistência após Q5 e Q8. Dois eixos, três temas e fallback neutro permanecem.
 
-FIRST VIEWPORT: Proposta, ação, número de perguntas, gratuidade e ausência de email antes da ficha no mobile. Abertura e resultado em colunas; perguntas em até 640 px; grades empilham até 760 px.
+FIRST VIEWPORT: Logo claro, título geométrico em caixa alta, contexto e CTA mint. Desktop: imagem óptica e sinal ao lado do texto; grade 1.1fr/.9fr, gap 80 px, ou 45 px até 1100 px. Mobile: texto e ação antes da imagem/sinal, uma coluna e gap 24 px. Avançar e Skip não aguardam animação.
 
-FORM: Radios nativos, labels, fieldset/legend, avanço explícito e back. Ponto/contorno/fundo mostram escolha. Progresso nativo com contagem, sem transição de largura. Entrada breve de 200 ms, 4 px e sem blur, removida com movimento reduzido. Navegação leva foco ao título/legend e volta ao topo.
+FORM: Uma coluna de até 640 px para responder. Sinal compacto acima da contagem e progresso nativos; escolhas amplas, avanço explícito e voltar. O ruído diminui pela posição da tela no fluxo, sem ler a pontuação ou inferir melhora mental.
 
-FINISH: Capturas quiz-intro, quiz-question e quiz-result em 1440/390, VERIFICACAO-V5.json e revisão final do conjunto em .impeccable/review/v5. O ship cobre os três fixes pontuados.
+FINISH: Sete cenas desktop/mobile e seis capturas de viewport em .impeccable/review/v8.2/final. finish-review.md encontrou apenas persistência documental como correção material. Nenhuma nova execução funcional ou do detector faz parte deste registro.
 
-## Built behavior and limits
+## Stages and visual progress
 
-Pergunta 32 px/1,24, ou 28 px no mobile. Radios têm alvo de 68/65 px, aro 22 px e ponto 10 px. Foco chega ao label. Resposta é salva ao escolher, sem autoavanço. Sem resposta, role=alert e foco no primeiro radio.
+`visualStage(screen)` define o tema; `visualProgress(screen)` é o índice da tela no fluxo sem engine_reveal, dividido por total de telas menos um. O controller atualiza body, --signal-clarity e theme-color a cada render.
 
-Resultado tem folha plana com dl, details explicativo e focos em botões aria-pressed. Estado em sessionStorage, chave protocol44-quiz-v5, sem nome/email ou envio. Restauração filtra valores inválidos; falha de storage mantém uso em memória. Limpar remove a chave. Foco persiste até a prática quando storage está disponível.
+| Estágio | Telas | Fundo e papéis |
+| --- | --- | --- |
+| noise | screen_0, Q1, Q2 e demais telas não listadas | Deep Void #0d0e11; conjunto dark-* de DESIGN.md. |
+| focus | Q3, Q4, reinforcement_1, Q5, Q6, reinforcement_2 | #111a29 e conjunto focus-*. |
+| settle | Q7, Q8, Q9, priming_2, reinforcement_3, Q10, loading, gate_name | #1b3049 e conjunto settle-*. |
+| clear | result | Studio White #f8f9fa e conjunto claro. |
 
-A ficha mostra três respostas ilustrativas e acesso direto ao exercício. Não é depoimento. Sem JavaScript, noscript oferece prática escrita. A reflexão não mede causas ocultas nem prevê resultado.
+Os três temas escuros mantêm mint em ação/destaque/foco, Studio White no texto principal e pares próprios de texto secundário/contorno. No resultado, ações são verdes, destaque/foco azuis e texto Ink Black. Os azuis intermediários são interpolações implementadas. Revisar retorna a Q1; voltar e restaurar sessão recalculam tema e ruído pela tela.
 
-Testes existentes cobrem dez perguntas, pontes, validação, voltar/restaurar, três focos/resultado aberto, limpeza e continuidade na prática. Prévia local noindex; sem backend, auditoria integral por leitor de tela ou validação de eficácia.
+Scanlines originais SVG cobrem o fundo com opacity calc(.03 * (1 - var(--signal-clarity))). Chegam a zero no resultado. Não são o progresso de respostas nem medem estado psicológico.
 
+## Signal and opening materials
 
-## Refinamento V5.1
+Abertura com raster óptico original `/brand/signal-glass-v8.2.webp`, 1536 × 1024. Prompt no JSON adjacente; referências Pinterest no contrato. Aqui a imagem é apoio decorativo com alt vazio: largura 100%, altura 190 px, object-fit cover, opacidade 0,9. Mobile: altura 145 px.
 
-Direção vigente em NATURAL-REFINEMENT.md. Copy mais conversada, laranja nas ações e superfícies de apoio em papel. Evidência atual em .impeccable/review/natural: 13 grupos, dez capturas e zero erros de execução. A revisão anterior permanece histórica.
+SVG principal com 17 linhas em viewBox 600 × 380, deslocado sobre a imagem por margem superior −25 px e máximo de 150 px de altura; mobile −20 px e máximo 90 px. O traço central mint tem 2 px; secundários CRT Gray, 0,8 px. Não há quadrado terminal laranja.
 
+`signalArt(clarity,compact)` reduz o ruído e a separação das linhas. A interrupção central permanece abaixo de clareza 0,55; fragmentos crimson desaparecem a partir de 0,6. A opacidade secundária passa de 0,5 a 0,14. Esses limiares são composição, não faixas clínicas.
 
-## Adequação V8 — contrato vigente
+O sinal compacto usa sete linhas, viewBox 600 × 64, janela de 44 px e margem inferior 10 px; mobile 34 px e margem 4 px. Substitui a faixa recortada antiga. A barra nativa abaixo continua com 4 px, máximo 10 e contagem real de respostas.
 
-Substitui o contrato de foco escolhido descrito acima. Implementação: src/lib/quiz-v8.ts e quiz-v8-controller.ts; fonte src/content/funnel-content.json. Abertura com sinal de 2,4s pulável → dez perguntas e três reforços → atividade opcional por Q9 → resumo imediato → nome opcional → resultado calculado em dois eixos → prática. Q3 usa checkboxes; Q7 idade opcional; Q4/Q8 pesos do JSON. Consistência é nota inline, retrospectiva. Empates não resolvidos usam copy neutra. Não há troca direta de resultado ou captura de email. SessionStorage versionado em protocol44-quiz-v8. Campos escritos na prática não são persistidos. Identidade e componentes preservados; comparação de sinais é ilustração sem série temporal ou efeito clínico. Testes em tests/quiz-v8.test.mjs e docs/VALIDACAO_V8.md.
+Traço da abertura: uma execução de 1,8 s por montagem. Cursor mint da legenda: 6 × 14 px, duas pulsações de 1,2 s. Reduced-motion mantém o sinal completo e elimina a pulsação. O feixe da imagem do hero pertence à home, não é um efeito duplicado aqui.
+
+## Type and controls
+
+Abertura: Montserrat 650, caixa alta, clamp(34px,3.3vw,47px)/1,18, tracking −0,025em; mobile clamp(30px,7.8vw,40px). Lead 21 px/1,55, 19 px no mobile. Padding vertical 64/78 px, ou 34/42 px.
+
+Pergunta: Montserrat 650, 29 px/1,28; mobile 25 px. Nota inline tem título de 20 px/1,35 em Plus Jakarta Sans, peso 650, caixa alta e tracking −0,025em, subordinado à pergunta. Texto da nota 17 px/1,5.
+
+Opções: Plus Jakarta Sans 18/17 px, entrelinha 1,5, raio 10 px, mínimo 68 px, padding 17 × 20 px ou 16 px no mobile. Radio: aro 22 px, ponto 10 px; checkbox com cantos 4/1 px. Seleção combina fundo, contorno e indicador; foco chega ao label. Sem autoavanço.
+
+Idade e nome: até 420 px, raio 6 px, padding 15 × 18 px, texto 21 px/1,4. Ambos opcionais. A atividade mantém controles nativos e escolhas de palavras aria-pressed. Erros escuros usam #ff809c; nenhum efeito de glitch prejudica o texto.
+
+## Clear result
+
+Campo Studio White, título Pacific Blue e CTA Hyper Green/Ink Black no início. Padding 54/75 px, ou 34/44 px no mobile. Desktop: leitura 1.15fr e resumo .85fr, gap 100 px; até 1100 px, gap 45 px e resumo sem sticky. Acima disso, resumo sticky a 24 px do topo.
+
+Título principal: Montserrat 650, caixa alta, clamp(34px,3.1vw,45px)/1,16; mobile 31 px. h2 do resultado: 28 px/1,25, mobile 25 px, conservando a família própria do componente. Texto de seções: 20/19 px, entrelinha 1,6. Cabeçalho inclui sinal ilustrativo de 150 × 32 px, nome opcional, contexto e CTA.
+
+Resumo: apoio claro, regra superior verde de 2 px, padding 28 × 30 px, sem borda externa. Mostra respostas de base, método em details, revisão e convite ao programa. Comparação de ondas em duas colunas no desktop e uma no mobile, com legenda de ilustração e sem eixo temporal.
+
+No mobile: coluna flex com leitura primeiro, resumo de largura total e padding 24 px depois, fechamento por último. Resultado calculado não oferece o seletor direto de foco V5. Revisar retorna às perguntas.
+
+## Behavior and limits
+
+Sessão local versionada protocol44-quiz-v8, sem email ou envio. Falha de storage conserva uso em memória; limpar restaura abertura. Escrita da prática não é persistida. Ausência de resposta informa role=alert e foca o primeiro controle. Navegação retorna ao topo e foca título/legend.
+
+Perguntas e reforços entram em 200 ms/4 px, eliminados com movimento reduzido. Sem JavaScript, noscript oferece a prática escrita. Ruído, sinal, comparação e Blocked Signal são metáforas visuais, não diagnóstico ou prova de eficácia.
+
+Programa completo e filme em preparação, prática escrita disponível, vendas fechadas e noindex. V4 e checkout ficam fora desta extensão.

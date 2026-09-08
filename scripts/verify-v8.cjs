@@ -29,7 +29,7 @@ const checks=[];const errors=[];
    await overflow(id);
   }
  }
- await page.goto(base+'/');assert.match(await page.locator('h1').innerText(),/Stop putting your/);assert.equal(await page.locator('meta[name="p44-content-version"]').getAttribute('content'),'8.1');
+ await page.goto(base+'/');assert.match(await page.locator('h1').innerText(),/Stop putting your/i);assert.equal(await page.locator('meta[name="p44-content-version"]').getAttribute('content'),'8.2');
  await page.locator('[data-example-step="2"]').click();assert(await page.locator('[data-example-panel="2"]').isVisible());await overflow('home desktop');
  await page.screenshot({path:path.join(out,'home-desktop.png'),fullPage:true});checks.push('home, sample tabs, version marker');
  await page.goto(base+'/quiz');await page.locator('#quiz-app h1').waitFor();assert(!(await page.locator('#quiz-app').innerText()).includes('Blocked Signal'));await page.screenshot({path:path.join(out,'quiz-intro-desktop.png')});

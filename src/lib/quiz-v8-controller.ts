@@ -1,6 +1,6 @@
 import {content,copy} from './funnel-content';
 import {signalArt} from './signal-art';
-import {questions,SESSION_KEY,freshState,readState,flow,isAnswered,calculate,answerLabel,consistentAfterQ5,consistentAfterQ8,visualStage} from './quiz-v8';
+import {questions,SESSION_KEY,freshState,readState,flow,isAnswered,calculate,answerLabel,consistentAfterQ5,consistentAfterQ8,visualStage,visualProgress} from './quiz-v8';
 const root=document.getElementById('quiz-app')!;
 const ui=content.ui;
 let state=freshState();
@@ -14,17 +14,19 @@ function commit(){save();render();window.scrollTo({top:0,behavior:'instant'});ro
 function go(direction=1){const steps=flow(state);state.screen=steps[Math.max(0,Math.min(steps.length-1,steps.indexOf(state.screen)+direction))];commit();}
 function actions(label=ui.continue){return `<div class="question-actions"><button type="button" class="back-button" id="back">${t(ui.back)}</button><button type="button" class="button button-primary" id="next-screen">${t(label)} ${arrow}</button></div>`;}
 function wireActions(){document.getElementById('back')?.addEventListener('click',()=>go(-1));document.getElementById('next-screen')?.addEventListener('click',()=>go());}
-function progress(){const n=Number(state.screen.replace('q',''));const count=Object.keys(questions).filter(id=>isAnswered(id,state.answers)).length;return `<div class="q5-progress"><span>${t(questions[state.screen]?ui.questionCount:ui.answeredCount,{current:n,count})}</span><span>${questions[state.screen]?t(questions[state.screen].section_label):''}</span><progress aria-label="${t(ui.progressLabel)}" max="10" value="${count}"></progress></div>`;}
+function progress(){const n=Number(state.screen.replace('q',''));const count=Object.keys(questions).filter(id=>isAnswered(id,state.answers)).length;return `<div class="q5-progress"><div class="signal-mini" aria-hidden="true">${signalArt(visualProgress(state.screen),true)}</div><span>${t(questions[state.screen]?ui.questionCount:ui.answeredCount,{current:n,count})}</span><span>${questions[state.screen]?t(questions[state.screen].section_label):''}</span><progress aria-label="${t(ui.progressLabel)}" max="10" value="${count}"></progress></div>`;}
 function references(){return `<details class="q8-references"><summary>${t(ui.readingTitle)}</summary><p>${t(ui.readingNote)}</p>${content.citations.map(c=>`<article><h3><a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${t(c.name)}</a></h3><p><strong>${t(c.title)}</strong></p><p>${t(c.body)}</p></article>`).join('')}</details>`;}
 function render(){
   const id=state.screen;
   root.dataset.screen=id;
-  document.body.dataset.signalStage=visualStage(id);
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content',id==='result'?'#f5f3ee':'#141619');
+  const stage=visualStage(id);
+  document.body.dataset.signalStage=stage;
+  document.body.style.setProperty('--signal-clarity',String(visualProgress(id)));
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content',({noise:'#0d0e11',focus:'#111a29',settle:'#1b3049',clear:'#f8f9fa'})[stage]);
   root.className=id==='result'?'q5-result q8-result wrap':id==='screen_0'?'q8-intro wrap':'q5-flow';
   if(id==='screen_0'){
     const s=content.screens.screen_0;
-    root.innerHTML=`<div class="q8-intro-copy"><h1 tabindex="-1">${t(s.title)}</h1>${s.body.map(p=>`<p class="lead">${t(p)}</p>`).join('')}<button class="button button-primary" id="start-quiz">${t(s.cta)} ${arrow}</button><p class="button-note">${t(s.note)}</p></div><div class="q8-signal-intro">${signalArt()}<p class="signal-caption"><span>${t(ui.signalStart)}</span><span>${t(ui.signalEnd)}</span></p><button class="text-button" id="skip-intro">${t(ui.skipIntro)}</button></div>`;
+    root.innerHTML=`<div class="q8-intro-copy"><h1 tabindex="-1">${t(s.title)}</h1>${s.body.map(p=>`<p class="lead">${t(p)}</p>`).join('')}<button class="button button-primary" id="start-quiz">${t(s.cta)} ${arrow}</button><p class="button-note">${t(s.note)}</p></div><div class="q8-signal-intro"><img class="signal-portrait" src="/brand/signal-glass-v8.2.webp" width="1536" height="1024" alt="" />${signalArt()}<p class="signal-caption"><span>${t(ui.signalStart)}</span><span>${t(ui.signalEnd)}</span></p><button class="text-button" id="skip-intro">${t(ui.skipIntro)}</button></div>`;
     document.getElementById('start-quiz')!.onclick=()=>go();document.getElementById('skip-intro')!.onclick=()=>go();return;
   }
   if(questions[id]){

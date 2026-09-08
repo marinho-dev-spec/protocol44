@@ -53,9 +53,13 @@ export function flow(state:State):string[] {
 // Navigation determines the visual chapter. It never uses a score or claims improvement.
 export function visualStage(screen:string):'noise'|'focus'|'settle'|'clear' {
   if(screen==='result')return 'clear';
-  if(['q9','priming_2','reinforcement_3','q10','loading','gate_name'].includes(screen))return 'settle';
-  if(['reinforcement_1','q5','q6','reinforcement_2','q7','q8'].includes(screen))return 'focus';
+  if(['q7','q8','q9','priming_2','reinforcement_3','q10','loading','gate_name'].includes(screen))return 'settle';
+  if(['q3','q4','reinforcement_1','q5','q6','reinforcement_2'].includes(screen))return 'focus';
   return 'noise';
+}
+export function visualProgress(screen:string):number {
+  const steps=content.flow.filter(id=>!id.startsWith('engine_reveal'));
+  return Math.max(0,steps.indexOf(screen))/(steps.length-1);
 }
 export function isAnswered(id:string,answers:Answers):boolean {
   const value=answers[id];

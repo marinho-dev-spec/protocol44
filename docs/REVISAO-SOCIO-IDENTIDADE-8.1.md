@@ -1,3 +1,5 @@
+> Histórico 8.1. A direção visual abaixo foi substituída pelo pedido posterior de fidelidade ao RTF; veja IDENTIDADE-8.2-PINTEREST.md. As decisões de copy e integridade da oferta continuam aplicáveis.
+
 # Protocol 44 — revisão do sócio e identidade 8.1
 
 Data: 8 de setembro de 2026. Fonte pública de copy: `src/content/funnel-content.json` (8.1). Motor e sessão V8 preservados, pois os IDs, pesos, tipos e temas das dez perguntas não mudaram.

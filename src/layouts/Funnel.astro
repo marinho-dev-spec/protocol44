@@ -12,7 +12,7 @@ const { title, description, lang = 'en', surface } = Astro.props;
     <meta name="description" content={description} />
     <meta name="p44-content-version" content={content.version} />
     <meta name="robots" content="noindex,nofollow" />
-    <meta name="theme-color" content="#FF4D17" />
+    <meta name="theme-color" content={surface === 'home' || surface === 'quiz' ? '#0D0E11' : '#F8F9FA'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -23,8 +23,8 @@ const { title, description, lang = 'en', surface } = Astro.props;
     <link rel="alternate icon" href="/brand/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/brand/icon-180.png" />
     <link rel="manifest" href="/brand/site.webmanifest" />
-    <link rel="preload" href="/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/sourcesans3.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href={surface?'/fonts/montserrat.ttf':'/fonts/manrope.ttf'} as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href={surface?'/fonts/plusjakartasans.ttf':'/fonts/sourcesans3.ttf'} as="font" type="font/ttf" crossorigin />
     <title>{title}</title>
   </head>
   <body data-surface={surface} data-signal-stage={surface === 'quiz' ? 'noise' : undefined}><a class="skip-link" href="#main">{lang === 'pt-BR' ? 'Pular para o conteúdo' : 'Skip to content'}</a><slot /></body>

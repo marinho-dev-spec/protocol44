@@ -3,7 +3,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const assert=require('node:assert/strict');
 const base=process.env.P44_BASE_URL||'http://127.0.0.1:4322';
-const out=process.env.P44_REVIEW_DIR||'.impeccable/review/v8.1/final';
+const out=process.env.P44_REVIEW_DIR||'.impeccable/review/v8.2/final';
 fs.mkdirSync(out,{recursive:true});
 const answers={q1:'work',q2:'many',q3:['money'],q4:'money',q5:'none',q6:'online',q7:'skip',q8:'career',q9:'doubter',q10:'trip'};
 const report=[];
@@ -29,6 +29,7 @@ const report=[];
    if(scene.screen)await page.locator(`#quiz-app[data-screen="${scene.screen}"]`).waitFor();
    if(scene.stage)assert.equal(await page.locator('body').getAttribute('data-signal-stage'),scene.stage);
    await page.evaluate(async()=>{
+    document.querySelectorAll('img[loading="lazy"]').forEach(image=>image.loading='eager');
     await Promise.all(Array.from(document.images).map(image=>image.decode().catch(()=>{})));
     window.scrollTo({top:0,behavior:'instant'});
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));

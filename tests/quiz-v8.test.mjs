@@ -27,7 +27,7 @@ after(async () => {
 });
 const {
   questions, freshState, calculate, consistentAfterQ5, consistentAfterQ8,
-  isAnswered, readState, flow, answerLabel, visualStage,
+  isAnswered, readState, flow, answerLabel, visualStage, visualProgress,
 } = await import(pathToFileURL(bundleFile).href);
 const content = JSON.parse(await readFile(resolve(projectRoot, 'src/content/funnel-content.json'), 'utf8'));
 
@@ -43,7 +43,19 @@ describe('visual journey follows navigation, not scores', () => {
     assert.equal(visualStage('q1'), 'noise');
     assert.equal(visualStage('q5'), 'focus');
     assert.equal(visualStage('q9'), 'settle');
-    assert.equal(visualStage('q3'), 'noise');
+    assert.equal(visualStage('q3'), 'focus');
+    assert.equal(visualStage('q2'), 'noise');
+    assert.equal(visualStage('q7'), 'settle');
+  });
+  test('signal clarity follows the current screen and resets when going back', () => {
+    const stages = content.flow.filter(id => !id.startsWith('engine_reveal'));
+    assert.equal(visualProgress('screen_0'), 0);
+    assert.equal(visualProgress('result'), 1);
+    for (let i = 1; i < stages.length; i++) {
+      assert(visualProgress(stages[i]) > visualProgress(stages[i - 1]));
+    }
+    assert(visualProgress('q2') < visualProgress('q8'));
+    assert.equal(visualProgress('unknown'), 0);
   });
 });
 

@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "base": "http://127.0.0.1:4322",
+  "checks": [
+    "home, sample tabs, version marker",
+    "required answer, family, back/reload, multi-select and exclusive none",
+    "full path concrete / yes",
+    "full path capacity / no",
+    "full path thoughts / some",
+    "full path mixed / skip",
+    "full path zero / skip",
+    "review, practice context, blank validation, actual download, no persistence, no fake video",
+    "390px full flow and key pages without horizontal overflow",
+    "age invalid/fractional/skip and conditional consistency notes",
+    "reduced motion and clear answers",
+    "storage unavailable graceful fallback",
+    "no-JS link to written practice"
+  ],
+  "errors": [],
+  "scope": "Browser behaviour and layout; not commercial conversion or product efficacy."
+}
