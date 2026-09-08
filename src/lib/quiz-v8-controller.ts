@@ -1,5 +1,6 @@
 import {content,copy} from './funnel-content';
 import {signalArt} from './signal-art';
+import {gsap} from 'gsap';
 import {questions,SESSION_KEY,freshState,readState,flow,isAnswered,calculate,answerLabel,consistentAfterQ5,consistentAfterQ8,visualStage,visualProgress} from './quiz-v8';
 const root=document.getElementById('quiz-app')!;
 const ui=content.ui;
@@ -10,7 +11,8 @@ const t=(value:string,values:Record<string,string|number>={})=>esc(copy(value,va
 const arrow='<svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7"/></svg>';
 const signal=(quiet=false)=>`<svg class="signal-drawing ${quiet?'signal-clear':''}" viewBox="0 0 600 100" fill="none" aria-hidden="true"><path class="signal-axis" d="M0 50H600"/><path class="signal-wave" d="${quiet?'M0 50C30 50 30 20 60 20S90 80 120 80 150 20 180 20 210 80 240 80 270 20 300 20 330 80 360 80 390 20 420 20 450 80 480 80 510 20 540 20 570 50 600 50':'M0 50L20 50 28 35 36 66 47 19 55 73 65 45 79 55 94 30 107 70 118 46 132 60 145 24 158 77 170 50 181 43 196 63 210 27 225 75 240 41 254 55 266 19 280 80 295 38 310 57 320 26 335 70 350 45 365 54 380 24 395 72 410 41 425 55 440 30 455 68 470 44 485 53 500 40 515 60 530 45 545 54 563 47 581 50 600 50'}"/></svg>`;
 function save(){try{sessionStorage.setItem(SESSION_KEY,JSON.stringify(state));}catch{}}
-function commit(){save();render();window.scrollTo({top:0,behavior:'instant'});root.querySelector<HTMLElement>('h1,h2,legend')?.focus({preventScroll:true});}
+function animateScreen(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;gsap.fromTo(root,{autoAlpha:.84,y:6},{autoAlpha:1,y:0,duration:.26,ease:'power3.out',overwrite:true});}
+function commit(){save();render();animateScreen();window.scrollTo({top:0,behavior:'instant'});root.querySelector<HTMLElement>('h1,h2,legend')?.focus({preventScroll:true});}
 function go(direction=1){const steps=flow(state);state.screen=steps[Math.max(0,Math.min(steps.length-1,steps.indexOf(state.screen)+direction))];commit();}
 function actions(label=ui.continue){return `<div class="question-actions"><button type="button" class="back-button" id="back">${t(ui.back)}</button><button type="button" class="button button-primary" id="next-screen">${t(label)} ${arrow}</button></div>`;}
 function wireActions(){document.getElementById('back')?.addEventListener('click',()=>go(-1));document.getElementById('next-screen')?.addEventListener('click',()=>go());}
@@ -86,4 +88,4 @@ function render(){
   wireActions();
 }
 document.getElementById('clear-v8')!.onclick=()=>{state=freshState();try{sessionStorage.removeItem(SESSION_KEY);}catch{}render();window.scrollTo({top:0,behavior:'instant'});root.querySelector<HTMLElement>('h1')?.focus();};
-render();
+render();animateScreen();

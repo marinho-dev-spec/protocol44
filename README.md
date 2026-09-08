@@ -2,6 +2,10 @@
 
 Site institucional, quiz em inglês e prática escrita. Adequação V8: copy centralizada em JSON, resultado calculado por dois eixos e identidade visual preservada.
 
+## Stack atual
+
+As rotas atuais são páginas Astro estáticas, com Tailwind CSS v4 como camada de utilitários (`src/styles/tailwind.css`) e as folhas da identidade para os componentes do funil. GSAP controla as entradas curtas da home, VSL e quiz; `prefers-reduced-motion` desliga o movimento sem esconder conteúdo ou bloquear a navegação. O bundle continua sem backend e sem captura de email.
+
 ## Rotas e estado
 
 | Rota | Conteúdo |

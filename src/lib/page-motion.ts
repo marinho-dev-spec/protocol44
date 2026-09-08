@@ -1,6 +1,6 @@
-/** Progressive enhancement: every entrance starts from visible server HTML. */
-const EASE_OUT = 'cubic-bezier(0.16, 1, 0.3, 1)';
+import { gsap } from 'gsap';
 
+/** Progressive enhancement: every entrance starts from visible server HTML. */
 let mountedRoot: HTMLElement | null = null;
 let disposePage: (() => void) | undefined;
 
@@ -11,35 +11,36 @@ function initializePageMotion() {
 
   const lifecycle = new AbortController();
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const animations = new Map<Element, Animation>();
+  const animations = new Map<Element, gsap.core.Tween>();
   let observer: IntersectionObserver | undefined;
 
   function cancelAnimation(element: Element) {
-    animations.get(element)?.cancel();
+    animations.get(element)?.kill();
     animations.delete(element);
   }
 
   function animate(
     element: Element,
-    keyframes: Keyframe[],
+    from: gsap.TweenVars,
+    to: gsap.TweenVars,
     duration: number,
     delay = 0,
   ) {
-    if (reducedMotion.matches || typeof element.animate !== 'function') return;
+    if (reducedMotion.matches) return;
     cancelAnimation(element);
-    const animation = element.animate(keyframes, {
-      duration,
-      delay,
-      easing: EASE_OUT,
-      // No persistent fill or inline hiding; CSS remains the resting state.
-      fill: 'none',
-      iterations: 1,
-    });
-    animations.set(element, animation);
+    let animation: gsap.core.Tween;
     const release = () => {
       if (animations.get(element) === animation) animations.delete(element);
     };
-    void animation.finished.then(release, release);
+    animation = gsap.fromTo(element, from, {
+      ...to,
+      duration: duration / 1000,
+      delay: delay / 1000,
+      ease: 'power3.out',
+      overwrite: true,
+      onComplete: release,
+    });
+    animations.set(element, animation);
   }
 
   // Controls are initialized independently of motion and browser animation APIs.
@@ -79,7 +80,7 @@ function initializePageMotion() {
 
       if (withFeedback) {
         // The new content is available immediately, including to assistive tech.
-        animate(panels.get(index)!, [{ opacity: 0.76 }, { opacity: 1 }], 180);
+        animate(panels.get(index)!, { opacity: 0.76 }, { opacity: 1 }, 180);
       }
     };
 
@@ -98,9 +99,12 @@ function initializePageMotion() {
   function reveal(element: Element) {
     // Mark only meaningful groups. Default entrances use no spatial movement.
     const isText = element.getAttribute('data-motion') === 'text';
-    animate(element, isText
-      ? [{ opacity: 0.8, translate: '0 6px' }, { opacity: 1, translate: '0 0' }]
-      : [{ opacity: 0.8 }, { opacity: 1 }], 320);
+    animate(
+      element,
+      isText ? { opacity: 0.8, y: 6 } : { opacity: 0.8 },
+      isText ? { opacity: 1, y: 0 } : { opacity: 1 },
+      320,
+    );
   }
 
   if (!reducedMotion.matches && 'IntersectionObserver' in window) {

@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Tailwind v4 is the utility layer for every current funnel surface.
+   Component styling still lives in the identity sheets so the visual
+   contract remains readable and easy to audit. */
+@theme {
+  --font-display: Montserrat, sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --color-void: #0d0e11;
+  --color-mint: #00f0a8;
+  --color-blue: #0052ff;
+  --color-paper: #f8f9fa;
+}
