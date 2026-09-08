@@ -1,3 +1,28 @@
+# Publicação V8 — 7 de setembro de 2026
+
+**Publicado e verificado em produção.**
+
+- Site: https://protocol44.vercel.app/
+- Quiz: https://protocol44.vercel.app/quiz
+- Apresentação e prática: https://protocol44.vercel.app/vsl
+- Repositório: https://github.com/marinho-dev-spec/protocol44
+- Commit da aplicação verificado: `c0e4ccc9f7fbc3664a06426a3f611d760c517fb9`.
+- Publicação via push na `main` e integração automática existente com a Vercel.
+- HTTP 200 e marcador `p44-content-version=8.0` conferidos no domínio público.
+- Script público do quiz: `Quiz.astro_astro_type_script_index_0_lang.qDbsXt5h.js`.
+
+A adequação centraliza a copy em JSON, restaura os dois eixos ponderados, acrescenta seleção múltipla, três reforços, atividade opcional, nome local opcional e três reflexões com fallback neutro. Identidade visual preservada. O mecanismo é apresentado como metáfora; percentuais sem cálculo, autobiografia sem autor e gráficos de eficácia sem dados não integram a oferta pública.
+
+**Validação:** build concluído; 59 testes de lógica; 13 grupos de navegador no endereço público, sem erros. Foram percorridas as três linhas de resultado, empate e zero, atividades Yes/Somewhat/No/Skip, contexto na prática, download, retomada, limpeza, movimento reduzido, storage indisponível e fallback sem JavaScript. O teste aguarda o contexto da prática carregar ao navegar pela rede. Capturas em `.impeccable/review/v8-production`; relatório distribuído em [docs/verification-v8-production.json](docs/verification-v8-production.json).
+
+A publicação mantém a prévia gratuita, `noindex,nofollow` e vendas fechadas. Vídeo e programa completo estão em produção. Não existe coleta de email ou pagamento novo. Nome e respostas ficam na aba; a escrita da prática só fica com a pessoa se ela baixar o arquivo. Preços e condições em documentos de venda são propostas para a entrega completa.
+
+O commit posterior de documentação registra esta conferência e a sincronização do teste de navegador; não modifica a aplicação verificada.
+
+---
+
+## Histórico anterior
+
 # Publicação — 7 de setembro de 2026
 
 Atualização editorial V6: promessa, apresentação da oferta, perguntas, resultados e VSL revisados com base no acervo e nos comentários. Build local e 13 grupos de verificação aprovados; dez capturas em .impeccable/review/offer-v6. Motor do quiz e configuração comercial preservados. A atualização segue pelo deploy automático da main.

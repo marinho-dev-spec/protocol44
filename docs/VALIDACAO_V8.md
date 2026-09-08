@@ -22,4 +22,4 @@ Percentual individual e corpus não reproduzido não aparecem como prova. Os DOI
 
 ## Produção
 
-A confirmação do commit, deploy e teste no endereço público é registrada em `DEPLOYMENT.md` após a publicação. Esta validação local não presume que a versão já esteja no ar.
+A versão pública foi conferida em https://protocol44.vercel.app com marcador 8.0 e commit da aplicação c0e4ccc9f7fbc3664a06426a3f611d760c517fb9. Os mesmos 13 grupos passaram sem erros. Relatório em [verification-v8-production.json](./verification-v8-production.json); detalhes em [DEPLOYMENT.md](../DEPLOYMENT.md). O teste aguarda o carregamento do contexto ao navegar da reflexão para a prática na rede.

@@ -58,7 +58,7 @@ const checks=[];const errors=[];
  }
  await page.locator('#review-answers').click();assert.equal(await screen(),'q1');
  await walk(cases[2].a,'some');await page.locator('.q5-result-copy a[href="/vsl#first-practice"]').click();
- assert(await page.locator('#practice-focus').isVisible());await page.locator('#first-practice-form button').click();assert.match(await page.locator('#practice-status').innerText(),/at least one/);
+ await page.locator('#practice-focus').waitFor({state:'visible'});await page.locator('#first-practice-form button').click();assert.match(await page.locator('#practice-status').innerText(),/at least one/);
  await page.locator('#practice-event').fill('A test plan was interrupted.');await page.locator('#practice-next').fill('Return to one step after lunch.');
  const [download]=await Promise.all([page.waitForEvent('download'),page.locator('#first-practice-form button').click()]);await download.saveAs(path.join(out,'reflection.txt'));assert.match(fs.readFileSync(path.join(out,'reflection.txt'),'utf8'),/Return to one step/);
  await page.reload();assert.equal(await page.locator('#practice-event').inputValue(),'');assert.equal(await page.locator('video').count(),0);checks.push('review, practice context, blank validation, actual download, no persistence, no fake video');
