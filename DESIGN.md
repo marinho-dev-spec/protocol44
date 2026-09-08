@@ -171,7 +171,7 @@ components:
 
 A identidade construída apresenta material óptico, sinal interrompido e campo escuro, seguido por superfícies claras de leitura com azul e verde. Montserrat dá forma geométrica aos títulos, principalmente em caixa alta; Plus Jakarta Sans sustenta leitura e controles. A logo serif44 mantém sua geometria e seu pequeno acento laranja, separado da paleta funcional.
 
-Este registro de 08/09/2026 descreve a 8.2 e substitui as prescrições visuais V5–8.1 para home, quiz e VSL. O titular rejeitou a adaptação laranja da 8.1 e pediu fidelidade ao RTF e referências de imagem no Pinterest. A descrição acima sintetiza essa direção fixada; não houve nova seleção criativa, seed aleatória ou comp aprovado. A copy e o funcionamento 8.1 permanecem.
+Este registro de 08/09/2026 descreve a 8.2 e a polida visual posterior para home, quiz e VSL; ele substitui as prescrições visuais V5–8.1. O titular rejeitou a adaptação laranja da 8.1 e pediu fidelidade ao RTF e referências de imagem no Pinterest. A descrição acima sintetiza essa direção fixada; não houve nova seleção criativa, seed aleatória ou comp aprovado. A copy e o funcionamento 8.1 permanecem.
 
 A autoridade é a cascata de `funnel.css`, `funnel-v5.css`, `funnel-v8.css` no quiz e, por último, `signal-identity.css`, junto dos componentes atuais. O [contrato 8.2](docs/IDENTIDADE-8.2-PINTEREST.md) registra o briefing, as referências observadas e a proveniência. As composições pertencem aos briefs de [home](.impeccable/surfaces/src-pages-index-astro.md), [quiz](.impeccable/surfaces/src-pages-quiz-astro.md) e [VSL/prática](.impeccable/surfaces/src-pages-vsl-astro.md). A [V4 documental](.impeccable/surfaces/src-pages-quiz-v4-astro.md) e o checkout permanecem legados.
 
@@ -242,7 +242,7 @@ Intervalos e insets recorrentes estão no frontmatter. Opções têm gap de 11 p
 
 ## Elevation & Depth
 
-Containers são planos: tonalidade, espaço e regras criam agrupamento. Exemplo, resultado e prática não usam sombra estrutural ou rotação. A profundidade óptica pertence ao raster original; não é uma sombra de container ou uma textura física simulada por CSS.
+Containers são planos: tonalidade, espaço e regras criam agrupamento. Exemplo, resultado e prática não usam sombra estrutural ou rotação. A apresentação do raster óptico no herói é a exceção controlada: uma moldura fina, raio discreto e halo mint muito suave ajudam a separar a imagem do campo escuro sem simular material físico. A profundidade óptica continua pertencendo ao raster original.
 
 **The Flat Container Rule.** Agrupe leitura e escrita com fundo, contorno e espaço. Preserve a profundidade da imagem óptica como material da imagem, sem convertê-la em elevação de todos os componentes.
 
@@ -250,7 +250,7 @@ A folha inclinada, sombras herdadas e os antigos fundos quentes não fazem parte
 
 ## Shapes
 
-Ações primárias têm raio de 8 px. A ação secundária azul, campos e escolhas de palavras mantêm 6 px. Opções têm 10 px. Notas inline e a folha de prática usam 12 px. Exemplo e resumo de respostas mantêm forma retangular. O raster óptico não recebe raio de container; a fotografia contextual tem raio de 8 px.
+Ações primárias têm raio de 8 px. A ação secundária azul, campos e escolhas de palavras mantêm 6 px. Opções têm 10 px. Notas inline e a folha de prática usam 12 px. Exemplo e resumo de respostas mantêm forma retangular. O enquadramento `.signal-screen` do raster óptico do herói usa raio de 16 px no desktop e 12 px no mobile, contorno fino de 1 px e halo mint discreto; a fotografia contextual tem raio de 8 px. Esse tratamento existe apenas para o enquadramento da arte de sinal.
 
 Contornos geralmente têm 1 px. Radio usa aro de 22 px e ponto de 10 px; checkbox mantém essas dimensões, com raio externo de 4 px e interno de 1 px. Setas são SVG. FAQ usa duas linhas CSS de 14 × 1,5 px: cruz fechada e linha horizontal aberta.
 

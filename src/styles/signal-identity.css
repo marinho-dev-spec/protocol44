@@ -114,7 +114,7 @@ body[data-surface=quiz]:not([data-signal-stage=clear]) .form-error{color:#ff809c
 body[data-surface=quiz]::before{position:fixed}
 .home-opening>.product-hero,body[data-surface=quiz]>:is(.header-surround,main,.site-footer){position:relative;z-index:1}
 .signal-display{margin:0;align-self:center;min-width:0}
-.signal-screen{position:relative;isolation:isolate;overflow:hidden;background:#0d0e11}
+.signal-screen{position:relative;isolation:isolate;overflow:hidden;background:#0d0e11;border:1px solid #a0a5b52b;border-radius:16px;box-shadow:0 26px 72px rgba(0,240,168,.08)}
 .signal-screen .signal-image{display:block;width:100%;height:auto;aspect-ratio:1.2;object-fit:cover}
 .signal-screen::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 42%,#00f0a814 49%,#00f0a832 50%,transparent 52%);transform:translateY(105%);animation:crt-scan 2.1s var(--ease) 1;pointer-events:none}
 .signal-display figcaption{display:flex;justify-content:space-between;gap:24px;margin-top:22px;border-top:1px solid var(--line);padding-top:18px;font-size:15px;color:var(--muted)}
@@ -137,6 +137,7 @@ body[data-surface=quiz]::before{position:fixed}
  body[data-surface=quiz] .q8-result h2{font-size:25px}
  body[data-surface] .q5-option{font-size:17px}
  .signal-screen .signal-image{aspect-ratio:1.65}
+ .signal-screen{border-radius:12px;box-shadow:0 18px 44px rgba(0,240,168,.07)}
  .signal-display figcaption{font-size:14px;gap:12px;margin-top:16px;padding-top:14px}
  .q8-signal-intro .signal-portrait{height:145px}
  .q8-signal-intro .signal-field{max-height:90px;margin-top:-20px}
