@@ -1,4 +1,4 @@
-# Publicação 8.2 — 8 de setembro de 2026
+# Publicação 8.2 + polida visual — 8 de setembro de 2026
 
 **Publicado e verificado em produção.**
 
@@ -6,13 +6,13 @@
 - [Quiz](https://protocol44.vercel.app/quiz)
 - [Apresentação e prática](https://protocol44.vercel.app/vsl)
 - [Repositório](https://github.com/marinho-dev-spec/protocol44)
-- Commit da aplicação verificado: `574f40ef4b7110522f71cc62c3f80d5d9494e4af`.
-- [Deploy Vercel](https://vercel.com/odairmarinho2019-5298s-projects/protocol44/De1BZLtfmugqErH9GdtJKoMzArva), status `success` no contexto `Vercel – protocol44`.
+- Commit da aplicação verificado: `4133876ea9c6e9bd6bdbbe313910c288db8e2601`.
+- [Deploy Vercel](https://vercel.com/odairmarinho2019-5298s-projects/protocol44/7LKQC5YD4xvB49wBEYVTkzxJVkHj), status `success` nos contextos `Vercel – protocol44` e `Vercel – acorde-quiz`.
 - HTTP 200 e `p44-content-version=8.2` confirmados nas três rotas. Nova imagem WebP respondeu HTTP 200 com tipo `image/webp`.
 
-A aplicação segue a última paleta explícita de IDENTIDADE VISUAL.rtf: Deep Void/mint/crimson no início, branco/azul/verde no resultado, Montserrat e Plus Jakarta Sans. Pesquisa no Pinterest documentada; imagem óptica original na abertura, fotografia ilustrativa junto ao exemplo. A logo escolhida permanece. A copy 8.1 e o funcionamento do quiz foram preservados.
+A aplicação segue a última paleta explícita de IDENTIDADE VISUAL.rtf: Deep Void/mint/crimson no início, branco/azul/verde no resultado, Montserrat e Plus Jakarta Sans. Pesquisa no Pinterest documentada; imagem óptica original na abertura, fotografia ilustrativa junto ao exemplo. A logo escolhida permanece. A polida acrescenta uma moldura fina, raio de 16 px no desktop/12 px no mobile e halo mint discreto somente na arte óptica do herói, sem alterar a copy 8.2 ou o funcionamento do quiz.
 
-**Validação:** build Astro; 62 testes de lógica; 13 grupos de navegador locais e os mesmos 13 no endereço público, sem erros. Cobertura: resultados, opções neutras, revisão/retomada, múltipla seleção, idade/nome opcionais, atividades, prática, download, privacidade, armazenamento indisponível, JavaScript desativado e movimento reduzido. [Relatório público](docs/verification-v8.2-production.json). Capturas locais de sete cenas em desktop/celular, 20 imagens, conferidas pelo revisor independente. A única correção final exigida foi a persistência de DESIGN.md, classificada como resolvida no parecer final.
+**Validação:** build Astro; 62 testes de lógica; 13 grupos de navegador locais e os mesmos 13 no endereço público, sem erros. Cobertura: resultados, opções neutras, revisão/retomada, múltipla seleção, idade/nome opcionais, atividades, prática, download, privacidade, armazenamento indisponível, JavaScript desativado e movimento reduzido. [Relatório público](docs/verification-v8.2-production.json). Capturas locais de sete cenas em desktop/celular, 20 imagens, conferidas após a polida. A revisão de acabamento classificou a alteração como `ship`.
 
 Vídeo e programa completo seguem em preparação; amostra escrita disponível, vendas fechadas, páginas com noindex. A atualização não constitui comprovação de eficácia ou conversão comercial.
 
