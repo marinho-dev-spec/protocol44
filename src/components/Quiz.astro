@@ -6,11 +6,12 @@ import '../styles/funnel-v5.css';
 import '../styles/funnel-v8.css';
 import '../styles/signal-identity.css';
 import '../styles/editorial.css';
+import '../styles/quiz-viewport.css';
 const u=content.ui;
 ---
 <Funnel surface="quiz" title={copy(u.quizTitle)} description={copy(u.quizDescription)}>
   <BrandHeader page="quiz" />
-  <main id="main" class="q5-main"><div id="quiz-app"></div><noscript><p class="wrap noscript">{u.noJs} <a href="/vsl#first-practice">{u.noJsLink}</a>.</p></noscript></main>
+  <main id="main" class="q5-main"><div id="quiz-app" data-layout="viewport"></div><noscript><p class="wrap noscript">{u.noJs} <a href="/vsl#first-practice">{u.noJsLink}</a>.</p></noscript></main>
   <footer class="site-footer wrap"><span>{content.tokens.BRAND} <span class="footer-signature">{u.tagline}</span></span><details><summary>{u.privacyTitle}</summary><p>{u.privacy}</p><button type="button" class="text-button" id="clear-v8">{u.clear}</button></details></footer>
   <script>import '../lib/quiz-v8-controller';</script>
 </Funnel>

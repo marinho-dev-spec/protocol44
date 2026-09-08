@@ -1,0 +1,165 @@
+/* The question is the screen: compact chrome, complete answers, reachable actions.
+   The page can still grow for text zoom, an open keyboard or expanded disclosures. */
+body[data-surface=quiz]:not([data-quiz-view=result]) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+body[data-surface=quiz]:not([data-quiz-view=result]) .header-surround { padding: 8px 16px 0; }
+body[data-surface=quiz]:not([data-quiz-view=result]) .site-header { height: 48px; max-width: 760px; padding: 0 16px; border-radius: 12px; }
+body[data-surface=quiz]:not([data-quiz-view=result]) .brand img { width: 145px; }
+body[data-surface=quiz]:not([data-quiz-view=result]) .site-header nav a { font-size: 12px; }
+body[data-surface=quiz]:not([data-quiz-view=result]) .q5-main { display: flex; flex: 1; min-height: 0; }
+body[data-surface=quiz]:not([data-quiz-view=result]) .site-footer {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(100% - 32px);
+  max-width: 668px;
+  min-height: 30px;
+  padding: 3px 0 5px;
+  border: 0;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1.4;
+}
+body[data-surface=quiz]:not([data-quiz-view=result]) .site-footer>span { display: none; }
+body[data-surface=quiz]:not([data-quiz-view=result]) .site-footer details { max-width: none; text-align: center; }
+body[data-surface=quiz]:not([data-quiz-view=result]) .site-footer summary { min-height: 28px; padding: 6px; }
+body[data-surface=quiz]:not([data-quiz-view=result]) .site-footer details[open] {
+  position: absolute; bottom: 5px; right: 0; z-index: 5;
+  width: min(360px, 100%); max-height: 70svh; overflow: auto;
+  padding: 16px 20px; border: 1px solid var(--line);
+  border-radius: 12px; background: var(--cream); text-align: left;
+  box-shadow: 0 8px 32px #0003;
+}
+body[data-surface=quiz]:not([data-quiz-view=result]) .site-footer details[open] p { font-size: 14px; line-height: 1.6; }
+
+body[data-surface=quiz] .q5-flow {
+  --step-space: 16px;
+  --option-gap: 8px;
+  --option-padding: 12px;
+  --option-height: 54px;
+  --option-type: 16px;
+  --question-type: 26px;
+  display: flex; flex-direction: column; align-self: stretch;
+  width: calc(100% - 40px); max-width: 668px;
+  min-height: calc(100svh - 92px);
+  margin: 0 auto; padding: var(--step-space) 0 8px;
+}
+body[data-surface=quiz] .q5-progress { flex: none; gap: 7px; margin: 0 0 var(--step-space); font-size: 12px; line-height: 1.4; }
+body[data-surface=quiz] .q5-progress .signal-mini { display: none; }
+body[data-surface=quiz] .q5-progress progress { height: 3px; }
+body[data-surface=quiz] #question-form { display: flex; flex-direction: column; flex: 1; }
+body[data-surface=quiz] .q5-title { font-size: var(--question-type); line-height: 1.25; font-weight: 600; text-transform: none; text-wrap: pretty; }
+body[data-surface=quiz] .question-hint { font-size: 13px; line-height: 1.4; margin: 9px 0 var(--step-space); }
+body[data-surface=quiz] .q5-options { gap: var(--option-gap); }
+body[data-surface=quiz] .q5-option {
+  min-height: var(--option-height); padding: var(--option-padding) 16px;
+  font-size: var(--option-type); line-height: 1.35; gap: 12px; border-radius: 10px;
+}
+body[data-surface=quiz] .q5-flow .question-actions { flex: none; margin-top: auto; padding-top: var(--step-space); gap: 16px; }
+body[data-surface=quiz] .q5-flow .button { min-height: 48px; padding: 12px 23px; font-size: 16px; }
+body[data-surface=quiz] .q5-flow .back-button { min-height: 44px; padding-block: 10px; font-size: 14px; }
+body[data-surface=quiz] .q5-flow .form-error { margin-top: 8px; font-size: 13px; line-height: 1.35; }
+body[data-surface=quiz] .q8-inline-note { flex: none; padding: 12px 14px; margin: 0 0 var(--step-space); }
+body[data-surface=quiz] .q8-inline-note h2 { font-size: 15px; line-height: 1.3; text-transform: none; margin: 0 0 5px; }
+body[data-surface=quiz] .q8-inline-note p { font-size: 13px; line-height: 1.4; }
+body[data-surface=quiz] .q5-flow .q8-input-label { margin: 16px 0 8px; font-size: 16px; }
+body[data-surface=quiz] .q5-flow .q8-input { font-size: 18px; padding: 12px 15px; }
+body[data-surface=quiz] .q5-flow .q8-skip { margin: 4px 0 0 auto; min-height: 36px; padding: 6px 0; font-size: 13px; }
+
+/* Bridges share the frame; their primary action remains after all required text. */
+body[data-surface=quiz] .q5-bridge { display: flex; flex-direction: column; flex: 1; padding: 0; }
+body[data-surface=quiz] .q5-bridge>h2 { font-size: 25px; line-height: 1.25; }
+body[data-surface=quiz] .q5-bridge>.lead { font-size: 17px; line-height: 1.5; margin-top: 16px; }
+body[data-surface=quiz] .q5-bridge>.q8-caption { font-size: 13px; line-height: 1.45; margin-top: 12px; }
+body[data-surface=quiz] .q8-optional-row { flex: none; margin-bottom: 12px; font-size: 13px; align-items: center; }
+body[data-surface=quiz] .q8-optional-row .text-button { min-height: 32px; padding: 4px 0; font-size: 13px; }
+body[data-surface=quiz] #priming-form,body[data-surface=quiz] #name-form { display: flex; flex: 1; flex-direction: column; }
+body[data-surface=quiz] .q8-check-title { margin: 16px 0 10px; font-size: 17px; line-height: 1.4; }
+body[data-surface=quiz] #priming-form .q5-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+body[data-surface=quiz] #priming-form .q5-option { padding-inline: 10px; gap: 8px; font-size: 14px; }
+body[data-surface=quiz] .q8-words { margin-top: 14px; gap: 8px; }
+body[data-surface=quiz] .q8-words button { min-height: 40px; padding: 8px 14px; font-size: 15px; }
+body[data-surface=quiz] .q8-proof-points { margin-top: 14px; }
+body[data-surface=quiz] .q8-proof-points article { padding-block: 12px; }
+body[data-surface=quiz] .q8-proof-points h3 { font-size: 16px; line-height: 1.35; margin-bottom: 4px; }
+body[data-surface=quiz] .q8-proof-points p { font-size: 14px; line-height: 1.4; }
+body[data-surface=quiz] .q5-bridge>.q8-references { padding: 8px 0; margin-top: 8px; font-size: 13px; }
+body[data-surface=quiz] .q8-reading-pages { flex: 1; display: flex; flex-direction: column; }
+body[data-surface=quiz] .q8-reading-page { flex: 1; display: flex; flex-direction: column; }
+body[data-surface=quiz] .q8-reading-page>h2 { font-size: 23px; line-height: 1.25; }
+body[data-surface=quiz] .q8-reading-page>.lead { font-size: 16px; line-height: 1.5; margin-top: 16px; }
+body[data-surface=quiz] .q8-reading-page>.q8-caption { font-size: 13px; line-height: 1.4; margin-top: 12px; }
+body[data-surface=quiz] .q8-reading-page>.q8-references { padding: 8px 0; margin: 8px 0 0; font-size: 13px; }
+body[data-surface=quiz] .q8-reading-position { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+
+/* The landing introduction also ends with its start action inside the frame. */
+body[data-surface=quiz] .q8-intro { padding-block: 22px; align-self: center; gap: 50px; }
+body[data-surface=quiz] .q8-intro h1 { font-size: clamp(27px, 3vw, 42px); }
+body[data-surface=quiz] .q8-intro .lead { font-size: 17px; line-height: 1.5; margin-top: 18px; }
+body[data-surface=quiz] .q8-intro .section-kicker { font-size: 11px; margin-bottom: 18px; }
+body[data-surface=quiz] .q8-intro .button { margin-top: 24px; }
+body[data-surface=quiz] .q8-signal-intro .quiz-life-photo .signal-portrait { max-height: 220px; }
+body[data-surface=quiz] .q8-intro .quiz-reflection-preview { padding: 20px 24px; }
+body[data-surface=quiz] .q8-intro .quiz-reflection-preview h2 { font-size: 23px; margin-top: 12px; }
+body[data-surface=quiz] .q8-intro .quiz-reflection-preview .signal-field { height: 40px; margin-top: 14px; }
+
+/* Density responds to the actual text and viewport height, never to a score. */
+body[data-surface=quiz] .q5-flow[data-density=compact] {
+  --step-space: 12px; --option-gap: 6px; --option-padding: 9px;
+  --option-height: 48px; --option-type: 15.5px; --question-type: 23px;
+}
+body[data-surface=quiz] .q5-flow[data-density=tight] {
+  --step-space: 8px; --option-gap: 5px; --option-padding: 6px;
+  --option-height: 44px; --option-type: 15px; --question-type: 20px;
+}
+body[data-surface=quiz] .q5-flow[data-density=tight] .question-hint { margin-top: 7px; font-size: 12px; }
+body[data-surface=quiz] .q5-flow[data-density=tight] .button { min-height: 44px; padding-block: 10px; }
+body[data-surface=quiz] .q5-flow[data-density=tight] .q8-inline-note { padding: 9px 12px; }
+body[data-surface=quiz] .q5-flow[data-density=tight] .q5-bridge>h2 { font-size: 21px; }
+body[data-surface=quiz] .q5-flow[data-density=tight] .q5-bridge>.lead { font-size: 15px; line-height: 1.4; margin-top: 12px; }
+body[data-surface=quiz] .q5-flow[data-density=tight] .q8-proof-points article { padding-block: 8px; }
+
+@media(min-width: 761px) {
+  body[data-surface=quiz] .q5-flow { min-height: min(780px, calc(100svh - 92px)); align-self: center; }
+  body[data-surface=quiz] #quiz-app[data-screen=q3] .q5-options,
+  body[data-surface=quiz] #quiz-app[data-screen=q4] .q5-options { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width: 760px) {
+  body[data-surface=quiz] .q8-intro { display: block; max-width: 520px; }
+  body[data-surface=quiz] .q8-intro .q8-signal-intro { display: none; }
+  body[data-surface=quiz] .q8-intro .section-kicker { display: none; }
+  body[data-surface=quiz] .q8-intro h1 { font-size: 28px; line-height: 1.15; }
+  body[data-surface=quiz] .q8-intro .lead { font-size: 16px; line-height: 1.5; margin-top: 18px; }
+  body[data-surface=quiz] .q8-intro .button-note { font-size: 12px; }
+  body[data-surface=quiz] .q5-flow { --question-type: 23px; --option-padding: 10px; --option-height: 50px; --step-space: 12px; }
+  body[data-surface=quiz] .q5-bridge>h2 { font-size: 23px; }
+  body[data-surface=quiz] .q5-bridge>.lead { font-size: 16px; }
+}
+@media(max-height: 620px) and (max-width: 760px) {
+  body[data-surface=quiz]:not([data-quiz-view=result]) .header-surround { padding: 4px 12px 0; }
+  body[data-surface=quiz]:not([data-quiz-view=result]) .site-header { height: 40px; }
+  body[data-surface=quiz]:not([data-quiz-view=result]) .site-footer { min-height: 26px; padding: 0; }
+  body[data-surface=quiz]:not([data-quiz-view=result]) .site-footer summary { min-height: 26px; padding: 5px; }
+  body[data-surface=quiz] .q5-flow,body[data-surface=quiz] .q5-flow[data-density] { --step-space: 6px; --option-gap: 5px; --option-padding: 6px; --option-height: 44px; --option-type: 15px; --question-type: 20px; width: calc(100% - 24px); min-height: calc(100svh - 70px); padding-bottom: 4px; }
+  body[data-surface=quiz] .q5-flow .q5-option { padding-inline: 12px; gap: 10px; }
+  body[data-surface=quiz] .q5-flow .question-hint { font-size: 12px; margin-block: 6px; }
+  body[data-surface=quiz] .q5-flow .q5-bridge>h2 { text-transform: none; font-size: 21px; }
+  body[data-surface=quiz] .q5-flow .q5-bridge>.lead { font-size: 15px; line-height: 1.35; margin-top: 10px; }
+  body[data-surface=quiz] .q5-flow .q8-words { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 10px; gap: 5px; }
+  body[data-surface=quiz] .q5-flow .q8-words button { padding: 6px; font-size: 13px; }
+  body[data-surface=quiz] .q5-flow .q8-optional-row { margin-bottom: 8px; }
+  body[data-surface=quiz] .q5-flow .q8-check-title { margin-top: 10px; font-size: 16px; }
+  body[data-surface=quiz] .q8-intro { padding-block: 12px; }
+  body[data-surface=quiz] .q8-intro h1 { font-size: 24px; }
+  body[data-surface=quiz] .q8-intro .lead { font-size: 15px; line-height: 1.4; margin-top: 14px; }
+  body[data-surface=quiz] .q8-intro .button { margin-top: 18px; }
+  body[data-surface=quiz] .q8-reading-page>h2 { font-size: 21px; text-transform: none; }
+  body[data-surface=quiz] .q8-reading-page>.lead { font-size: 15px; line-height: 1.4; margin-top: 12px; }
+  body[data-surface=quiz] .q8-reading-page .q8-reading-position { margin-bottom: 4px; }
+  body[data-surface=quiz] .q8-reading-page .q8-proof-points { margin-top: 8px; }
+  body[data-surface=quiz] .q8-reading-page>.q8-caption { margin-top: 8px; }
+  body[data-surface=quiz] .q8-reading-page>.q8-references { padding-block: 6px; margin-top: 6px; }
+}
+body[data-surface=quiz] #priming-form .q5-option { flex-direction: column; justify-content: center; padding: 8px; gap: 5px; text-align: center; }

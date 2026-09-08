@@ -1,10 +1,13 @@
 import {content,copy} from './funnel-content';
 import {signalArt} from './signal-art';
 import {gsap} from 'gsap';
+import {initializeQuizViewport} from './quiz-viewport';
 import {questions,SESSION_KEY,freshState,readState,flow,isAnswered,calculate,answerLabel,consistentAfterQ5,consistentAfterQ8,visualStage,visualProgress} from './quiz-v8';
 const root=document.getElementById('quiz-app')!;
+initializeQuizViewport(root);
 const ui=content.ui;
 let state=freshState();
+let reinforcementPage=0;
 try{state=readState(sessionStorage.getItem(SESSION_KEY));}catch{}
 const esc=(value:unknown)=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 const t=(value:string,values:Record<string,string|number>={})=>esc(copy(value,values));
@@ -16,14 +19,16 @@ function stopScreenMotion(){gsap.killTweensOf(root);gsap.set(root,{clearProps:'o
 reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)stopScreenMotion();});
 function animateScreen(){stopScreenMotion();if(reducedMotion.matches)return;gsap.fromTo(root,{autoAlpha:.84,y:8},{autoAlpha:1,y:0,duration:.32,ease:'power3.out',overwrite:true,clearProps:'opacity,visibility,transform'});}
 function commit(){save();render();animateScreen();window.scrollTo({top:0,behavior:'instant'});root.querySelector<HTMLElement>('h1,h2,legend')?.focus({preventScroll:true});}
-function go(direction=1){const steps=flow(state);state.screen=steps[Math.max(0,Math.min(steps.length-1,steps.indexOf(state.screen)+direction))];commit();}
+function go(direction=1){const steps=flow(state);state.screen=steps[Math.max(0,Math.min(steps.length-1,steps.indexOf(state.screen)+direction))];if(state.screen==='reinforcement_3')reinforcementPage=direction<0?1:0;commit();}
 function actions(label=ui.continue){return `<div class="question-actions"><button type="button" class="back-button" id="back">${t(ui.back)}</button><button type="button" class="button button-primary" id="next-screen">${t(label)} ${arrow}</button></div>`;}
 function wireActions(){document.getElementById('back')?.addEventListener('click',()=>go(-1));document.getElementById('next-screen')?.addEventListener('click',()=>go());}
 function progress(){const n=Number(state.screen.replace('q',''));const count=Object.keys(questions).filter(id=>isAnswered(id,state.answers)).length;return `<div class="q5-progress"><div class="signal-mini" aria-hidden="true">${signalArt(visualProgress(state.screen),true)}</div><span>${t(questions[state.screen]?ui.questionCount:ui.answeredCount,{current:n,count})}</span><span>${questions[state.screen]?t(questions[state.screen].section_label):''}</span><progress aria-label="${t(ui.progressLabel)}" max="10" value="${count}"></progress></div>`;}
 function references(){return `<details class="q8-references"><summary>${t(ui.readingTitle)}</summary><p>${t(ui.readingNote)}</p>${content.citations.map(c=>`<article><h3><a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${t(c.name)}</a></h3><p><strong>${t(c.title)}</strong></p><p>${t(c.body)}</p></article>`).join('')}</details>`;}
 function render(){
   const id=state.screen;
+  document.querySelector<HTMLDetailsElement>('.site-footer details')?.removeAttribute('open');
   root.dataset.screen=id;
+  document.body.dataset.quizView=id==='result'?'result':id==='screen_0'?'intro':questions[id]?'question':'bridge';
   const stage=visualStage(id);
   document.body.dataset.signalStage=stage;
   document.body.style.setProperty('--signal-clarity',String(visualProgress(id)));
@@ -85,6 +90,22 @@ function render(){
     root.dataset.topic=result.topic;root.dataset.persona=result.persona||'';
     root.innerHTML=`<div class="q5-result-copy"><header class="q8-result-heading">${signal(true)}<h1 tabindex="-1">${t(r.title)}</h1><p class="q8-personal-intro">${t(state.name?ui.resultIntro:ui.resultIntroAnon,{Name:state.name})}</p><p class="lead">${t(r.intro)}</p><a class="button button-primary result-start" href="/vsl#first-practice">${t(ui.practiceCta)} ${arrow}</a></header><p class="q5-result-context">${t(r.recognition)}</p><section class="q8-result-section"><h2>${t(content.tokens.MECHANISM)}: ${t(r.name)}</h2><p>${t(r.mechanism)}</p></section><section class="q8-result-section"><h2>${t(ui.metaphorTitle)}</h2><p>${t(r.metaphor)}</p><p class="q8-caption">${t(ui.metaphorLimit)}</p></section><section class="q8-comparison"><h2>${t(ui.compareTitle)}</h2><div><h3>${t(ui.compareBefore)}</h3>${signal()}<p>${t(r.before)}</p></div><div><h3>${t(ui.compareAfter)}</h3>${signal(true)}<p>${t(r.after)}</p></div><p class="q8-caption">${t(ui.compareNote)}</p></section>${scene?`<section class="q8-result-section"><h2>${t(ui.sceneTitle)}</h2><p>${t(scene)}</p></section>`:''}${extra?`<section class="q8-result-section" id="priming-reflection"><h2>${t(ui.primingTitle)}</h2><p>${t(extra)}</p></section>`:''}<section class="q8-result-section"><h2>${t(ui.futureTitle)}</h2><p>${t(future)}</p><p>${t(r.next)}</p></section><div class="q5-first-step"><h2>${t(ui.practiceTitle)}</h2><p>${t(r.prompt)}</p></div><a class="button button-primary" href="/vsl#first-practice">${t(ui.practiceCta)} ${arrow}</a><p class="button-note">${t(ui.practiceNote)}</p>${references()}</div><aside class="q5-answer-sheet"><h2>${t(ui.basisTitle)}</h2><dl><div><dt>${t(ui.basisTheme)}</dt><dd>${t(r.name)}</dd></div><div><dt>${t(ui.basisConcern)}</dt><dd>${t(answerLabel('q4',state.answers))}</dd></div><div><dt>${t(ui.basisChange)}</dt><dd>${t(answerLabel('q8',state.answers))}</dd></div></dl><p class="q8-caption">${t(ui.basisExplanation)}</p><details><summary>${t(ui.methodTitle)}</summary><p>${t(ui.method)}</p></details><button class="text-button" id="review-answers">${t(ui.review)}</button><section class="q8-result-offer"><h3>${t(ui.offerTitle)}</h3><p>${t(ui.offerBody)}</p><p>${t(ui.offerNote)}</p><a href="/#inside">${t(ui.offerCta)}</a></section></aside><section class="q8-close"><h2>${t(ui.closeTitle)}</h2><p>${t(ui.closeBody)}</p><div class="q8-close-actions"><a class="button button-primary" href="/vsl#first-practice">${t(ui.practiceCta)} ${arrow}</a><button class="text-button" id="review-bottom">${t(ui.review)}</button></div></section>`;
     const review=()=>{state.screen='q1';commit();};document.getElementById('review-answers')!.onclick=review;document.getElementById('review-bottom')!.onclick=review;return;
+  }
+  if(id==='reinforcement_3'){
+    const s=content.screens.reinforcement_3;
+    root.innerHTML=`${progress()}<div class="q8-reading-pages"><section class="q8-reading-page" data-reading-page="0"><p class="q8-reading-position">1 / 2</p><h2 tabindex="-1">${t(s.title)}</h2>${s.body.map(p=>`<p class="lead">${t(p)}</p>`).join('')}</section><section class="q8-reading-page" data-reading-page="1" hidden><p class="q8-reading-position">2 / 2</p><h2 tabindex="-1">${t(content.editorial.peekTitle)}</h2><div class="q8-proof-points">${s.cards.map(c=>`<article><h3>${t(c.title)}</h3><p>${t(c.body)}</p></article>`).join('')}</div><p class="q8-caption">${t(s.note)}</p>${references()}</section>${actions(s.cta)}</div>`;
+    let page=reinforcementPage;
+    const showPage=(next:number)=>{
+      page=next;
+      reinforcementPage=page;
+      root.querySelectorAll<HTMLElement>('[data-reading-page]').forEach(node=>node.hidden=Number(node.dataset.readingPage)!==page);
+      animateScreen();
+      root.querySelector<HTMLElement>('[data-reading-page]:not([hidden]) h2')?.focus({preventScroll:true});
+    };
+    document.getElementById('back')!.onclick=()=>page?showPage(0):go(-1);
+    document.getElementById('next-screen')!.onclick=()=>page?go():showPage(1);
+    if(page)showPage(page);
+    return;
   }
   const s=content.screens[id as keyof typeof content.screens] as {title:string;body:string[]|string;note?:string;cta?:string;cards?:{title:string;body:string}[]};
   root.innerHTML=`${progress()}<div class="q5-bridge ${id.startsWith('engine')?'q8-inline-reflection':''}"><h2 tabindex="-1">${t(s.title)}</h2>${(Array.isArray(s.body)?s.body:[s.body]).map(p=>`<p class="lead">${t(p)}</p>`).join('')}${s.cards?`<div class="q8-proof-points">${s.cards.map(c=>`<article><h3>${t(c.title)}</h3><p>${t(c.body)}</p></article>`).join('')}</div>`:''}${s.note?`<p class="q8-caption">${t(s.note)}</p>`:''}${id==='reinforcement_3'?references():''}${actions(s.cta||ui.continue)}</div>`;
