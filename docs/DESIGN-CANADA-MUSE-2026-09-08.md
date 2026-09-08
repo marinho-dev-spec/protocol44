@@ -36,4 +36,6 @@ Conteúdo da oferta continua 8.2; nenhuma mudança em perguntas, pontuação, ra
 
 ## Verificação de entrega
 
-Verificar build, testes de lógica, caminhos do quiz, downloads reais, controles do exemplo, movimento reduzido, larguras móveis/desktop e páginas publicadas. Evidência visual local em `.impeccable/review/canada-muse/`.
+Build Astro concluído. 62 testes de lógica e 13 grupos de navegador local aprovados. Capturadas sete cenas em 1440px e 390px, com as etapas escura, intermediárias e clara verificadas. Mais nove combinações das rotas principais em 320px, 768px e 1024px, sem rolagem horizontal ou navegação cortada. Conferidos controles do exemplo via Enter/Space, troca de movimento reduzido durante a animação, navegação de teclado no quiz e acesso do hero à prática real. Imagens responsivas: 137KB / 51KB / 25KB aproximadamente.
+
+Na segunda passagem de design, o título do celular foi recomposto para evitar palavra isolada, a prévia do quiz ganhou hierarquia secundária e o grafismo compacto passou a ocupar a largura prevista. Evidência visual local em `.impeccable/review/canada-muse/`. A verificação de produção está registrada em `DEPLOYMENT.md`. Escopo: comportamento e apresentação em Chrome; não certificação integral de acessibilidade nem resultado comercial.

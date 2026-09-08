@@ -1,3 +1,24 @@
+# Publicação Canadá / Muse — 8 de setembro de 2026
+
+**Publicado e verificado no domínio público.**
+
+- [Site](https://protocol44.vercel.app/) · [Quiz](https://protocol44.vercel.app/quiz) · [Prática](https://protocol44.vercel.app/vsl).
+- Commit da aplicação: `c49a94412661c148af40d8929fb0adc167869780`, publicado na main do repositório marinho-dev-spec/protocol44.
+- [Deploy Vercel](https://vercel.com/odairmarinho2019-5298s-projects/protocol44/9pGGifvXav9uyRwTSVGNgCxzACpH), status `success`.
+- Três rotas com HTTP 200 e marcador `p44-visual-revision=canada-muse-2026-09-08`; imagem responsiva nova também servida com HTTP 200.
+
+O titular escolheu [Muse](https://choosemuse.com/) como referência de estilo após pedir referências para o público canadense. A revisão substitui a abstração óptica do hero por fotografia ilustrativa original em grande escala, reorganiza a apresentação das fases, destaca a prática real e aplica a mesma linguagem ao quiz e à página de prática. Logo e paleta final do sócio preservadas; entrada escura, resultado claro. Stack Astro, Tailwind CSS e GSAP.
+
+Validação: build; 62 testes de lógica; 13 grupos de navegador local e **13 em produção, sem erros**. Inclui percursos completos, retomada, revisão, opções neutras, atividades opcionais, download real e ausência de envio de respostas. [Relatório desta produção](docs/verification-canada-muse-production.json). Também conferidos 320/768/1024px nas três rotas, sete cenas em desktop/celular, controles por teclado e mudança de movimento reduzido durante animações.
+
+Vídeo e programa integral continuam em preparação; prática escrita disponível, vendas fechadas. Não há resultado de conversão medido. Referências, decisões e revisão visual: [direção Canadá / Muse](docs/DESIGN-CANADA-MUSE-2026-09-08.md).
+
+O registro de documentação posterior não modifica a aplicação verificada.
+
+---
+
+## Histórico
+
 # Publicação 8.2 + polida visual + stack Astro/Tailwind/GSAP — 8 de setembro de 2026
 
 **Publicado e verificado em produção.**
