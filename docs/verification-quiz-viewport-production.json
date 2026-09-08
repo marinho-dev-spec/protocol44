@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-08",
+  "base": "https://protocol44.vercel.app",
+  "applicationCommit": "9ba59c96bb4df2a1c953f836c98fed21e142c199",
+  "status": "pass",
+  "total": 105,
+  "viewports": ["390x844", "375x667", "360x640", "320x568", "1366x768"],
+  "failures": [],
+  "errors": [],
+  "readingNavigation": "pass",
+  "script": "scripts/verify-quiz-viewport.cjs",
+  "localFunctionalGroups": 13,
+  "scope": "Complete quiz text and controls within the viewport at the tested default text sizes. Expanded disclosures, text zoom, keyboards and the result retain access to scrolling."
+}

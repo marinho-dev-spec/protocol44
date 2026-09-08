@@ -1,3 +1,19 @@
+# Quiz ajustado à altura da tela — 8 de setembro de 2026
+
+**Publicado e verificado em produção.** [Abrir quiz](https://protocol44.vercel.app/quiz).
+
+Commit da aplicação: 9ba59c96bb4df2a1c953f836c98fed21e142c199. [Deploy Vercel](https://vercel.com/odairmarinho2019-5298s-projects/protocol44/CVxgvwFmnP7xtAwqiqyzbEmJ78bk), status success. HTTP 200 e marcador data-layout=viewport conferidos no domínio público.
+
+Perguntas, opções completas e ação de avançar se ajustam à mesma tela. Cabeçalho/progresso compactos, espaço adaptado ao conteúdo, introdução mobile simplificada e terceira explicação em duas etapas. Pontuação e texto das perguntas preservados. Voltar percorre as duas etapas; limpar respostas fecha o painel de privacidade.
+
+105 combinações de tela e viewport passaram localmente e **105 em produção, sem falhas**: 390×844, 375×667, 360×640, 320×568 e 1366×768. Cobertura inclui os dez enunciados, notas condicionais, atividades, reforços, nome e introdução, limites do texto dentro de cada opção e navegação entre as partes. O teste geral do funil passou nos 13 grupos locais. [Resumo público](docs/verification-quiz-viewport-production.json). [Decisões e limites](docs/QUIZ-VIEWPORT-2026-09-08.md).
+
+O resultado e os detalhes expandidos são páginas de leitura; zoom e teclado conservam acesso por rolagem quando necessário. O registro de documentação posterior não modifica a aplicação verificada.
+
+---
+
+## Histórico
+
 # Publicação Canadá / Muse — 8 de setembro de 2026
 
 **Publicado e verificado no domínio público.**
